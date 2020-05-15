@@ -16,4 +16,4 @@ def sum_of_matrix_array(matrix):
 
 
 if __name__ == "__main__":
-    pass
+    print(sum_of_matrix_array([[],[2,3]]))
