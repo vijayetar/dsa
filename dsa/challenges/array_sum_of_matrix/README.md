@@ -31,7 +31,7 @@ Function to add up the sum of each row in a matrix and return an array with the 
 
 ## Solution
 ![page 1](../../assets/matrix1.jpg)
-![page 2](../../assets/matrix2.jpg)
+![page 2](../../assets/matrix2.jpeg)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
