@@ -4,7 +4,7 @@
 
 See [solution](array_sum_of_matrix.py)
 
-__Pull Request__:
+__Pull Request__:https://github.com/vijayetar/dsa/pull/1
 
 Function to add up the sum of each row in a matrix and return an array with the appropriate values.
 
