@@ -5,8 +5,10 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def insert(self, value):
+    def insert(self, value, *args):
         self.head = Node(value, self.head)
+        for arg in args:
+            self.head = Node(arg, self.head)
         return self
 
     def __str__(self):
@@ -54,6 +56,8 @@ if __name__ == "__main__":
     ll = LinkedList()
     ll.insert("Lucy")
     ll.insert("Lucky")
+    print(ll)
+    ll.insert("marv","jemma","snowy")
     print(ll)
 
 

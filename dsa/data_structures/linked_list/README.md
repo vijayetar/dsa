@@ -37,7 +37,7 @@ However, the includes method is O(n) since it is dependent on the the length of 
     - [x] Empty linked list is created on instantiating
     - [x] Method insert created to make new head each time it is called
     - [x] method includes created to check if value of the node exits
-    - [ ] method insert created to pass multiple arguments
+    - [x] method insert created to pass multiple arguments
  - [x] Unit tests written and passing
      - [x] “Happy Path” - Expected outcome
      - [x] Expected failure
