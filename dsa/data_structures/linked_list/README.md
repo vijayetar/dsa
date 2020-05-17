@@ -26,7 +26,8 @@ However, the includes method is O(n) since it is dependent on the the length of 
 * .gitignore
 
 ## Solution
-
+![whiteboard1](../../assets/linked_list1.jpg)
+![whiteboard1](../../assets/linked_list2.jpg)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
