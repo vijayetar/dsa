@@ -38,7 +38,7 @@ def test_LinkedList_insert():
     expected = "{apples} ->  NULL"
     assert actual == expected
 
-#check multiple inserts into linked list
+# #check multiple inserts into linked list
 def test_LinkedList_insert():
     ll = LinkedList()
     ll.insert("apples", "bananas", "coconut", "dragonfruits")
@@ -46,7 +46,7 @@ def test_LinkedList_insert():
     expected = "{dragonfruits} -> {coconut} -> {bananas} -> {apples} ->  NULL"
     assert actual == expected
 
-## check True includes in the Linked List
+# ## check True includes in the Linked List
 def test_LinkedList_includes_True():
     ll = LinkedList()
     ll.insert("apples")
@@ -56,7 +56,7 @@ def test_LinkedList_includes_True():
     expected = True
     assert actual == expected
 
-## check False includes in the Linked List
+# ## check False includes in the Linked List
 def test_LinkedList_includes_False():
     ll = LinkedList()
     ll.insert("apples")
@@ -66,7 +66,7 @@ def test_LinkedList_includes_False():
     expected = False
     assert actual == expected
 
-# # check if the error is raised with and without entering a Node
+# # # check if the error is raised with and without entering a Node
 
 def test_Node_raiseError():
     with pytest.raises(TypeError):
@@ -75,9 +75,10 @@ def test_Node_raiseError():
         mooney = Node("Mooney","this is not a node")
 
 #------------------------------------
-# @pytest.fixture(autouse = True)
+# @pytest.fixture()
 # def prep_LinkedList_apples():
 #     ll = LinkedList()
 #     ll.insert("apples")
+#     return ll
 
 
