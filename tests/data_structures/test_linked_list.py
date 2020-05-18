@@ -31,42 +31,35 @@ def test_LinkedList_instantiation():
     assert actual == expected
 
 ## check insert into linked list
-def test_LinkedList_insert():
-    ll = LinkedList()
-    ll.insert("apples")
+def test_LinkedList_insert(ll):
     actual = str(ll)
     expected = "{apples} ->  NULL"
     assert actual == expected
 
-# #check multiple inserts into linked list
-def test_LinkedList_insert():
-    ll = LinkedList()
-    ll.insert("apples", "bananas", "coconut", "dragonfruits")
+# # #check multiple inserts into linked list
+def test_LinkedList_insert(ll):
+    ll.insert("bananas", "coconut", "dragonfruits")
     actual = str(ll)
     expected = "{dragonfruits} -> {coconut} -> {bananas} -> {apples} ->  NULL"
     assert actual == expected
 
-# ## check True includes in the Linked List
-def test_LinkedList_includes_True():
-    ll = LinkedList()
-    ll.insert("apples")
+# # ## check True includes in the Linked List
+def test_LinkedList_includes_True(ll):
     ll.insert("oranges")
     ll.insert("pineapples")
     actual = ll.includes("oranges")
     expected = True
     assert actual == expected
 
-# ## check False includes in the Linked List
-def test_LinkedList_includes_False():
-    ll = LinkedList()
-    ll.insert("apples")
+# # ## check False includes in the Linked List
+def test_LinkedList_includes_False(ll):
     ll.insert("oranges")
     ll.insert("pineapples")
     actual = ll.includes("kiwi")
     expected = False
     assert actual == expected
 
-# # # check if the error is raised with and without entering a Node
+# # # # check if the error is raised with and without entering a Node
 
 def test_Node_raiseError():
     with pytest.raises(TypeError):
@@ -75,10 +68,10 @@ def test_Node_raiseError():
         mooney = Node("Mooney","this is not a node")
 
 #------------------------------------
-# @pytest.fixture()
-# def prep_LinkedList_apples():
-#     ll = LinkedList()
-#     ll.insert("apples")
-#     return ll
+@pytest.fixture()
+def ll():
+    ll = LinkedList()
+    ll.insert("apples")
+    return ll
 
 
