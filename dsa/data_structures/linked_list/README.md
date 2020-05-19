@@ -2,11 +2,13 @@
 
 [Table of Contents](../../../README.md)
 
-See [solution](linked_list.py)
+See [solution for class 5 and 6](linked_list.py)
 
-__Pull Request__:https://github.com/vijayetar/dsa/pull/3
+__Pull Request for class 5__:https://github.com/vijayetar/dsa/pull/3
+__Pull Request for class 6__:https://github.com/vijayetar/dsa/pull/5
 
-## Challenge
+
+# Challenge for class 5
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 * Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
 * Define a method called __insert__ which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -29,19 +31,36 @@ However, the includes method is O(n) since it is dependent on the the length of 
 ![whiteboard1](../../assets/linked_list1.jpg)
 ![whiteboard1](../../assets/linked_list2.jpg)
 
+# Challenge for class 6
+Write the following methods for the Linked List class:
+
+.append(value) which adds a new node with the given value to the end of the list
+.insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+.insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+
+## Approach and Efficiency
+WRT to the append/insertBefore and inserAfter method, given the nature of the singly-linked lists, the code requires us to traverse through the list before locating these positions. This means that the BigO is O(n) since it is dependent on the the length of the linked list.  Since i tried to enter multiple arguments as well, I realized that that there are two loops arguments arg and the linked list n, so the BigO can be increased by the arg size as well as the n factor
+
+## Specifications Used
+* .editorconfig
+* .gitattributes
+* .gitignore
+
+## Solution
+![whiteboard1](../../assets/linked_list3.jpg)
+![whiteboard1](../../assets/linked_list4.jpg)
+
 ## Checklist
- - [x] Top-level README “Table of Contents” is updated
- - [x] Feature tasks for this challenge are completed
-    - [x] Node class created with attributes value and next
-    - [x] It also raises error with the argument for next value is not a node
-    - [x] Empty linked list is created on instantiating
-    - [x] Method insert created to make new head each time it is called
-    - [x] method includes created to check if value of the node exits
-    - [x] method insert created to pass multiple arguments
- - [x] Unit tests written and passing
-     - [x] “Happy Path” - Expected outcome
-     - [x] Expected failure
-     - [x] Edge Case (if applicable/obvious)
+
+- [ ] Feature Tasks
+     - [ ] .append(value) which adds a new node with the given value to the end of the list
+     - [ ] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+     - [ ] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+- [x] Top-level README “Table of Contents” is updated
+- [ ] Unit tests written and passing
+     - [ ] “Happy Path” - Expected outcome
+     - [ ] Expected failure
+     - [ ] Edge Case (if applicable/obvious)
  - [x] README for this challenge is complete
      - [x] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code
