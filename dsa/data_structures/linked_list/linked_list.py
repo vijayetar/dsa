@@ -11,6 +11,33 @@ class LinkedList:
             self.head = Node(arg, self.head)
         return self
 
+    def append(self,value, *args):
+        # checks if the self.head has a value
+        if not self.head:
+            self.head = Node(value, self.head)
+            if len(args) == 0:
+                return
+            print("this is length of args", len(args))
+            for arg in args:
+                print(arg)
+                new_node= Node(arg)
+                current = self.head
+                print("this is current.next",current.next)
+                new_node.next = current.next
+                current.next = new_node
+                current = current.next.next
+        # new_node = Node(value)
+        # current = self.head
+        # # checks if the next value is None or Falsy
+        # if not current.next:
+        #     new_node.next, current.next = current.next, new_node
+        #     return
+        # while current.next:
+        #     current = current.next
+        #     if not current.next:
+        #         new_node.next, current.next = current.next, new_node
+        #         return
+
     def __str__(self):
         """ { a } -> { b } -> { c } -> NULL """
 
@@ -54,11 +81,17 @@ class Node:
 if __name__ == "__main__":
 
     ll = LinkedList()
-    ll.insert("Lucy")
-    ll.insert("Lucky")
     print(ll)
-    ll.insert("marv","jemma","snowy")
+    # ll.append("Kite")
+    # print(ll)
+    ll.append("L","1","2","3")
     print(ll)
+    # ll.append("L","u","c","k","y")
+    # print(ll)
+    # ll.append("Merv")
+    # print(ll)
+    # ll.append("Naomi")
+    # print(ll)
 
 
 

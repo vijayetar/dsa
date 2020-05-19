@@ -4,9 +4,11 @@
 
 See [solution](linked_list.py)
 
-__Pull Request__:https://github.com/vijayetar/dsa/pull/3
+__Pull Request for class 5__:https://github.com/vijayetar/dsa/pull/3
+__Pull Request for class 6__:
 
-## Challenge
+
+## Challenge for class 5
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 * Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
 * Define a method called __insert__ which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -46,3 +48,10 @@ However, the includes method is O(n) since it is dependent on the the length of 
      - [x] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code
      - [x] Picture of whiteboard
+
+## Challenge for class 6
+* Write the following methods for the Linked List class:
+
+* [ ].append(value) which adds a new node with the given value to the end of the list
+* [ ].insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+* [ ].insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node

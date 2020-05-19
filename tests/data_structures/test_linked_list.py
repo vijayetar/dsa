@@ -67,6 +67,8 @@ def test_Node_raiseError():
         lucky = Node("Lucky")
         mooney = Node("Mooney","this is not a node")
 
+
+
 #------------------------------------
 @pytest.fixture()
 def ll():
