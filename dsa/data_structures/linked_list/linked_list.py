@@ -14,20 +14,15 @@ class LinkedList:
     def append(self,value, *args):
         # checks if the self.head has a value
         if not self.head:
+            #code for an empty linked list only
             self.head = Node(value, self.head)
-            print('this is self.head',self.head)
             if len(args) == 0:
                 return
             current = self.head
-            print("this is length of args", len(args))
             for arg in args:
-                print('this is the arg', arg)
                 new_node= Node(arg)
-                print('this is the new_node', new_node)
                 switch = True
                 while current and switch:
-                    print("this is current",current, switch)
-                    print("this is current.next",current.next)
                     if current.next == None:
                         print("inside the if statement")
                         current.next = new_node
@@ -35,18 +30,23 @@ class LinkedList:
                         switch = False
                     else:
                         current = current.next
-                    print("this is the new current",current)
-        # new_node = Node(value)
-        # current = self.head
-        # # checks if the next value is None or Falsy
-        # if not current.next:
-        #     new_node.next, current.next = current.next, new_node
-        #     return
-        # while current.next:
-        #     current = current.next
-        #     if not current.next:
-        #         new_node.next, current.next = current.next, new_node
-        #         return
+            return
+        # code for linked list with self.head
+        new_node = Node(value)
+        current = self.head
+        # loop through the linked list until current.next == None
+        while current.next != None:
+            current = current.next
+        current.next = new_node
+        current = new_node
+        #checks if there are any arguments after the value
+        if len(args)== 0:
+            return
+        for arg in args:
+            new_node = Node(arg)
+            current.next = new_node
+            current = new_node
+        return
 
     def __str__(self):
         """ { a } -> { b } -> { c } -> NULL """
@@ -92,16 +92,11 @@ if __name__ == "__main__":
 
     ll = LinkedList()
     print(ll)
-    ll.append("Kite", "Lucky", "Lucy")
+    ll.insert("1","3","2")
     print(ll)
-    # ll.append("L","1","2","3")
-    # print(ll)
-    # ll.append("L","u","c","k","y")
-    # print(ll)
-    # ll.append("Merv")
-    # print(ll)
-    # ll.append("Naomi")
-    # print(ll)
+    ll.append("")
+
+
 
 
 

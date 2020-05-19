@@ -67,6 +67,24 @@ def test_Node_raiseError():
         lucky = Node("Lucky")
         mooney = Node("Mooney","this is not a node")
 
+### check append on empty linked list
+def test_LinkedList_append_empty_list():
+    ll = LinkedList()
+    ll.append("5")
+    actual = str(ll)
+    expected = "{5} ->  NULL"
+    assert actual == expected
+
+def test_LinkedList_append_empty_list():
+    ll = LinkedList()
+    ll.insert("1","3","2")
+    ll.append("5")
+    actual = str(ll)
+    expected = "{2} -> {3} -> {1} -> {5} ->  NULL"
+    assert actual == expected
+
+
+
 
 
 #------------------------------------
