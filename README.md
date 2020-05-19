@@ -13,7 +13,8 @@
 
 
 ### Data Structures
-* [Linked Lists](dsa/data_structures/linked_list/README.md)
+* [Linked Lists -insert](dsa/data_structures/linked_list/README.md)
+* [Linked Lists- append, insertBefore, insertAfter](dsa/data_structures/linked_list/README.md)
 
 
 
