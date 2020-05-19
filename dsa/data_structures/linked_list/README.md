@@ -5,7 +5,7 @@
 See [solution for class 5 and 6](linked_list.py)
 
 __Pull Request for class 5__:https://github.com/vijayetar/dsa/pull/3
-__Pull Request for class 6__:
+__Pull Request for class 6__:https://github.com/vijayetar/dsa/pull/5
 
 
 # Challenge for class 5
@@ -51,9 +51,11 @@ WRT to the append/insertBefore and inserAfter method, given the nature of the si
 ![whiteboard1](../../assets/linked_list4.jpg)
 
 ## Checklist
-    - [ ].append(value) which adds a new node with the given value to the end of the list
-    - [ ].insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
-    - [ ].insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+
+- [ ] Feature Tasks
+     - [ ] .append(value) which adds a new node with the given value to the end of the list
+     - [ ] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+     - [ ] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 - [x] Top-level README “Table of Contents” is updated
 - [ ] Unit tests written and passing
      - [ ] “Happy Path” - Expected outcome
