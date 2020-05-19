@@ -15,17 +15,27 @@ class LinkedList:
         # checks if the self.head has a value
         if not self.head:
             self.head = Node(value, self.head)
+            print('this is self.head',self.head)
             if len(args) == 0:
                 return
+            current = self.head
             print("this is length of args", len(args))
             for arg in args:
-                print(arg)
+                print('this is the arg', arg)
                 new_node= Node(arg)
-                current = self.head
-                print("this is current.next",current.next)
-                new_node.next = current.next
-                current.next = new_node
-                current = current.next.next
+                print('this is the new_node', new_node)
+                switch = True
+                while current and switch:
+                    print("this is current",current, switch)
+                    print("this is current.next",current.next)
+                    if current.next == None:
+                        print("inside the if statement")
+                        current.next = new_node
+                        current = new_node
+                        switch = False
+                    else:
+                        current = current.next
+                    print("this is the new current",current)
         # new_node = Node(value)
         # current = self.head
         # # checks if the next value is None or Falsy
@@ -82,10 +92,10 @@ if __name__ == "__main__":
 
     ll = LinkedList()
     print(ll)
-    # ll.append("Kite")
-    # print(ll)
-    ll.append("L","1","2","3")
+    ll.append("Kite", "Lucky", "Lucy")
     print(ll)
+    # ll.append("L","1","2","3")
+    # print(ll)
     # ll.append("L","u","c","k","y")
     # print(ll)
     # ll.append("Merv")

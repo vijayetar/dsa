@@ -39,7 +39,7 @@ Write the following methods for the Linked List class:
 .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 
 ## Approach and Efficiency
-WRT to the append/insertBefore and inserAfter method, given the nature of the singly-linked lists, the code requires us to traverse through the list before locating these positions. This means that the BigO is O(n) since it is dependent on the the length of the linked list.
+WRT to the append/insertBefore and inserAfter method, given the nature of the singly-linked lists, the code requires us to traverse through the list before locating these positions. This means that the BigO is O(n) since it is dependent on the the length of the linked list.  Since i tried to enter multiple arguments as well, I realized that that there are two loops arguments arg and the linked list n, so the BigO can be increased by the arg size as well as the n factor
 
 ## Specifications Used
 * .editorconfig
