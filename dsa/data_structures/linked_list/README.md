@@ -2,11 +2,11 @@
 
 [Table of Contents](../../../README.md)
 
-See [solution for class 5 and 6](linked_list.py)
+See [solution for class 5, 6 and 7](linked_list.py)
 
 __Pull Request for lab 5__:https://github.com/vijayetar/dsa/pull/3
 __Pull Request for lab 6__:https://github.com/vijayetar/dsa/pull/5
-__Pull Request for lab 7__:
+__Pull Request for lab 7__:https://github.com/vijayetar/dsa/pull/6
 
 # Challenge for class 5
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
@@ -83,10 +83,10 @@ Since the best outcome required two iterations of the loop, the BigO(n) and depe
 - [x] Feature Tasks
      - [x]Able to show kth value from end starting at 0
 - [x] Top-level README “Table of Contents” is updated
-- [ ] Unit tests written and passing
-     - [ ] “Happy Path” - Expected outcome
-     - [ ] Expected failure
-     - [ ] Edge Case (if applicable/obvious)
+- [x] Unit tests written and passing
+     - [x] “Happy Path” - Expected outcome
+     - [x] Expected failure
+     - [x] Edge Case (if applicable/obvious)
  - [x] README for this challenge is complete
      - [x] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code

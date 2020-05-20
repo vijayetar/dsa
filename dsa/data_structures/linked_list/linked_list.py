@@ -72,9 +72,9 @@ class LinkedList:
         '''Find the kth node value in the linked list from the end'''
         # check if there is a value after head
         if k < 0:
-            return "You entered negative number"
+            return "Exception"
         if not self.head:
-            return "No value in the linked list"
+            return "Exception"
         current = self.head
         length = 1
         # find length of the linked list
