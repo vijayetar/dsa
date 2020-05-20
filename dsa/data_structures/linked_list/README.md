@@ -2,11 +2,11 @@
 
 [Table of Contents](../../../README.md)
 
-See [solution for class 5 and 6](linked_list.py)
+See [solution for class 5, 6 and 7](linked_list.py)
 
-__Pull Request for class 5__:https://github.com/vijayetar/dsa/pull/3
-__Pull Request for class 6__:https://github.com/vijayetar/dsa/pull/5
-
+__Pull Request for lab 5__:https://github.com/vijayetar/dsa/pull/3
+__Pull Request for lab 6__:https://github.com/vijayetar/dsa/pull/5
+__Pull Request for lab 7__:https://github.com/vijayetar/dsa/pull/6
 
 # Challenge for class 5
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
@@ -61,6 +61,35 @@ WRT to the append/insertBefore and inserAfter method, given the nature of the si
      - [ ] “Happy Path” - Expected outcome
      - [ ] Expected failure
      - [ ] Edge Case (if applicable/obvious)
+ - [x] README for this challenge is complete
+     - [x] Summary, Description, Approach & Efficiency, Solution
+     - [x] Link to code
+     - [x] Picture of whiteboard
+
+# Challenge for class 7
+Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Approach and Efficiency
+I used O[1] approach to remove negative integers inserted as parameters
+Now to get the kth position from the end in a singly linked list, I needed to iterate through the list to get the total number of nodes.  Then if the k value was greater than the length, then a error message was returned.
+Then calculating the difference from the length, the positon from the beginning was calculated. Then starting from the head, the (length - k)th position was calculated and returned.
+
+Since the best outcome required two iterations of the loop, the BigO(n) and dependent on the length of the linked list.
+
+time = 2xO(n) = O(n)
+space = 1xO(n) = O(n)
+## Solution
+![whiteboard1](../../assets/linked_list5.jpg)
+
+## Checklist
+
+- [x] Feature Tasks
+     - [x]Able to show kth value from end starting at 0
+- [x] Top-level README “Table of Contents” is updated
+- [x] Unit tests written and passing
+     - [x] “Happy Path” - Expected outcome
+     - [x] Expected failure
+     - [x] Edge Case (if applicable/obvious)
  - [x] README for this challenge is complete
      - [x] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code
