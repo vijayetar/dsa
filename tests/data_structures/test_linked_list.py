@@ -130,6 +130,54 @@ def test_kth_value_one():
     actual = ll.find_k_node_value(0)
     expected= '1'
     assert actual == expected
+
+def test_kth_value_empty_list():
+    ll= LinkedList()
+    actual = ll.find_k_node_value2(3)
+    expected="Exception"
+    assert actual == expected
+
+def test_kth_value_largeKay():
+    ll= LinkedList()
+    ll.insert("1","2","3")
+    actual = ll.find_k_node_value2(15)
+    expected="Exception"
+    assert actual == expected
+
+def test_kth_value_negativeKay():
+    ll= LinkedList()
+    ll.insert("1","2","3")
+    actual = ll.find_k_node_value2(-15)
+    expected="Exception"
+    assert actual == expected
+
+def test_kth_value_zeroKay():
+    ll= LinkedList()
+    ll.insert("1","2","3")
+    actual = ll.find_k_node_value2(0)
+    expected= '1'
+    assert actual == expected
+
+def test_kth_value_full_length():
+    ll= LinkedList()
+    ll.insert("1","2","3","4","5")
+    actual = ll.find_k_node_value2(4)
+    expected= '5'
+    assert actual == expected
+
+def test_kth_value_mid_length():
+    ll= LinkedList()
+    ll.insert("1","2","3","4","5")
+    actual = ll.find_k_node_value2(2)
+    expected= '3'
+    assert actual == expected
+
+def test_kth_value_one():
+    ll= LinkedList()
+    ll.insert("1")
+    actual = ll.find_k_node_value2(0)
+    expected= '1'
+    assert actual == expected
 #------------------------------------
 @pytest.fixture()
 def ll():

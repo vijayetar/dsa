@@ -75,6 +75,9 @@ Now to get the kth position from the end in a singly linked list, I needed to it
 Then calculating the difference from the length, the positon from the beginning was calculated. Then starting from the head, the (length - k)th position was calculated and returned.
 
 Since the best outcome required two iterations of the loop, the BigO(n) and dependent on the length of the linked list.
+
+time = 2xO(n) = O(n)
+space = 1xO(n) = O(n)
 ## Solution
 ![whiteboard1](../../assets/linked_list5.jpg)
 

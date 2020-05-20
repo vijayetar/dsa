@@ -94,6 +94,26 @@ class LinkedList:
             counter += 1
         return "Exception"
 
+    def find_k_node_value2(self,k=0):
+        '''JB approach to finding the kth node value in the linked list from the end'''
+        # check if there is a value after head
+        if k < 0:
+            return "Exception"
+        if not self.head:
+            return "Exception"
+        current = self.head
+        # find length of the linked list
+        counter = 0
+        while current != None:
+            if counter == k:
+                value_desired = self.head
+            elif counter >k:
+                value_desired = value_desired.next
+            current = current.next
+            counter+=1
+        if counter > k:
+            return value_desired.value
+        return "Exception"
 
 # create Node class and instantiate it with value and pointer
 class Node:
@@ -113,13 +133,16 @@ class Node:
 
 if __name__ == "__main__":
 
-    ll = LinkedList()
-    print(ll)
-    ll.append("1","3","8","2")
-    print(ll)
-    ll.append("l","i","k","e")
-    print(ll)
-    print(ll.find_k_node_value(4))
+    # ll = LinkedList()
+    # print(ll)
+    # ll.append("1","3","8","2")
+    # print(ll)
+    # ll.append("l","i","k","e")
+    # print(ll)
+    # print(ll.find_k_node_value(4))
+    ll= LinkedList()
+    ll.insert("1","2","3")
+    print(ll.find_k_node_value2(0))
 
 
 
