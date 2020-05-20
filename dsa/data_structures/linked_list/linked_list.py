@@ -102,7 +102,6 @@ class LinkedList:
         if not self.head:
             return "Exception"
         current = self.head
-        # find length of the linked list
         counter = 0
         while current != None:
             if counter == k:
