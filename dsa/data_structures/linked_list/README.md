@@ -4,9 +4,9 @@
 
 See [solution for class 5 and 6](linked_list.py)
 
-__Pull Request for class 5__:https://github.com/vijayetar/dsa/pull/3
-__Pull Request for class 6__:https://github.com/vijayetar/dsa/pull/5
-
+__Pull Request for lab 5__:https://github.com/vijayetar/dsa/pull/3
+__Pull Request for lab 6__:https://github.com/vijayetar/dsa/pull/5
+__Pull Request for lab 7__:
 
 # Challenge for class 5
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
@@ -56,6 +56,28 @@ WRT to the append/insertBefore and inserAfter method, given the nature of the si
      - [ ] .append(value) which adds a new node with the given value to the end of the list
      - [ ] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
      - [ ] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+- [x] Top-level README “Table of Contents” is updated
+- [ ] Unit tests written and passing
+     - [ ] “Happy Path” - Expected outcome
+     - [ ] Expected failure
+     - [ ] Edge Case (if applicable/obvious)
+ - [x] README for this challenge is complete
+     - [x] Summary, Description, Approach & Efficiency, Solution
+     - [x] Link to code
+     - [x] Picture of whiteboard
+
+# Challenge for class 7
+Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Approach and Efficiency
+
+## Solution
+
+## Checklist
+
+- [ ] Feature Tasks
+     - [ ]
+     - [ ] 
 - [x] Top-level README “Table of Contents” is updated
 - [ ] Unit tests written and passing
      - [ ] “Happy Path” - Expected outcome

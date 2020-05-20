@@ -12,7 +12,6 @@ class LinkedList:
         return self
 
     def append(self,value, *args):
-        # checks if the self.head has a value
         if not self.head:
             #code for an empty linked list only
             self.head = Node(value, self.head)
@@ -24,7 +23,6 @@ class LinkedList:
                 switch = True
                 while current and switch:
                     if current.next == None:
-                        print("inside the if statement")
                         current.next = new_node
                         current = new_node
                         switch = False
@@ -34,7 +32,6 @@ class LinkedList:
         # code for linked list with self.head
         new_node = Node(value)
         current = self.head
-        # loop through the linked list until current.next == None
         while current.next != None:
             current = current.next
         current.next = new_node
@@ -71,6 +68,32 @@ class LinkedList:
             current = current.next
         return False
 
+    def find_k_node_value(self,k=0):
+        '''Find the kth node value in the linked list from the end'''
+        # check if there is a value after head
+        if k < 0:
+            return "You entered negative number"
+        if not self.head:
+            return "No value in the linked list"
+        current = self.head
+        length = 1
+        # find length of the linked list
+        while current.next != None:
+            length +=1
+            current = current.next
+        if k>length:
+            return "Exception"
+        n = length - k
+        # find the value at position n
+        counter = 1
+        current = self.head
+        while current != None:
+            if n == counter:
+                return current.value
+            current = current.next
+            counter += 1
+        return "Exception"
+
 
 # create Node class and instantiate it with value and pointer
 class Node:
@@ -92,9 +115,12 @@ if __name__ == "__main__":
 
     ll = LinkedList()
     print(ll)
-    ll.insert("1","3","2")
+    ll.append("1","3","8","2")
     print(ll)
-    ll.append("")
+    ll.append("l","i","k","e")
+    print(ll)
+    print(ll.find_k_node_value(4))
+
 
 
 
