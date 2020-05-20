@@ -70,14 +70,18 @@ WRT to the append/insertBefore and inserAfter method, given the nature of the si
 Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## Approach and Efficiency
+I used O[1] approach to remove negative integers inserted as parameters
+Now to get the kth position from the end in a singly linked list, I needed to iterate through the list to get the total number of nodes.  Then if the k value was greater than the length, then a error message was returned.
+Then calculating the difference from the length, the positon from the beginning was calculated. Then starting from the head, the (length - k)th position was calculated and returned.
 
+Since the best outcome required two iterations of the loop, the BigO(n) and dependent on the length of the linked list.
 ## Solution
+![whiteboard1](../../assets/linked_list5.jpg)
 
 ## Checklist
 
-- [ ] Feature Tasks
-     - [ ]
-     - [ ] 
+- [x] Feature Tasks
+     - [x]Able to show kth value from end starting at 0
 - [x] Top-level README “Table of Contents” is updated
 - [ ] Unit tests written and passing
      - [ ] “Happy Path” - Expected outcome
