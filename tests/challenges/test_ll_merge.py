@@ -1,6 +1,6 @@
 import pytest
-from .ll_merge.ll_merge import merge_list
-from ...dsa.data_structures.linked_list.linked_list import Node, LinkedList
+from dsa.dsa.challenges.ll_merge.ll_merge import merge_list
+from dsa.dsa.data_structures.linked_list.linked_list import Node, LinkedList
 
 def test_merge_lists_same_length():
     ll1 = LinkedList()
