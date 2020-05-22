@@ -1,1 +1,1 @@
-from ..dsa import __version__
+from dsa import __version__

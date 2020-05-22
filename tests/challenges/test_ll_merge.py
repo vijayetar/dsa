@@ -1,6 +1,6 @@
 import pytest
-from dsa.dsa.challenges.ll_merge.ll_merge import merge_list
-from dsa.dsa.data_structures.linked_list.linked_list import Node, LinkedList
+from dsa.challenges.ll_merge.ll_merge import merge_list
+from dsa.data_structures.linked_list.linked_list import Node, LinkedList
 
 def test_merge_lists_same_length():
     ll1 = LinkedList()
@@ -8,7 +8,7 @@ def test_merge_lists_same_length():
     ll1.insert("a","b","c")
     ll2.insert("A","B","C")
     actual = merge_list(ll1, ll2)
-    expected = "c : C : b : B : a : A : None"
+    expected = 'c : C : b : B : a : A : None'
     assert actual == expected
 
 def test_merge_list_link1_long():
