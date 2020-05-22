@@ -10,6 +10,7 @@
 
 
 * [Sum of Numbers in a Matrix](/dsa/challenges/array_sum_of_matrix/README.md)
+* [Merge Linked Lists](/dsa/challenges/ll_merge/README.md)
 
 
 ### Data Structures

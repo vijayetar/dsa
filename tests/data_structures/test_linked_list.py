@@ -1,6 +1,7 @@
 import pytest
 
-from ...dsa.data_structures.linked_list.linked_list import Node, LinkedList
+from dsa.data_structures.linked_list.linked_list import Node, LinkedList
+from dsa.challenges.ll_merge.ll_merge import merge_list
 
 # check Node instantiation
 def test_node_instantiation():
