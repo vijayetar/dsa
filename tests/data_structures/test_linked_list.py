@@ -84,6 +84,44 @@ def test_LinkedList_append_empty_list():
     expected = "{2} -> {3} -> {1} -> {5} ->  NULL"
     assert actual == expected
 
+### check insert_before function
+def test_LinkedList_insert_before_empty_link():
+    ll = LinkedList()
+    actual = ll.insert_before("apples","oranges")
+    expected = "Exception"
+    assert actual == expected
+
+def test_LinkedList_insert_before_absent_value(ll):
+    ll.insert("oranges")
+    coconut = Node("coconut")
+    actual = ll.insert_before(coconut,"kiwi")
+    expected = "Exception"
+    assert actual == expected
+
+def test_LinkedList_insert_before_present_value():
+    ll = LinkedList()
+    ll.insert("oranges","bananas", "coconut")
+    ll.insert_before("oranges","kiwi")
+    actual = str(ll)
+    expected = "{coconut} -> {bananas} -> {kiwi} -> {oranges} ->  NULL"
+    assert actual == expected
+
+def test_LinkedList_insert_before_multiple_arg_just_head():
+    ll=LinkedList()
+    ll.insert("oranges")
+    ll.insert_before("oranges","1","2","3")
+    actual = str(ll)
+    expected = "{3} -> {2} -> {1} -> {oranges} ->  NULL"
+    assert actual == expected
+
+def test_LinkedList_insert_before_multiple_arg_long_head():
+    ll=LinkedList()
+    ll.insert("oranges","kiwi","bananas","coconut")
+    ll.insert_before("kiwi","1","2","3")
+    actual = str(ll)
+    expected = "{coconut} -> {bananas} -> {3} -> {2} -> {1} -> {kiwi} -> {oranges} ->  NULL"
+    assert actual == expected
+
 def test_kth_value_empty_list():
     ll= LinkedList()
     actual = ll.find_k_node_value(3)
