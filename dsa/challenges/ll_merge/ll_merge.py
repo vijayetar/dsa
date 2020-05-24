@@ -1,7 +1,6 @@
 from dsa.data_structures.linked_list.linked_list import Node, LinkedList
 
 def merge_list(link1, link2):
-
         scout1 = link1.head
         scout2 = link2.head
         if not scout1 and scout2:
