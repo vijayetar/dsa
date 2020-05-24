@@ -122,6 +122,45 @@ def test_LinkedList_insert_before_multiple_arg_long_head():
     expected = "{coconut} -> {bananas} -> {3} -> {2} -> {1} -> {kiwi} -> {oranges} ->  NULL"
     assert actual == expected
 
+# check insert_after
+def test_LinkedList_insert_after_single_new_value():
+    ll=LinkedList()
+    ll.insert("oranges","kiwi","bananas")
+    ll.insert_after("kiwi","1")
+    actual = str(ll)
+    expected = "{bananas} -> {kiwi} -> {1} -> {oranges} ->  NULL"
+    assert actual == expected
+
+def test_LinkedList_insert_after_empty_list():
+    ll=LinkedList()
+    actual = ll.insert_after("kiwi","1")
+    expected = "Exception"
+    assert actual == expected
+
+def test_LinkedList_insert_after_single_list():
+    ll=LinkedList()
+    ll.insert("apples")
+    ll.insert_after("apples","1")
+    actual = str(ll)
+    expected = "{apples} -> {1} ->  NULL"
+    assert actual == expected
+
+def test_LinkedList_insert_after_multiple_arg_single_link():
+    ll=LinkedList()
+    ll.insert("apples")
+    ll.insert_after("apples","1","2","3")
+    actual = str(ll)
+    expected = "{apples} -> {3} -> {2} -> {1} ->  NULL"
+    assert actual == expected
+
+def test_LinkedList_insert_after_multiple_arg_large_link():
+    ll=LinkedList()
+    ll.insert("apples", "kiwi", "coconut", "pineapple")
+    ll.insert_after("kiwi","1","2","3")
+    actual = str(ll)
+    expected = "{pineapple} -> {coconut} -> {kiwi} -> {3} -> {2} -> {1} -> {apples} ->  NULL"
+    assert actual == expected
+
 def test_kth_value_empty_list():
     ll= LinkedList()
     actual = ll.find_k_node_value(3)

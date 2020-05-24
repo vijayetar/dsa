@@ -56,7 +56,7 @@ class LinkedList:
         new_node = Node(value)
         if current.value == positional_value:
             new_node.next = current
-            if len(args)>0:
+            if len(args):
                 for arg in args:
                     arg_node = Node(arg)
                     arg_node.next = new_node
@@ -67,7 +67,7 @@ class LinkedList:
             while scout:
                 if scout.value == positional_value:
                     new_node.next = scout
-                    if len(args)>0:
+                    if len(args):
                         for arg in args:
                             arg_node = Node(arg)
                             arg_node.next = new_node
@@ -76,6 +76,33 @@ class LinkedList:
                     return self.head
                 scout = scout.next
                 current = current.next
+        return "Exception"
+
+    def insert_after(self,positional_value, new_value, *args):
+        if not self.head:
+            return "Exception"
+        current = self.head
+        new_node = Node(new_value)
+        if current.value == positional_value:
+            new_node.next = current.next
+            if len(args):
+                for arg in args:
+                    arg_node = Node(arg)
+                    arg_node.next = new_node
+                    new_node = arg_node
+            current.next = new_node
+            return self.head
+        while current.next:
+            if current.value == positional_value:
+                new_node.next = current.next
+                if len(args):
+                    for arg in args:
+                        arg_node = Node(arg)
+                        arg_node.next = new_node
+                        new_node = arg_node
+                current.next = new_node
+                return self.head
+            current = current.next
         return "Exception"
 
     def __str__(self):
