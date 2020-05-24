@@ -1,4 +1,4 @@
-# Sum of numbers in a Matrix
+# Linked Lists
 
 [Table of Contents](../../../README.md)
 
