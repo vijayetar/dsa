@@ -36,17 +36,17 @@ Similarly, the dequeue, peek and isEmpty methods involved returning the self.fro
 
 
 ## Solution
-![page 1]
-![page 2]
+![page 1](../../assets/S_Q_2.jpg)
+![page 2](../../assets/S_Q_1.jpg)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
- - [] Unit tests written and passing
-     - [] “Happy Path” - Expected outcome
-     - [] Expected failure
-     - [] Edge Case (if applicable/obvious)
- - [] README for this challenge is complete
-     - [ ] Summary, Description, Approach & Efficiency, Solution
+ - [x] Unit tests written and passing
+     - [x] “Happy Path” - Expected outcome
+     - [x] Expected failure
+     - [x] Edge Case (if applicable/obvious)
+ - [x] README for this challenge is complete
+     - [x] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code
-     - [ ] Picture of whiteboard
+     - [x] Picture of whiteboard

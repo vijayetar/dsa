@@ -1,3 +1,4 @@
+from collections import deque
 
 class Node:
     def __init__ (self, value, next_ = None):
@@ -119,23 +120,40 @@ class Queue:
 
         return f"{final_string}NULL"
 
+class QueueDeque():
+    def __init__(self):
+        self.storage = deque()
+    def enqueue(self,new_value):
+        if len(self.storage):
+            new_node = Node(new_value, self.storage[0])
+            print("this is in self.storage", self.storage)
+            self.storage.appendleft(new_node)
+        else:
+            self.storage.appendleft(Node(new_value))
+        return
+    def dequeue(self):
+        return self.storage.pop()
+    def peek(self):
+        return self.storage[-1]
+    def is_empty(self):
+        return len(self.storage)==0
+    def __str__(self):
+        '''String representation of QueueDeque '''
+        final_string = ""
+        for item in self.storage:
+            final_string += f"<- {{{str(item.value)}}}"
+        return f"NULL{final_string}"
+
+
 if __name__ == "__main__":
-    my_queue = Queue()
-    print(my_queue.isEmpty())
-    my_queue.enqueue("bananas")
-    print(my_queue)
-    print(my_queue.dequeue())
-    print(my_queue)
-    my_queue.enqueue("coconuts")
-    my_queue.enqueue("kiwi")
-    my_queue.enqueue("berries")
-    print(my_queue)
-    print(my_queue.dequeue())
-    # print(my_queue.front, my_queue.rear)
-    # print(my_queue.dequeue())
-    print(my_queue)
-    print(my_queue.isEmpty())
-    print(my_queue.peek())
+    my_queue = QueueDeque()
+    print(str(my_queue))
+    my_queue.enqueue("task1")
+    my_queue.enqueue("task2")
+    my_queue.enqueue("task3")
+    my_queue.enqueue("task4")
+    print(str(my_queue))
+
 
 
 
