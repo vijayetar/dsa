@@ -1,11 +1,11 @@
-# Sum of numbers in a Matrix
+# Linked Lists
 
 [Table of Contents](../../../README.md)
 
 See [solution for class 5, 6 and 7](linked_list.py)
 
 __Pull Request for lab 5__:https://github.com/vijayetar/dsa/pull/3
-__Pull Request for lab 6__:https://github.com/vijayetar/dsa/pull/5
+__Pull Request for lab 6__:https://github.com/vijayetar/dsa/pull/8
 __Pull Request for lab 7__:https://github.com/vijayetar/dsa/pull/6
 
 # Challenge for class 5
@@ -52,15 +52,15 @@ WRT to the append/insertBefore and inserAfter method, given the nature of the si
 
 ## Checklist
 
-- [ ] Feature Tasks
-     - [ ] .append(value) which adds a new node with the given value to the end of the list
-     - [ ] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
-     - [ ] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+- [x] Feature Tasks
+     - [x] .append(value) which adds a new node with the given value to the end of the list
+     - [x] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+     - [x] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 - [x] Top-level README “Table of Contents” is updated
-- [ ] Unit tests written and passing
-     - [ ] “Happy Path” - Expected outcome
-     - [ ] Expected failure
-     - [ ] Edge Case (if applicable/obvious)
+- [x] Unit tests written and passing
+     - [x] “Happy Path” - Expected outcome
+     - [x] Expected failure
+     - [x] Edge Case (if applicable/obvious)
  - [x] README for this challenge is complete
      - [x] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code

@@ -3,7 +3,8 @@
 [Table of Contents](../../../README.md)
 
 See [solution](ll_merge.py)
-__PR__: https://github.com/vijayetar/dsa/pull/7
+
+__PR__: https://github.com/vijayetar/dsa/pull/9
 
 ## Challenge
 Write a function called __mergeLists__ which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.

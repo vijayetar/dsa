@@ -6,12 +6,14 @@ class LinkedList:
         self.head = None
 
     def insert(self, value, *args):
+        ''' inserts new node of value at the head and creates new head'''
         self.head = Node(value, self.head)
         for arg in args:
             self.head = Node(arg, self.head)
         return self
 
     def append(self,value, *args):
+        ''' appends new node of value at the tail'''
         if not self.head:
             #code for an empty linked list only
             self.head = Node(value, self.head)
@@ -44,6 +46,64 @@ class LinkedList:
             current.next = new_node
             current = new_node
         return
+
+    def insert_before(self,positional_value,value,*args):
+        '''at positional_value, inserts value and additional arguments BEFORE the positional_value'''
+        if not self.head:
+            return "Exception"
+        current = self.head
+        scout = current.next
+        new_node = Node(value)
+        if current.value == positional_value:
+            new_node.next = current
+            if len(args):
+                for arg in args:
+                    arg_node = Node(arg)
+                    arg_node.next = new_node
+                    new_node=arg_node
+            self.head = new_node
+            return self.head
+        elif scout:
+            while scout:
+                if scout.value == positional_value:
+                    new_node.next = scout
+                    if len(args):
+                        for arg in args:
+                            arg_node = Node(arg)
+                            arg_node.next = new_node
+                            new_node=arg_node
+                    current.next = new_node
+                    return self.head
+                scout = scout.next
+                current = current.next
+        return "Exception"
+
+    def insert_after(self,positional_value, new_value, *args):
+        if not self.head:
+            return "Exception"
+        current = self.head
+        new_node = Node(new_value)
+        if current.value == positional_value:
+            new_node.next = current.next
+            if len(args):
+                for arg in args:
+                    arg_node = Node(arg)
+                    arg_node.next = new_node
+                    new_node = arg_node
+            current.next = new_node
+            return self.head
+        while current.next:
+            if current.value == positional_value:
+                new_node.next = current.next
+                if len(args):
+                    for arg in args:
+                        arg_node = Node(arg)
+                        arg_node.next = new_node
+                        new_node = arg_node
+                current.next = new_node
+                return self.head
+            current = current.next
+        return "Exception"
 
     def __str__(self):
         """ { a } -> { b } -> { c } -> NULL """
@@ -140,8 +200,16 @@ if __name__ == "__main__":
     # print(ll)
     # print(ll.find_k_node_value(4))
     ll= LinkedList()
-    ll.insert("1","2","3")
-    print(ll.find_k_node_value2(0))
+    # ll.insert("1","2","3")
+    ll.insert("oranges","bananas","coconut")
+    print("before insert_before:  ",ll)
+    ll.insert_before("oranges","kiwi","1","2","3")
+    # actual = ll.insert_before("oranges","pineapples")k
+    actual = str(ll)
+    print("this is actual:  ", actual)
+    print("after insert_before:   ",ll)
+
+
 
 
 
