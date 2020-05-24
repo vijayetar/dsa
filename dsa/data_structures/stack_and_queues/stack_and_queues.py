@@ -44,13 +44,13 @@ class Stack:
         '''returns True if the stack is empty '''
         if not self.top:
             return True
+        return False
 
     def peek(self):
         '''returns the top value or raises exception if the stack is empty'''
         if self.isEmpty():
             raise Exception("sorry the stack is empty")
-        else:
-            return self.top.value
+        return self.top.value
 
     def __str__(self):
         """ { a } -> { b } -> { c } -> NULL """
@@ -65,17 +65,77 @@ class Stack:
 
         return f"{final_string}NULL"
 
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.rear = None
 
+    def enqueue(self, new_value):
+        '''Takes any value as an argument and adds a new node with that value to the back of the queue '''
+        if self.isEmpty():
+            self.rear = Node(new_value)
+            self.front = self.rear
+            return
+        current = self.rear
+        current.next = Node(new_value)
+        self.rear = current.next
+        return
+
+    def dequeue(self):
+        '''Removes the node from the front of the queue, and returns the node’s value.'''
+        if not self.front:
+            raise Exception("this is an empty Queue")
+        current = self.front
+        if current.next:
+            self.front = current.next
+            current.next = None
+        else:
+            self.front = None
+            self.rear = None
+        return current.value
+
+    def peek(self):
+        '''Returns the value of the node located in the front of the queue'''
+        if self.isEmpty():
+            raise Exception("sorry, the Queue is empty")
+        return self.front.value
+
+    def isEmpty(self):
+        '''returns True if the Queue is empty '''
+        if not self.front:
+            return True
+        return False
+
+    def __str__(self):
+        """ { a } -> { b } -> { c } -> NULL """
+
+        final_string = ""
+
+        current = self.front
+
+        while current:
+            final_string += f"{{{current.value}}} -> "
+            current = current.next
+
+        return f"{final_string}NULL"
 
 if __name__ == "__main__":
-    my_stack = Stack()
-    my_stack.push("apples")
-    print(my_stack)
-    my_stack.push("bananas","3","4")
-    print(my_stack)
-    print(my_stack.peek())
-    print(my_stack)
-    print(my_stack.pop())
-    print(my_stack)
+    my_queue = Queue()
+    print(my_queue.isEmpty())
+    my_queue.enqueue("bananas")
+    print(my_queue)
+    print(my_queue.dequeue())
+    print(my_queue)
+    my_queue.enqueue("coconuts")
+    my_queue.enqueue("kiwi")
+    my_queue.enqueue("berries")
+    print(my_queue)
+    print(my_queue.dequeue())
+    # print(my_queue.front, my_queue.rear)
+    # print(my_queue.dequeue())
+    print(my_queue)
+    print(my_queue.isEmpty())
+    print(my_queue.peek())
+
 
 

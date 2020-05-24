@@ -1,12 +1,15 @@
 import pytest
 
-from dsa.data_structures.stack_and_queues.stack_and_queues import Node, Stack
+from dsa.data_structures.stack_and_queues.stack_and_queues import Node, Stack, Queue
 
 def test_check_stack():
     assert Stack
 
 def test_check_node():
     assert Node
+
+def test_check_queue():
+    assert Queue
 
 def test_Stack_instantiate_empty_stack():
     fruits = Stack()
@@ -42,6 +45,11 @@ def test_Stack_push_multipleValues(fruit_stack):
     expected = "{3} -> {2} -> {1} -> {bananas} -> {apples} -> NULL"
     assert actual == expected
 
+def test_Queue_instantiate_empty_queue():
+    my_queue = Queue()
+    actual = str(my_queue)
+    expected = "NULL"
+    assert actual == expected
 #---------------------------------------
 @pytest.fixture()
 def empty_stack():

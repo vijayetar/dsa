@@ -4,7 +4,7 @@
 
 [Solution](stack_and_queues.py)
 
-__PR request__:
+__PR request__: https://github.com/vijayetar/dsa/pull/10
 
 ## Challenge
 * Create a Node class with properties of values and pointer
@@ -33,12 +33,12 @@ __PR request__:
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
- - [x] Feature tasks for this challenge are completed
+ - [ ] Feature tasks for this challenge are completed
  - [x] Unit tests written and passing
      - [x] “Happy Path” - Expected outcome
      - [x] Expected failure
      - [x] Edge Case (if applicable/obvious)
  - [x] README for this challenge is complete
-     - [x] Summary, Description, Approach & Efficiency, Solution
+     - [ ] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code
-     - [x] Picture of whiteboard
+     - [ ] Picture of whiteboard
