@@ -16,6 +16,8 @@ The Stack instances have only push, pop, and peek methods.
 ## Approach and Efficiency
 The methods within the Stack class ie push, pop and peek methods use O(1) approach.  I was able to use these same methods between the two stacks to find the front and the rear of the psuedoqueue and then either add to the rear or take it out from the front of the queue.
 
+However, since we are also using two stacks, and emptying between them, we have increased our space/efficiency to O(n).
+
 ## Specifications Used
 * .editorconfig
 * .gitattributes
