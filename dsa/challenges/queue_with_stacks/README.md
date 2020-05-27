@@ -4,7 +4,7 @@
 
 See [solution](queue_with_stacks.py)
 
-__PR__:
+__PR__: https://github.com/vijayetar/dsa/pull/11
 
 ## Challenge
 Create a brand new PseudoQueue class and will internally only utilize 2 Stack objects.
@@ -28,12 +28,12 @@ The methods within the Stack class ie push, pop and peek methods use O(1) approa
 ![page 3](../../assets/pseudoqueue_3.jpg)
 
 ## Checklist
- - [ ] Top-level README “Table of Contents” is updated
+ - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
- - [ ] Unit tests written and passing
-     - [ ] “Happy Path” - Expected outcome
-     - [ ] Expected failure
-     - [ ] Edge Case (if applicable/obvious)
+ - [x] Unit tests written and passing
+     - [x] “Happy Path” - Expected outcome
+     - [x] Expected failure
+     - [x] Edge Case (if applicable/obvious)
  - [x] README for this challenge is complete
      - [x] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code

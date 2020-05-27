@@ -1,4 +1,5 @@
 from dsa.data_structures.stack_and_queues.stack_and_queues import Stack
+
 class PseudoQueue:
     def __init__(self):
         self.stack_to_enqueue = Stack()
@@ -25,25 +26,18 @@ class PseudoQueue:
         current = self.stack_to_enqueue.top
 
         while current:
-            final_string += f"{{{current.value}}} -> "
+            final_string += f" <-- {{{current.value}}} "
             current = current.next
 
-        return f"{final_string}NULL"
+        return f"NULL{final_string}"
 
 
 if __name__ == "__main__":
-    new_queue = PseudoQueue()
-    print(new_queue)
-    new_queue.enqueue("apples", "oranges", "kiwi")
-    print(new_queue)
-    new_queue.stack_to_dequeue.push("3","2","1")
-    print("this is new queue", new_queue)
-    new_queue.enqueue("coconuts")
-    print(new_queue.dequeue())
-    print(new_queue)
-    print(new_queue.dequeue())
-    print(new_queue)
-    print(new_queue.enqueue("grapefruit"))
-    print(new_queue)
+    pq = PseudoQueue()
+    pq.enqueue("apples","oranges","grapefruit")
+    pq.dequeue()
+    pq.enqueue("coconuts", "mangoes")
+    actual = str(pq)
+    print(actual)
 
 
