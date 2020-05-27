@@ -48,5 +48,8 @@ def test_pseudoqueue_dequeque_to_empty():
     expected = "NULL"
     assert actual == expected
 
-
+def test_pseudoqueue_dequeque_raiseError():
+    pq = PseudoQueue()
+    with pytest.raises(RuntimeError):
+        pq.dequeue()
 

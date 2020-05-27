@@ -14,6 +14,10 @@ class PseudoQueue:
     def dequeue(self):
         while not self.stack_to_enqueue.isEmpty():
             self.stack_to_dequeue.push(self.stack_to_enqueue.pop())
+
+        if self.stack_to_dequeue.isEmpty():
+            raise RuntimeError("cannot dequeue from empty queue")
+
         return self.stack_to_dequeue.pop()
 
     def __str__(self):
@@ -34,6 +38,7 @@ class PseudoQueue:
 
 if __name__ == "__main__":
     pq = PseudoQueue()
+    pq.dequeue()
     pq.enqueue("apples","oranges","grapefruit")
     pq.dequeue()
     pq.enqueue("coconuts", "mangoes")
