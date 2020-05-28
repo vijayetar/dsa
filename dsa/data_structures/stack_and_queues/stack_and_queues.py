@@ -86,7 +86,7 @@ class Queue:
         return
 
     def dequeue(self):
-        '''Removes the node from the front of the queue, and returns the node’s value.'''
+        '''Removes the node from the front of the queue, and returns the node’s value'''
         if not self.front:
             raise Exception("this is an empty Queue")
         current = self.front

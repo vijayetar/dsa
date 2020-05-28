@@ -19,6 +19,8 @@
 * [Linked Lists- find kth position from the end in linked list](dsa/data_structures/linked_list/README.md)
 * [Stacks-and-Queues](dsa/data_structures/stack_and_queues/README.md)
 * [Queue with Stacks](dsa/challenges/queue_with_stacks/README.md)
+* [Fifo Animal Shelter](dsa/challenges/fifo_animal_shelter/README.md
+)
 
 
 
