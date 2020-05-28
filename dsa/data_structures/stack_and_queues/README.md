@@ -24,7 +24,7 @@ I assigned the empty stack with a top assigned to None.  As each new value is pu
 
 Similarly, the pop() method uses O(1) of time and space by removing the  node from the top and then reassigning the top to the next node in the Stack. I used the same approach or isEmpty() and peek() methods.
 
-The Queue was a lot more challenging.  After assigining self.rear and self.front attributes to None in an empty queue, I was able to reassign them as more values were added into the queue. With each enqueu, the new node was added after the self.rear. I was then able to reassign the self.rear to the new node with each addition.  This allowed the changes to take place in O(1) time and space efficiency.
+The Queue was a lot more challenging.  After assigining self.rear and self.front attributes to None in an empty queue, I was able to reassign them as more values were added into the queue. With each enqueue, the new node was added after the self.rear. I was then able to reassign the self.rear to the new node with each addition.  This allowed the changes to take place in O(1) time and space efficiency.
 
 Similarly, the dequeue, peek and isEmpty methods involved returning the self.front value and reassigning it to the next node, or returning the value with the queue unchanged.  This process was also done in O(1) time and space.
 

@@ -37,8 +37,11 @@ class Stack:
             raise Exception("this is an empty stack")
         current = self.top
         if current.next:
-            next_value, current.next = current.next, None
+            next_value = current.next
+            current.next = None
             self.top = next_value
+        else:
+            self.top = None
         return current.value
 
     def isEmpty(self):
