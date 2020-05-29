@@ -18,8 +18,7 @@
 * [Linked Lists- append, insertBefore, insertAfter](dsa/data_structures/linked_list/README.md)
 * [Linked Lists- find kth position from the end in linked list](dsa/data_structures/linked_list/README.md)
 * [Stacks-and-Queues](dsa/data_structures/stack_and_queues/README.md)
-
-
+* [Binary Tree and Binary Search Tree](dsa/data_structures/tree/README.md)
 
 
 -----------------------------------
