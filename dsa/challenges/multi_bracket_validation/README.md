@@ -15,13 +15,16 @@ Square Brackets : []
 Curly Brackets : {}
 
 ## Approach and Efficiency
+I decided to use Stack to create last in and first out to collect the brackets and then make sure that they are closed appropriately. The challenge also was to ensure that they were closed appropriately.  Therefore I had to create a list and a dictionary to match the brackets appropriately and push it into the stack and or pop them only when they matched without using complicated and nested if statements.
 
+Edge cases such as empty string, or string without brackets were also accounted for.
+
+The space and time efficiency is O(n) due to the first for-loop. The pop and push are done with O(1)efficiency. There is a new stack created for this function to work, so takes up space.
 
 ## Specifications Used
 * .editorconfig
 * .gitattributes
 * .gitignore
-
 
 ## Solution
 [Document](https://docs.google.com/document/d/10U1vO309_F5Kvo4IUf1swUJaovXcKByewsZgNB06C4A/edit?usp=sharing)
