@@ -6,11 +6,11 @@
 > * [Shift an Array](/dsa/challenges/array_shift/README.md)
 > * [Remove and Shift Array](/dsa/challenges/array_shift/README.md)
 
-
-
-
 * [Sum of Numbers in a Matrix](/dsa/challenges/array_sum_of_matrix/README.md)
 * [Merge Linked Lists](/dsa/challenges/ll_merge/README.md)
+* [Queue with Stacks](dsa/challenges/queue_with_stacks/README.md)
+* [Fifo Animal Shelter](dsa/challenges/fifo_animal_shelter/README.md)
+* [Multi Bracket Validation](dsa/challenges/multi_bracket_validation/README.md)
 
 
 ### Data Structures
@@ -18,9 +18,7 @@
 * [Linked Lists- append, insertBefore, insertAfter](dsa/data_structures/linked_list/README.md)
 * [Linked Lists- find kth position from the end in linked list](dsa/data_structures/linked_list/README.md)
 * [Stacks-and-Queues](dsa/data_structures/stack_and_queues/README.md)
-* [Queue with Stacks](dsa/challenges/queue_with_stacks/README.md)
-* [Fifo Animal Shelter](dsa/challenges/fifo_animal_shelter/README.md
-)
+
 
 
 
