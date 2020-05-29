@@ -15,7 +15,7 @@ Square Brackets : []
 Curly Brackets : {}
 
 ## Approach and Efficiency
-I decided to use Stack to create last in and first out to collect the brackets and then make sure that they are closed appropriately. The challenge also was to ensure that they were closed appropriately.  Therefore I had to create a list and a dictionary to match the brackets appropriately and push it into the stack and or pop them only when they matched without using complicated and nested if statements.
+I decided to use Stack to create last in and first out to collect the brackets and then make sure that they are closed appropriately. The challenge also was to ensure that they were closed appropriately.  Therefore I had to create a dictionary to match the brackets appropriately and push it into the stack and or pop them only when they matched without using complicated and nested if statements.
 
 Edge cases such as empty string, or string without brackets were also accounted for.
 
