@@ -4,7 +4,7 @@
 
 See [solution](tree.py)
 
-__PR__:
+__PR__: https://github.com/vijayetar/dsa/pull/14  
 
 ## Challenge
 * Create a __Node class__ with the left child pointing, and the right child poininting to node.
