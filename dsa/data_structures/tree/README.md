@@ -60,7 +60,7 @@ d. isEmpty: returns True if the Queue is empty
      - [x] “Happy Path” - Expected outcome
      - [x] Expected failure
      - [x] Edge Case (if applicable/obvious)
- - [ ] README for this challenge is complete
+ - [x] README for this challenge is complete
      - [x] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code
      - [x] Picture of whiteboard

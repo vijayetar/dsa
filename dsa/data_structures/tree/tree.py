@@ -163,11 +163,11 @@ class Queue:
     def enqueue(self, new_node):
         '''Takes any node as an argument and adds it to the back of the queue '''
         if self.isEmpty():
-            self.rear = new_value
+            self.rear = new_node
             self.front = self.rear
             return
         current = self.rear
-        current.next = new_value
+        current.next = new_node
         self.rear = current.next
         return
 
