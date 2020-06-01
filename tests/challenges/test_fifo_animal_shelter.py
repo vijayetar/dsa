@@ -113,9 +113,9 @@ def test_animalshelter_dequeue_dog(ash2):
     expected = "{cat} -> {rabbit} -> NULL"
     assert actual == expected
 
-def test_animalshelter2_dequeue_others(ash2):
-    actual = ash2.dequeue("rabbit")
-    expected = "We have your preferred rabbit : rabbit"
+def test_animalshelter2_dequeue_not_present(ash2):
+    actual = ash2.dequeue("snake")
+    expected = "We do not have your preference snake"
     assert actual == expected
 
 def test_animalshelter2_isEmpty_True():
@@ -127,11 +127,6 @@ def test_animalshelter2_isEmpty_True():
 def test_animalshelter2_isEmpty_False(ash2):
     actual = ash2.isEmpty()
     expected = False
-    assert actual == expected
-
-def test_animalshelter2_peek_cat(ash2):
-    actual = ash2.peek()
-    expected = "dog"
     assert actual == expected
 
 #------------------

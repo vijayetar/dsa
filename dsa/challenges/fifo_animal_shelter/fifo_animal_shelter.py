@@ -142,7 +142,7 @@ class AnimalShelter2():
                 self.shelter_out.enqueue(front_line)
         self.shelter_in, self.shelter_out = self.shelter_out, self.shelter_in
         if not return_node:
-            return "We do not have your preference"
+            return f"We do not have your preference {pref}"
         return f"We have your preferred {pref} : {return_node}"
 
 
@@ -180,6 +180,10 @@ if __name__ == "__main__":
         print(ssh.shelter_out.isEmpty())
         print(ssh.shelter_in.isEmpty())
         print(ssh.dequeue("otter"))
+        print(str(ssh))
+        print(ssh.shelter_out.isEmpty())
+        print(ssh.shelter_in.isEmpty())
+        print(ssh.dequeue("rabbit"))
         print(str(ssh))
         print(ssh.shelter_out.isEmpty())
         print(ssh.shelter_in.isEmpty())

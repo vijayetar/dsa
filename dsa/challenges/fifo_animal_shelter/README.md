@@ -17,6 +17,10 @@ I used the Queue class by using Nodes, to create three separate Queue instantiat
 
 I was able to create enqueue, dequeue, peek and isEmpty for the shelter class, through the same methods for each of the Queue class.
 
+I created a second Animal Shelter class that used a single shelter_in queue to review all animals in the shelter.  However, to dequeue, I need another queue shelter_out to place the rest of the animals in there if there is a match.
+
+Then the shelter_out is renamed as shelter_in and the empty shelter_in renamed to shelter_out
+
 ## Specifications Used
 * .editorconfig
 * .gitattributes
