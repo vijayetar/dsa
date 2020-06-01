@@ -11,24 +11,66 @@ class BinaryTree:
         self.root = None
 
     def add(self,value):
-        #using  breadth first traversal
+        '''Takes single argument and adds argument value to the Binary Tree using breadth first traversal'''
         new_node = Node(value)
         if not self.root:
             self.root = new_node
             return
         bt_queue = Queue()
         def evaluate_q(root_node, new_node):
-            if root_node.left == None:
+            if not root_node.left:
                 root_node.left = new_node
                 return
             bt_queue.enqueue(root_node.left)
-            if root_node.right ==  None:
+            if not root_node.right:
                 root_node.right = new_node
                 return
             bt_queue.enqueue(root_node.right)
             root_node = bt_queue.dequeue()
             evaluate_q(root_node,new_node)
         evaluate_q(self.root, new_node)
+
+    def preOrder(self):
+        '''Returns list with node values in depth first traversal in the preorder method'''
+        if not self.root:
+            return "NULL"
+        output = []
+        def walk(root_node):
+            output.append(root_node.value)
+            if root_node.left:
+                walk(root_node.left)
+            if root_node.right:
+                walk(root_node.right)
+        walk(self.root)
+        return output
+
+    def inOrder(self):
+        '''Returns list with node values in depth first traversal in the inorder method'''
+        if not self.root:
+            return "NULL"
+        output = []
+        def walk(root_node):
+            if root_node.left:
+                walk(root_node.left)
+            output.append(root_node.value)
+            if root_node.right:
+                walk(root_node.right)
+        walk(self.root)
+        return output
+
+    def postOrder(self):
+        '''Returns list with node values in depth first traversal in the postorder method'''
+        if not self.root:
+            return "NULL"
+        output = []
+        def walk(root_node):
+            if root_node.left:
+                walk(root_node.left)
+            if root_node.right:
+                walk(root_node.right)
+            output.append(root_node.value)
+        walk(self.root)
+        return output
 
     def __str__(self):
         if not self.root:
@@ -50,6 +92,7 @@ class BinarySearchTree(BinaryTree):
         self.root = None
 
     def add(self, value):
+        '''Takes argument an integer and adds to the Binary Search tree so that if it is less than the root, it is placed left, and if it is more than the root, then it is placed rightof the root'''
         try:
             value = int(value)
             new_node = Node(value)
@@ -75,6 +118,7 @@ class BinarySearchTree(BinaryTree):
             return "Binary Search Tree can only take integers"
 
     def contains(self, value):
+        '''Takes a single argument an integer value and returns Boolean if the Binary Search Tree contains the value'''
         try:
             value = int(value)
             if not self.root:
@@ -97,7 +141,6 @@ class BinarySearchTree(BinaryTree):
         except ValueError:
             return "Binary Search Tree contains only take integers"
 
-
     def __str__(self):
         if not self.root:
             return "NULL"
@@ -117,8 +160,8 @@ class Queue:
         self.front = None
         self.rear = None
 
-    def enqueue(self, new_value):
-        '''Takes any value as an argument and adds a new node with that value to the back of the queue '''
+    def enqueue(self, new_node):
+        '''Takes any node as an argument and adds it to the back of the queue '''
         if self.isEmpty():
             self.rear = new_value
             self.front = self.rear
@@ -129,7 +172,7 @@ class Queue:
         return
 
     def dequeue(self):
-        '''Removes the node from the front of the queue, and returns the node’s value'''
+        '''Removes the node from the front of the queue, and returns the node'''
         if not self.front:
             raise Exception("this is an empty Queue")
         current = self.front
@@ -167,18 +210,4 @@ class Queue:
         return f"{final_string}NULL"
 
 if __name__ == "__main__":
-    # bt = BinaryTree()
-    # print("empty", bt)
-    # bt.add("A")
-    # print(bt)
-    # bt.add("B")
-    # print(bt)
-    # bt.add("C")
-    # print(bt)
-    # bt.add("D")
-    # print(bt)
-    # # print("this is root",bt.root.value)
-    # # my_list = bt.add("74")
-    # # print(my_list)
-
-
+    pass

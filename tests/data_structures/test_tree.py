@@ -30,16 +30,24 @@ def test_BT_add_root():
     expected = "44--> NULL"
     assert actual == expected
 
-def test_BT_add_to_root():
-    bt = BinaryTree()
-    bt.add("44")
-    bt.add("apples")
-    bt.add(100)
-    bt.add("bananas")
-    bt.add(120)
-    bt.add("kiwi")
-    actual= str(bt)
+def test_BT_add_to_root(bt_full):
+    actual= str(bt_full)
     expected = "44--> apples--> bananas--> 120--> 100--> kiwi--> NULL"
+    assert actual == expected
+
+def test_BT_preOrder(bt_full):
+    actual = bt_full.preOrder()
+    expected = ['44', 'apples', 'bananas', 120, 100, 'kiwi']
+    assert actual == expected
+
+def test_BT_inOrder(bt_full):
+    actual = bt_full.inOrder()
+    expected = ['bananas', 'apples', 120, '44', 'kiwi', 100]
+    assert actual == expected
+
+def test_BT_postOrder(bt_full):
+    actual = bt_full.postOrder()
+    expected = ['bananas', 120, 'apples', 'kiwi', 100, '44']
     assert actual == expected
 
 def test_BST_add_nonInteger():
@@ -78,7 +86,6 @@ def test_BST_contains_false_value(bst_full):
 
 #_____________________________________________
 @pytest.fixture()
-
 def bst_full():
     bst_full = BinarySearchTree()
     bst_full.add(15)
@@ -87,3 +94,14 @@ def bst_full():
     bst_full.add(5)
     bst_full.add(65)
     return bst_full
+
+@pytest.fixture()
+def bt_full():
+    bt = BinaryTree()
+    bt.add("44")
+    bt.add("apples")
+    bt.add(100)
+    bt.add("bananas")
+    bt.add(120)
+    bt.add("kiwi")
+    return bt
