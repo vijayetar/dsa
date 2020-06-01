@@ -4,7 +4,7 @@
 
 See [solution](tree.py)
 
-__PR__: https://github.com/vijayetar/dsa/pull/14  
+__PR__: https://github.com/vijayetar/dsa/pull/14
 
 ## Challenge
 * Create a __Node class__ with the left child pointing, and the right child poininting to node.
@@ -18,6 +18,11 @@ __PR__: https://github.com/vijayetar/dsa/pull/14
 
 ## Approach and Efficiency
 
+
+* __Binary Search Tree__:
+The Big O time complexity of a Binary Search Tree’s __insertion__ and __search__ operations is O(height). In the worst case, we will have to search all the way down to a leaf, which will require searching through as many nodes as the tree is tall. In a balanced (or “perfect”) tree, the height of the tree is log(n). In an unbalanced tree, the worst case height of the tree is n.
+
+The Big O space complexity of a BST search would be O(1). During a search, we are not allocating any additional space.
 
 ## Specifications Used
 * .editorconfig

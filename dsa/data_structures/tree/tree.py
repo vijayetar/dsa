@@ -10,41 +10,39 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def add(self, value):
-        if not self.root:
-            self.root = Node(value)
-            return
-        #check left and insert there and return
-        # or else check right and insert there and return
-        # or reassign the root and start again
-        new_node = Node(value)
-        print("this is the new_node", new_node.value)
+    # def add(self, value):
+    #     if not self.root:
+    #         self.root = Node(value)
+    #         return
+    #     #check left and insert there and return
+    #     # or else check right and insert there and return
+    #     # or reassign the root and start again
+    #     new_node = Node(value)
+    #     print("this is the new_node", new_node.value)
 
-        # find the height of the tree on the left vs the right and then figure out where to add the new node
-        def get_height(root):
-            if root is None:
-                return 0
-            return 1 + max(get_height(root.left),get_height(root.right))
-            
-        def is_balanced(root):
-            if root is None:
-                return True
-            return is_balanced(root.right) and is_balanced(root.left) and abs(get_height(root.left)-get_height(root.right)) <= 1
+    #     # find the height of the tree on the left vs the right and then figure out where to add the new node
+    #     def get_height(root):
+    #         if root is None:
+    #             return 0
+    #         return 1 + max(get_height(root.left),get_height(root.right))
 
-        def walk(root_node, new_node):
-            if root_node.left == None:
-                root_node.left = new_node
-                return
-            elif root_node.right == None:
-                root_node.right = new_node
-                return
-            else:
-                # walk(root_node.left, new_node)
+    #     def is_balanced(root):
+    #         if root is None:
+    #             return True
+    #         return is_balanced(root.right) and is_balanced(root.left) and abs(get_height(root.left)-get_height(root.right)) <= 1
 
-        walk(self.root,new_node)
-        return
+    #     def walk(root_node, new_node):
+    #         if root_node.left == None:
+    #             root_node.left = new_node
+    #             return
+    #         elif root_node.right == None:
+    #             root_node.right = new_node
+    #             return
+    #         else:
+    #             # walk(root_node.left, new_node)
 
-
+    #     walk(self.root,new_node)
+    #     return
     def __str__(self):
         if not self.root:
             return "NULL"
@@ -65,19 +63,72 @@ class BinaryTree:
         return final_string
 
 
-class BinarySearchTree:
+class BinarySearchTree(BinaryTree):
     def __init__(self):
         self.root = None
 
     def add(self, value):
-        if not self.root:
-            self.root = Node(value)
-        return
+        try:
+            value = int(value)
+            new_node = Node(value)
+            if not self.root:
+                self.root = new_node
+                return
+            def evaluate_value(root_node, new_node):
+                if root_node.value > new_node.value:
+                    if not root_node.left:
+                        root_node.left = new_node
+                        return
+                    evaluate_value(root_node.left, new_node)
+                    return
+                elif root_node.value< new_node.value:
+                    if not root_node.right:
+                        root_node.right = new_node
+                        return
+                    evaluate_value(root_node.right, new_node)
+                    return
+            evaluate_value(self.root, new_node)
+            return
+        except ValueError:
+            return "Binary Search Tree can only take integers"
+
+    def contains(self, value):
+        try:
+            value = int(value)
+            if not self.root:
+                return "Binary Search Tree is empty"
+            present = False
+            def check_value(root_node, value):
+                if root_node.value == value:
+                    return True
+                if root_node.left:
+                    present = check_value(root_node.left, value)
+                    if present:
+                        return present
+                if root_node.right:
+                    present = check_value(root_node.right, value)
+                    if present:
+                        return present
+                return False
+            present = check_value(self.root, value)
+            return present
+        except ValueError:
+            return "Binary Search Tree contains only take integers"
+
 
     def __str__(self):
-        final_string = ""
-        final_string+= self.root.value
-        return final_string
+        if not self.root:
+            return "NULL"
+        self.final_string = ""
+        def bst_output(root_node):
+            self.final_string+= f"{root_node.value}--> "
+            if root_node.left:
+                bst_output(root_node.left)
+            if root_node.right:
+                bst_output(root_node.right)
+            return
+        bst_output(self.root)
+        return f"{self.final_string}NULL"
 
 
 class Stack:
@@ -137,17 +188,35 @@ class Stack:
         return f"{final_string}NULL"
 
 if __name__ == "__main__":
-    bt = BinaryTree()
-    print("empty", bt)
-    bt.add("A")
-    print(bt)
-    bt.add("B")
-    print(bt)
-    bt.add("C")
-    print(bt)
-    bt.add("D")
-    print(bt)
-    # print("this is root",bt.root.value)
-    # my_list = bt.add("74")
-    # print(my_list)
+    # bt = BinaryTree()
+    # print("empty", bt)
+    # bt.add("A")
+    # print(bt)
+    # bt.add("B")
+    # print(bt)
+    # bt.add("C")
+    # print(bt)
+    # bt.add("D")
+    # print(bt)
+    # # print("this is root",bt.root.value)
+    # # my_list = bt.add("74")
+    # # print(my_list)
+    bst = BinarySearchTree()
+    print(bst)
+    bst.add("apple")
+    bst.add(15)
+    print(bst)
+    bst.add(8)
+    print(bst)
+    bst.add(18)
+    print(bst)
+    bst.add(4)
+    print(bst)
+    bst.add(2)
+    print(bst)
+    bst.add(3)
+    print(bst)
+    bst.add(10)
+    print(bst)
+    print(bst.contains(12))
 
