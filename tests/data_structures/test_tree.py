@@ -23,13 +23,24 @@ def test_BST_instantiation():
     expected = "NULL"
     assert actual == expected
 
-# def test_BT_add_to_root():
-#     bt = BinaryTree()
-#     bt.add("44")
-#     actual = str(bt)
-#     expected = "44"
-#     assert actual == expected
+def test_BT_add_root():
+    bt = BinaryTree()
+    bt.add("44")
+    actual = str(bt)
+    expected = "44--> NULL"
+    assert actual == expected
 
+def test_BT_add_to_root():
+    bt = BinaryTree()
+    bt.add("44")
+    bt.add("apples")
+    bt.add(100)
+    bt.add("bananas")
+    bt.add(120)
+    bt.add("kiwi")
+    actual= str(bt)
+    expected = "44--> apples--> bananas--> 120--> 100--> kiwi--> NULL"
+    assert actual == expected
 
 def test_BST_add_nonInteger():
     bst=BinarySearchTree()

@@ -10,57 +10,39 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    # def add(self, value):
-    #     if not self.root:
-    #         self.root = Node(value)
-    #         return
-    #     #check left and insert there and return
-    #     # or else check right and insert there and return
-    #     # or reassign the root and start again
-    #     new_node = Node(value)
-    #     print("this is the new_node", new_node.value)
+    def add(self,value):
+        #using  breadth first traversal
+        new_node = Node(value)
+        if not self.root:
+            self.root = new_node
+            return
+        bt_queue = Queue()
+        def evaluate_q(root_node, new_node):
+            if root_node.left == None:
+                root_node.left = new_node
+                return
+            bt_queue.enqueue(root_node.left)
+            if root_node.right ==  None:
+                root_node.right = new_node
+                return
+            bt_queue.enqueue(root_node.right)
+            root_node = bt_queue.dequeue()
+            evaluate_q(root_node,new_node)
+        evaluate_q(self.root, new_node)
 
-    #     # find the height of the tree on the left vs the right and then figure out where to add the new node
-    #     def get_height(root):
-    #         if root is None:
-    #             return 0
-    #         return 1 + max(get_height(root.left),get_height(root.right))
-
-    #     def is_balanced(root):
-    #         if root is None:
-    #             return True
-    #         return is_balanced(root.right) and is_balanced(root.left) and abs(get_height(root.left)-get_height(root.right)) <= 1
-
-    #     def walk(root_node, new_node):
-    #         if root_node.left == None:
-    #             root_node.left = new_node
-    #             return
-    #         elif root_node.right == None:
-    #             root_node.right = new_node
-    #             return
-    #         else:
-    #             # walk(root_node.left, new_node)
-
-    #     walk(self.root,new_node)
-    #     return
     def __str__(self):
         if not self.root:
             return "NULL"
-        final_string = ""
-        root_node = self.root
-        final_string+= f"{root_node.value}"
-        def bt_output(root_node, final_string):
-            final_string+= f"-->{root_node.value}"
+        self.final_string = ""
+        def bt_output(root_node):
+            self.final_string+= f"{root_node.value}--> "
             if root_node.left:
                 bt_output(root_node.left)
             if root_node.right:
                 bt_output(root_node.right)
-            return final_string
-        if root_node.left:
-            final_string = bt_output(root_node.left, final_string)
-        if root_node.right:
-            final_string = bt_output(root_node.right,final_string)
-        return final_string
+            return
+        bt_output(self.root)
+        return f"{self.final_string}NULL"
 
 
 class BinarySearchTree(BinaryTree):
@@ -130,56 +112,53 @@ class BinarySearchTree(BinaryTree):
         bst_output(self.root)
         return f"{self.final_string}NULL"
 
-
-class Stack:
+class Queue:
     def __init__(self):
-        self.top = None
+        self.front = None
+        self.rear = None
 
-    def push(self, new_value, *args):
-        '''adds new value to the top of the stack'''
+    def enqueue(self, new_value):
+        '''Takes any value as an argument and adds a new node with that value to the back of the queue '''
         if self.isEmpty():
-            self.top = Node(new_value)
-        else:
-            self.top = Node(new_value, self.top)
-        if len(args):
-            current = self.top
-            for arg in args:
-                new_node = Node(arg, current)
-                current = new_node
-            self.top = current
+            self.rear = new_value
+            self.front = self.rear
+            return
+        current = self.rear
+        current.next = new_value
+        self.rear = current.next
         return
 
-    def pop(self):
-        '''removes the node from the top of the stack and returns the node's value'''
-        if self.isEmpty():
-            raise Exception("this is an empty stack")
-        current = self.top
+    def dequeue(self):
+        '''Removes the node from the front of the queue, and returns the node’s value'''
+        if not self.front:
+            raise Exception("this is an empty Queue")
+        current = self.front
         if current.next:
-            next_value = current.next
+            self.front = current.next
             current.next = None
-            self.top = next_value
         else:
-            self.top = None
-        return current.value
-
-    def isEmpty(self):
-        '''returns True if the stack is empty '''
-        if not self.top:
-            return True
-        return False
+            self.front = None
+            self.rear = None
+        return current
 
     def peek(self):
-        '''returns the top value or raises exception if the stack is empty'''
+        '''Returns the value of the node located in the front of the queue'''
         if self.isEmpty():
-            raise Exception("sorry the stack is empty")
-        return self.top.value
+            raise Exception("sorry, the Queue is empty")
+        return self.front.value
+
+    def isEmpty(self):
+        '''returns True if the Queue is empty '''
+        if not self.front:
+            return True
+        return False
 
     def __str__(self):
         """ { a } -> { b } -> { c } -> NULL """
 
         final_string = ""
 
-        current = self.top
+        current = self.front
 
         while current:
             final_string += f"{{{current.value}}} -> "
@@ -201,22 +180,5 @@ if __name__ == "__main__":
     # # print("this is root",bt.root.value)
     # # my_list = bt.add("74")
     # # print(my_list)
-    bst = BinarySearchTree()
-    print(bst)
-    bst.add("apple")
-    bst.add(15)
-    print(bst)
-    bst.add(8)
-    print(bst)
-    bst.add(18)
-    print(bst)
-    bst.add(4)
-    print(bst)
-    bst.add(2)
-    print(bst)
-    bst.add(3)
-    print(bst)
-    bst.add(10)
-    print(bst)
-    print(bst.contains(12))
+
 
