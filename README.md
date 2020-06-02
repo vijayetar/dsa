@@ -11,6 +11,7 @@
 * [Queue with Stacks](dsa/challenges/queue_with_stacks/README.md)
 * [Fifo Animal Shelter](dsa/challenges/fifo_animal_shelter/README.md)
 * [Multi Bracket Validation](dsa/challenges/multi_bracket_validation/README.md)
+* [FizzBuzzTree](dsa/challenges/fizz_buzz_tree/README.md)
 
 
 ### Data Structures
