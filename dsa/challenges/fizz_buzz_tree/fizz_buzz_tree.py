@@ -18,10 +18,6 @@ def fizz_buzz_tree(bt):
         else:
             return str(num)
 
-    # from the bt = find the node through the pre_order method
-    # evaluate each node against fizz_buzz function and return the value
-    # the value is then added to the new fb_bt tree
-    # the fb_bt is returned
     def walk(root_node):
         if not root_node.value:
             return
@@ -33,51 +29,53 @@ def fizz_buzz_tree(bt):
         if root_node.right:
             walk(root_node.right)
     walk(bt.root)
-    return fb_bt.preOrder()
+    return fb_bt
 
 
 class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def add(self,value):
-        '''Takes single argument and adds argument value to the Binary Tree'''
-        new_node = Node(value)
-        if not self.root:
-            self.root = new_node
-            return
-        def walk(root_node, new_node):
-            if root_node.left == None:
-                root_node.left = new_node
-                return
-            elif root_node.right == None:
-                root_node.right = new_node
-                return
-            else:
-                walk(root_node.left, new_node)
-                walk(root_node.right, new_node)
-        walk(self.root,new_node)
-        return
-
     # def add(self,value):
-    #     '''Takes single argument and adds argument value to the Binary Tree using breadth first traversal'''
+    #     '''Takes single argument and adds argument value to the Binary Tree'''
     #     new_node = Node(value)
     #     if not self.root:
     #         self.root = new_node
     #         return
-    #     bt_queue = Queue()
-    #     def evaluate_q(root_node, new_node):
-    #         if not root_node.left:
+    #     def walk(root_node, new_node):
+    #         if not root_node:
+    #             return
+    #         if root_node.left == None:
     #             root_node.left = new_node
     #             return
-    #         bt_queue.enqueue(root_node.left)
-    #         if not root_node.right:
+    #         elif root_node.right == None:
     #             root_node.right = new_node
     #             return
-    #         bt_queue.enqueue(root_node.right)
-    #         root_node = bt_queue.dequeue()
-    #         evaluate_q(root_node,new_node)
-    #     evaluate_q(self.root, new_node)
+    #         else:
+    #             walk(root_node.left, new_node)
+    #             walk(root_node.right, new_node)
+    #     walk(self.root,new_node)
+    #     return
+
+    def add(self,value):
+        '''Takes single argument and adds argument value to the Binary Tree using breadth first traversal'''
+        new_node = Node(value)
+        if not self.root:
+            self.root = new_node
+            return
+        bt_queue = Queue()
+        def evaluate_q(root_node, new_node):
+            if not root_node.left:
+                root_node.left = new_node
+                return
+            bt_queue.enqueue(root_node.left)
+            if not root_node.right:
+                root_node.right = new_node
+                return
+            bt_queue.enqueue(root_node.right)
+            root_node = bt_queue.dequeue()
+            evaluate_q(root_node,new_node)
+        evaluate_q(self.root, new_node)
 
     def preOrder(self):
         '''Returns list with node values in depth first traversal in the preorder method'''
