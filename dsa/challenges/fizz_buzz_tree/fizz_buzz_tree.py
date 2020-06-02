@@ -36,27 +36,6 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    # def add(self,value):
-    #     '''Takes single argument and adds argument value to the Binary Tree'''
-    #     new_node = Node(value)
-    #     if not self.root:
-    #         self.root = new_node
-    #         return
-    #     def walk(root_node, new_node):
-    #         if not root_node:
-    #             return
-    #         if root_node.left == None:
-    #             root_node.left = new_node
-    #             return
-    #         elif root_node.right == None:
-    #             root_node.right = new_node
-    #             return
-    #         else:
-    #             walk(root_node.left, new_node)
-    #             walk(root_node.right, new_node)
-    #     walk(self.root,new_node)
-    #     return
-
     def add(self,value):
         '''Takes single argument and adds argument value to the Binary Tree using breadth first traversal'''
         new_node = Node(value)
