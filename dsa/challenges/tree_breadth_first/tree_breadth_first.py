@@ -51,7 +51,6 @@ class BinaryTree:
         evaluate_q(self.root)
         return output
 
-
     def preOrder(self):
         '''Returns list with node values in depth first traversal in the preorder method'''
         if not self.root:
@@ -106,75 +105,6 @@ class BinaryTree:
                 bt_output(root_node.right)
             return
         bt_output(self.root)
-        return f"{self.final_string}NULL"
-
-
-class BinarySearchTree(BinaryTree):
-    def __init__(self):
-        self.root = None
-
-    def add(self, value):
-        '''Takes argument an integer and adds to the Binary Search tree so that if it is less than the root, it is placed left, and if it is more than the root, then it is placed rightof the root'''
-        try:
-            value = int(value)
-            new_node = Node(value)
-            if not self.root:
-                self.root = new_node
-                return
-            def evaluate_value(root_node, new_node):
-                if root_node.value > new_node.value:
-                    if not root_node.left:
-                        root_node.left = new_node
-                        return
-                    evaluate_value(root_node.left, new_node)
-                    return
-                elif root_node.value< new_node.value:
-                    if not root_node.right:
-                        root_node.right = new_node
-                        return
-                    evaluate_value(root_node.right, new_node)
-                    return
-            evaluate_value(self.root, new_node)
-            return
-        except ValueError:
-            return "Binary Search Tree can only take integers"
-
-    def contains(self, value):
-        '''Takes a single argument an integer value and returns Boolean if the Binary Search Tree contains the value'''
-        try:
-            value = int(value)
-            if not self.root:
-                return "Binary Search Tree is empty"
-            present = False
-            def check_value(root_node, value):
-                if root_node.value == value:
-                    return True
-                if root_node.left:
-                    present = check_value(root_node.left, value)
-                    if present:
-                        return present
-                if root_node.right:
-                    present = check_value(root_node.right, value)
-                    if present:
-                        return present
-                return False
-            present = check_value(self.root, value)
-            return present
-        except ValueError:
-            return "Binary Search Tree contains only take integers"
-
-    def __str__(self):
-        if not self.root:
-            return "NULL"
-        self.final_string = ""
-        def bst_output(root_node):
-            self.final_string+= f"{root_node.value}--> "
-            if root_node.left:
-                bst_output(root_node.left)
-            if root_node.right:
-                bst_output(root_node.right)
-            return
-        bst_output(self.root)
         return f"{self.final_string}NULL"
 
 class Queue:
