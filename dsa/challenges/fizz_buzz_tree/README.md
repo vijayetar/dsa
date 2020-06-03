@@ -20,11 +20,13 @@ I created a standalone fizzbuzz function that took in an argument tree. upon cal
 
 Then a new binary tree was instantiated.  this will be the tree with fizzbuzz results and returned.
 
-the walk function is a recursive function that takes in an argument of the root node of the argument and then evaluates each node in pre order manner. it will then call the fizzbuzz function to return a string that will then be added to the new tree.
+The walk function is a recursive function that takes in an argument of the root node of the argument and then evaluates each node in pre order manner. it will then call the fizzbuzz function to return a string that will then be added to the new tree.
 
-The Big 0 for time is at the worst case O(n) as it traverses the entire tree, and for a balanced tree it is O(h) where h = height = log n
+The Big 0 for time is at the worst case O(n) as it traverses the entire tree, and for a balanced tree it is O(h) where h = height = log n, the Big O for space is O(n) since we are creating a second tree
 
-the Big O for space is O(n) since we are creating a second tree
+Function fizz_buzz_tree_2: uses breadth traversal for both removing and adding to it, and since it uses a queue both times, it has the worst Big O with time of O(n^2) and space of O(n)
+
+Function fizz_buzz_tree_3: uses preorder traversal to remove and add to the new tree. This is the best because the space and time is O(n) at the worst, and O(h) where h = log n in a balanced tree.
 
 ## Specifications Used
 * .editorconfig

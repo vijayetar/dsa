@@ -1,4 +1,4 @@
-from dsa.data_structures.tree.tree import Node, Queue
+from dsa.data_structures.tree.tree import Node, Queue, BinaryTree
 
 def fizz_buzz_tree(bt):
     if not isinstance(bt, BinaryTree):
@@ -37,9 +37,7 @@ def fizz_buzz_tree2(bt):
     elif not bt.root:
         raise Exception ("the argument has no root")
 
-    fb_bt = BinaryTree()
-
-    def fizz_buzz(num):
+    def check_fizz_buzz(num):
         if not num%5 and not num%3:
             return 'FizzBuzz'
         elif not num%5:
@@ -49,112 +47,72 @@ def fizz_buzz_tree2(bt):
         else:
             return str(num)
 
-    # I am going to do breadth traversal and try to simultaneously make the new tree while keeping only one queue
-    new_queue = Queue()
+    def add_fizz_buzz(value, new_bt, bt_queue):
+        new_value = check_fizz_buzz(value)
+        new_bt.add(new_value)
+        return
 
-    def breadth_walk(bt):
-        #make a queue until all the nodes are done
-        # and then input the queue and dequeue it
-        # apply all the fizzbuzz aspects to it
-        # return the tree
-        def make_queue():
-            pass
-
-
-    fb_bt = breadth_walk(bt)
-    return fb_bt
-
-
-
-class BinaryTree:
-    def __init__(self):
-        self.root = None
-
-    def add(self,value):
-        '''Takes single argument and adds argument value to the Binary Tree using breadth first traversal'''
-        new_node = Node(value)
-        if not self.root:
-            self.root = new_node
-            return
+    def breadth_walk(bt, new_bt):
+        '''Returns list with node vlaues in breadth traversal'''
         bt_queue = Queue()
-        def evaluate_q(root_node, new_node):
-            if not root_node.left:
-                root_node.left = new_node
+        def evaluate_q(root_node):
+            add_fizz_buzz(root_node.value, new_bt, bt_queue)
+            if root_node.left:
+                bt_queue.enqueue(root_node.left)
+            if root_node.right:
+                bt_queue.enqueue(root_node.right)
+            if bt_queue.isEmpty():
                 return
-            bt_queue.enqueue(root_node.left)
-            if not root_node.right:
-                root_node.right = new_node
-                return
-            bt_queue.enqueue(root_node.right)
             root_node = bt_queue.dequeue()
-            evaluate_q(root_node,new_node)
-        evaluate_q(self.root, new_node)
+            evaluate_q(root_node)
+        evaluate_q(bt.root)
 
-    def preOrder(self):
-        '''Returns list with node values in depth first traversal in the preorder method'''
-        if not self.root:
-            return "NULL"
-        output = []
-        def walk(root_node):
-            output.append(root_node.value)
-            if root_node.left:
-                walk(root_node.left)
-            if root_node.right:
-                walk(root_node.right)
-        walk(self.root)
-        return output
+    new_bt = BinaryTree()
+    bt_queue = Queue()
+    breadth_walk(bt,new_bt)
+    return new_bt.breadth_first()
 
-    def inOrder(self):
-        '''Returns list with node values in depth first traversal in the inorder method'''
-        if not self.root:
-            return "NULL"
-        output = []
-        def walk(root_node):
-            if root_node.left:
-                walk(root_node.left)
-            output.append(root_node.value)
-            if root_node.right:
-                walk(root_node.right)
-        walk(self.root)
-        return output
+def fizz_buzz_tree3(bt):
+    if not isinstance(bt, BinaryTree):
+        raise ValueError ("this is not a Tree")
+    elif not bt.root:
+        raise Exception ("the argument has no root")
 
-    def postOrder(self):
-        '''Returns list with node values in depth first traversal in the postorder method'''
-        if not self.root:
-            return "NULL"
-        output = []
-        def walk(root_node):
-            if root_node.left:
-                walk(root_node.left)
-            if root_node.right:
-                walk(root_node.right)
-            output.append(root_node.value)
-        walk(self.root)
-        return output
+    def check_fizz_buzz(num):
+        if not num%5 and not num%3:
+            return 'FizzBuzz'
+        elif not num%5:
+            return 'Buzz'
+        elif not num%3:
+            return 'Fizz'
+        else:
+            return str(num)
 
-    def __str__(self):
-        if not self.root:
-            return "NULL"
-        self.final_string = ""
-        def bt_output(root_node):
-            self.final_string+= f"{root_node.value}--> "
-            if root_node.left:
-                bt_output(root_node.left)
-            if root_node.right:
-                bt_output(root_node.right)
-            return
-        bt_output(self.root)
-        return f"{self.final_string}NULL"
+    def traverse(root):
+        '''Returns list with node vlaues in breadth traversal'''
+        if not root:
+            return None
+        fizzy_value = check_fizz_buzz(root.value)
+        new_node = Node(fizzy_value)
+        new_node.left = traverse(root.left)
+        new_node.right = traverse(root.right)
+        return new_node
+
+    new_bt = BinaryTree()
+    new_bt.root = traverse(bt.root)
+    return new_bt.breadth_first()
 
 if __name__ == "__main__":
     bt_full = BinaryTree()
     bt_full.add(15)
     bt_full.add(45)
-    bt_full.add(27)
+    bt_full.add(2)
     bt_full.add(22)
     bt_full.add(60)
     bt_full.add(33)
-    print(bt_full.preOrder())
+    bt_full.add(25)
     tree = fizz_buzz_tree2(bt_full)
+    print(tree)
+    tree = fizz_buzz_tree3(bt_full)
     print(tree)
 

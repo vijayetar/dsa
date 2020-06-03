@@ -12,6 +12,14 @@ def test_fbt_raise_error_no_root():
     with pytest.raises(Exception):
         fizz_buzz_tree(tree)
 
+def test_fbt_not_same_as_tree():
+    bt = BinaryTree()
+    bt.add(21)
+    fb_tree = fizz_buzz_tree(bt)
+    assert fb_tree is not bt
+    assert fb_tree.root is not bt.root
+
+
 def test_fbt_three_nodes():
     tree = BinaryTree()
     tree.add(45)
