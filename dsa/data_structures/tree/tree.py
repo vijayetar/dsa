@@ -1,10 +1,11 @@
 class Node:
-    def __init__(self,value, left_ = None, right_ = None):
+    def __init__(self,value, left_ = None, right_ = None, next_ = None):
         self.value = value
         if (isinstance(left_,Node) == False and left_ != None) or (isinstance(right_,Node) == False and right_ != None):
             raise TypeError("hey there is a problem with the value")
         self.left = left_
         self.right = right_
+        self.next= next_
 
 class BinaryTree:
     def __init__(self):
@@ -29,6 +30,42 @@ class BinaryTree:
             root_node = bt_queue.dequeue()
             evaluate_q(root_node,new_node)
         evaluate_q(self.root, new_node)
+
+    def breadth_first(self):
+        '''Returns list with node vlaues in breadth traversal'''
+        if not self.root:
+            return "NULL"
+        output = []
+        bt_queue = Queue()
+        def evaluate_q(root_node):
+            output.append(root_node.value)
+            print("this is the output so far", output)
+            # if not root_node.left:
+                # return
+                # break
+            while root_node.left:
+                bt_queue.enqueue(root_node.left)
+                break
+            # if not root_node.right:
+                # return
+                # break
+            while root_node.right:
+                bt_queue.enqueue(root_node.right)
+                break
+            if bt_queue.isEmpty():
+                return
+            root_node = bt_queue.dequeue()
+            evaluate_q(root_node)
+            # while not bt_queue.isEmpty():
+                # # breakpoint()
+                # root_node = bt_queue.dequeue()
+                # print("jkjkjjkk",root_node.value)
+                # if root_node:
+                #     evaluate_q(root_node)
+
+        evaluate_q(self.root)
+        return output
+
 
     def preOrder(self):
         '''Returns list with node values in depth first traversal in the preorder method'''
@@ -176,6 +213,9 @@ class Queue:
         if not self.front:
             raise Exception("this is an empty Queue")
         current = self.front
+        print("this is the current in the dequeue method", current.value)
+        # if current.value == "testlastOne":
+            # breakpoint()
         if current.next:
             self.front = current.next
             current.next = None
@@ -210,4 +250,14 @@ class Queue:
         return f"{final_string}NULL"
 
 if __name__ == "__main__":
-    pass
+    bt = BinaryTree()
+    bt.add("44")
+    bt.add("apples")
+    bt.add(100)
+    bt.add("bananas")
+    bt.add(120)
+    bt.add("kiwi")
+    bt.add("lastOne")
+    bt.add("testlastOne")
+    print("**********"*5)
+    print(bt.breadth_first())

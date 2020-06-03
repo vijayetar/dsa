@@ -31,6 +31,40 @@ def fizz_buzz_tree(bt):
     walk(bt.root)
     return fb_bt
 
+def fizz_buzz_tree2(bt):
+    if not isinstance(bt, BinaryTree):
+        raise ValueError ("this is not a Tree")
+    elif not bt.root:
+        raise Exception ("the argument has no root")
+
+    fb_bt = BinaryTree()
+
+    def fizz_buzz(num):
+        if not num%5 and not num%3:
+            return 'FizzBuzz'
+        elif not num%5:
+            return 'Buzz'
+        elif not num%3:
+            return 'Fizz'
+        else:
+            return str(num)
+
+    # I am going to do breadth traversal and try to simultaneously make the new tree while keeping only one queue
+    new_queue = Queue()
+
+    def breadth_walk(bt):
+        #make a queue until all the nodes are done
+        # and then input the queue and dequeue it
+        # apply all the fizzbuzz aspects to it
+        # return the tree
+        def make_queue():
+            pass
+
+
+    fb_bt = breadth_walk(bt)
+    return fb_bt
+
+
 
 class BinaryTree:
     def __init__(self):
@@ -121,6 +155,6 @@ if __name__ == "__main__":
     bt_full.add(60)
     bt_full.add(33)
     print(bt_full.preOrder())
-    tree = fizz_buzz_tree(bt_full)
+    tree = fizz_buzz_tree2(bt_full)
     print(tree)
 
