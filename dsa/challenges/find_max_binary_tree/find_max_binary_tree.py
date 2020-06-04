@@ -57,7 +57,7 @@ class BinaryTree:
         '''Finds maximum value in the binary tree and returns the number'''
         if not self.root:
             raise Exception("The tree is empty")
-        max = 0
+        max = self.root.value
         def traverse(root, max):
             if not root:
                 return None
@@ -70,7 +70,6 @@ class BinaryTree:
             return max
         max = traverse(self.root, max)
         return max
-
 
 
     def preOrder(self):
