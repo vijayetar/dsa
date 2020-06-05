@@ -13,6 +13,7 @@
 * [Multi Bracket Validation](dsa/challenges/multi_bracket_validation/README.md)
 * [FizzBuzzTree](dsa/challenges/fizz_buzz_tree/README.md)
 * [Tree-Breadth Traversal](dsa/challenges/tree_breadth_first/README.md)
+* [Find_Maximum_Binary_Tree](dsa/challenges/find_max_binary_tree/README.md)
 
 
 ### Data Structures
