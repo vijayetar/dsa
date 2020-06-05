@@ -1,10 +1,5 @@
 import pytest
-from dsa.data_structures.linked_list.linked_list import Node
-from dsa.data_structures.stack_and_queues.stack_and_queues import Stack
 from dsa.challenges.queue_with_stacks.queue_with_stacks import PseudoQueue
-
-def test_Stack():
-    assert Stack()
 
 def test_pseudoqueue():
     assert PseudoQueue()
