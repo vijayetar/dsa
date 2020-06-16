@@ -26,7 +26,13 @@ Review the pseudocode below, then trace the __algorithm__ by stepping through th
 ```
 
 ## Approach and Efficiency
+[doc-file](https://docs.google.com/document/d/13T32WeVWvSeR-tmqzqHc3tJOKLl3lpGGy8nPNRZHfPY/edit?usp=sharing)
 
+The approach in the worst case scenario with a reverse sorted list, would be to check each number with O(n) against the previous numbers with O(n). so the worst scenario is O(n^2).
+
+In the average cases, where the inner loop can be interrupted, the efficiency would be O(n^2/2).
+
+And in the best case, where the list is already sorted in ascending order, it would be O(n) only.
 
 ## Specifications Used
 * .editorconfig
@@ -34,12 +40,14 @@ Review the pseudocode below, then trace the __algorithm__ by stepping through th
 * .gitignore
 
 ## Solution
-
+![page1](../../assets/insert_sort_1.jpg)
+![page2](../../assets/insert_sort_2.jpg)
+![page3](../../assets/insert_sort_3.jpg)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
- - [ ] Unit tests written and passing
+ - [x] Unit tests written and passing
      - [x] “Happy Path” - Expected outcome
      - [x] Expected failure
      - [x] Edge Case (if applicable/obvious)
