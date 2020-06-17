@@ -108,6 +108,108 @@ class BinaryTree:
         bt_output(self.root)
         return f"{self.final_string}NULL"
 
+class BinaryTree2:
+    def __init__(self):
+        self.root = None
+
+    def add(self,value):
+        '''Takes single argument and adds argument value to the Binary Tree using breadth first traversal'''
+        new_node = Node(value)
+        if not self.root:
+            self.root = new_node
+            return
+        q = []
+        q.append(self.root)
+        while len(q):
+            root_node = q[0]
+            q.pop(0)
+            if not root_node.left:
+                root_node.left = Node(value)
+                return
+            q.append(root_node.left)
+            if not root_node.right:
+                root_node.right = Node(value)
+                return
+            q.append(root_node.right)
+        traverse(self.root)
+
+    def breadth_first(self):
+        '''Returns list with node vlaues in breadth traversal'''
+        if not self.root:
+            return "NULL"
+        output = []
+        bt_queue = Queue()
+        def evaluate_q(root_node):
+            output.append(root_node.value)
+            if root_node.left:
+                bt_queue.enqueue(root_node.left)
+            if root_node.right:
+                bt_queue.enqueue(root_node.right)
+            if bt_queue.isEmpty():
+                return
+            root_node = bt_queue.dequeue()
+            evaluate_q(root_node)
+
+        evaluate_q(self.root)
+        return output
+
+
+    def preOrder(self):
+        '''Returns list with node values in depth first traversal in the preorder method'''
+        if not self.root:
+            return "NULL"
+        output = []
+        def walk(root_node):
+            output.append(root_node.value)
+            if root_node.left:
+                walk(root_node.left)
+            if root_node.right:
+                walk(root_node.right)
+        walk(self.root)
+        return output
+
+    def inOrder(self):
+        '''Returns list with node values in depth first traversal in the inorder method'''
+        if not self.root:
+            return "NULL"
+        output = []
+        def walk(root_node):
+            if root_node.left:
+                walk(root_node.left)
+            output.append(root_node.value)
+            if root_node.right:
+                walk(root_node.right)
+        walk(self.root)
+        return output
+
+    def postOrder(self):
+        '''Returns list with node values in depth first traversal in the postorder method'''
+        if not self.root:
+            return "NULL"
+        output = []
+        def walk(root_node):
+            if root_node.left:
+                walk(root_node.left)
+            if root_node.right:
+                walk(root_node.right)
+            output.append(root_node.value)
+        walk(self.root)
+        return output
+
+    def __str__(self):
+        if not self.root:
+            return "NULL"
+        self.final_string = ""
+        def bt_output(root_node):
+            self.final_string+= f"{root_node.value}--> "
+            if root_node.left:
+                bt_output(root_node.left)
+            if root_node.right:
+                bt_output(root_node.right)
+            return
+        bt_output(self.root)
+        return f"{self.final_string}NULL"
+
 
 class BinarySearchTree(BinaryTree):
     def __init__(self):

@@ -20,6 +20,8 @@ __PR__: https://github.com/vijayetar/dsa/pull/14
 * __Binary Tree__:
 The Big O time complexity for insertion can be O(n) if all the nodes have to be evaluated. However by using the breadth first traversal, it is now O(largest width) of the tree.
 
+I also used instead of a queue, a list to append the root_node and while loop to do a breadth traversal and add the new value
+
 * __Binary Search Tree__:
 The Big O time complexity of a Binary Search Tree’s __insertion__ and __search__ operations is O(height). In the worst case, we will have to search all the way down to a leaf, which will require searching through as many nodes as the tree is tall. In a balanced (or “perfect”) tree, the height of the tree is log(n). In an unbalanced tree, the worst case height of the tree is n.
 
