@@ -4,7 +4,7 @@
 
 See [solution](quick_sort.py)
 
-__PR__:
+__PR__:https://github.com/vijayetar/dsa/pull/22
 
 ## Challenge
 Review the pseudocode below, then trace the __algorithm__ by stepping through the process with the provided sample array. __Document your explanation__ by creating a blog article that shows the step-by-step output after each iteration through some sort of visual.
@@ -46,11 +46,13 @@ ALGORITHM Swap(arr, i, low)
 ## Approach and Efficiency
 [doc-file]()
 
-The approach in the worst case scenario with a reverse sorted list, would be to check each number with O(n) against the previous numbers with O(n). so the worst scenario is O(n^2).
+The approach in the worst case scenario where the pivot is an extreme end of the array, either smallest or largest, the worst scenario is O(n^2).
 
-In the average cases, where the inner loop can be interrupted, the efficiency would be O(n^2/2).
+In the average cases, where the we choose a pivot value that is median of the array, the efficiency is O(nlogn)
 
 And in the best case, where the list is already sorted in ascending order, it would be O(n) only.
+
+The space is only O(n) since a new array is not created.
 
 ## Specifications Used
 * .editorconfig
@@ -58,9 +60,8 @@ And in the best case, where the list is already sorted in ascending order, it wo
 * .gitignore
 
 ## Solution
-![page1]()
-![page2]()
-![page3]()
+![page1](../../assets/quicksort1.png)
+![page2](../../assets/quicksort2.png)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
