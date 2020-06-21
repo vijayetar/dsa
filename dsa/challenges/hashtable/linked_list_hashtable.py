@@ -109,7 +109,7 @@ class LinkedList:
         values = []
         current = self.head
         while current:
-            values.append(current)
+            values.append(current.value)
             current = current.next
         return values
 
@@ -192,37 +192,7 @@ class Node:
 
 
     def __str__(self):
-        return f"{self.value} : {self.next}"
+        return f"{self.value}"
 
     def __repr__(self):
-        return f"{self.value} : {self.next}"
-
-
-if __name__ == "__main__":
-
-    # ll = LinkedList()
-    # print(ll)
-    # ll.append("1","3","8","2")
-    # print(ll)
-    # ll.append("l","i","k","e")
-    # print(ll)
-    # print(ll.find_k_node_value(4))
-    ll= LinkedList()
-    # ll.insert("1","2","3")
-    ll.insert("oranges","bananas","coconut")
-    print("before insert_before:  ",ll)
-    ll.insert_before("oranges","kiwi","1","2","3")
-    # actual = ll.insert_before("oranges","pineapples")k
-    actual = str(ll)
-    print("this is actual:  ", actual)
-    print("after insert_before:   ",ll)
-
-
-
-
-
-
-
-
-
-
+        return f"{self.value}"

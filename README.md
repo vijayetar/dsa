@@ -17,6 +17,7 @@
 * [Insertion-Sort](dsa/challenges/insertion_sort/README.md)
 * [Merge-Sort](dsa/challenges/merge_sort/README.md)
 * [Quick-Sort](dsa/challenges/quick_sort/README.md)
+* [Hashtable](dsa/challenges/hastable/README.md)
 
 
 
