@@ -4,7 +4,7 @@
 
 See [solution](hashtable.py)
 
-__PR__:
+__PR__:https://github.com/vijayetar/dsa/pull/24
 
 ## Challenge
 Implement a Hashtable with the following methods:
@@ -15,17 +15,21 @@ Implement a Hashtable with the following methods:
 [] hash: takes in an arbitrary key and returns an index in the collection.
 
 ## Approach and Efficiency
+The hashtable construction is an interesting implementation of O(1) efficiency when you have a O(n) list created to store data.
 
+When a Hashtable is created, the size determines how many indices are available for storing. So the smaller the size, more collisions, but the bigger the size of the list, the more empty spaces there are with inefficient use of space.
+
+The use of the hash to find the index and then store the key value pair as a linked list, allows the methods of get and contains in a O(1) manner.
 
 ## Specifications Used
 * .editorconfig
 * .gitattributes
 * .gitignore
 
-
 ## Solution
+![problemDomain](../../assets/hashtable_pd.png)
 
-
+![problemAlgorithm](../../assets/hashtable_algo.png)
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed

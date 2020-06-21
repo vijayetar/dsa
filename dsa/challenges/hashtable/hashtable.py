@@ -40,7 +40,11 @@ class Hashtable():
         hashed_key= self.hash(key)
         if not self.indices[hashed_key]:
             raise ValueError ("key is not in the hashtable")
-        return True
+        my_list = self.indices[hashed_key].display()
+        for pair in my_list:
+            if pair[0]==key:
+                return True
+        return False
 
     def __str__(self):
         switch = False
