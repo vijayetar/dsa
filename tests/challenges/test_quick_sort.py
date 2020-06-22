@@ -1,3 +1,4 @@
+
 import pytest
 from dsa.challenges.quick_sort.quick_sort import quick_sort, partition, swap
 
@@ -23,4 +24,3 @@ def test_quick_sort_nearly_sorted():
     actual = quick_sort([2,3,5,7,13,11])
     expected = [2, 3, 5, 7, 11, 13]
     assert actual == expected
-
