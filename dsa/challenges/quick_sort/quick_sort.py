@@ -1,7 +1,6 @@
 def quick_sort(arr, left=0, right=None):
     if right == None:
         right = len(arr)-1
-        print(left, right)
     if left < right:
         pos = partition(arr,left,right)
         quick_sort(arr, left, pos-1)
