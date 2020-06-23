@@ -19,7 +19,6 @@ def test_fbt_not_same_as_tree():
     assert fb_tree is not bt
     assert fb_tree.root is not bt.root
 
-
 def test_fbt_three_nodes():
     tree = BinaryTree()
     tree.add(45)
