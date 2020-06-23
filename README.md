@@ -18,7 +18,9 @@
 * [Merge-Sort](dsa/challenges/merge_sort/README.md)
 * [Quick-Sort](dsa/challenges/quick_sort/README.md)
 * [Hashtable](dsa/challenges/hastable/README.md)
-* [Repeated word](dsa/challenges/repeated_word/README.md)
+* [Repeated word](dsa/challenges/repeated_word/README.md)  
+* [Binary Tree Intersection](dsa/challenges/tree_intersection/README.md)
+
 
 
 
