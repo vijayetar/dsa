@@ -10,6 +10,8 @@ class Hashtable():
         self.indices = [None]*self.size
 
     def hash(self, string):
+        if not isinstance(string,str):
+            string = str(string)
         hashed_key = (sum(list(map(lambda x: ord(x), string)))*19)%self.size
         return hashed_key
 

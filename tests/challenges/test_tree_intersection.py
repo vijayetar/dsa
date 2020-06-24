@@ -1,5 +1,5 @@
 import pytest
-from dsa.challenges.tree_intersection.tree_intersection import find_intersection
+from dsa.challenges.tree_intersection.tree_intersection import find_intersection, find_intersection2
 from dsa.data_structures.tree.tree import BinaryTree2
 
 def test_find_intersection_empty_trees():
@@ -24,6 +24,30 @@ def test_find_intersection_two_unequal_trees(bt_trees_unequal):
     actual = find_intersection(bt1, bt2)
     expected = [15, 45]
     assert actual == expected
+
+def test_find_intersection_empty_trees():
+    bt1 = BinaryTree2()
+    bt2 = BinaryTree2()
+    with pytest.raises(ValueError):
+        find_intersection2(bt1, bt2)
+
+def test_find_intersection_one_empty_tree(bt_tree):
+    bt2 = BinaryTree2()
+    with pytest.raises(Exception):
+        find_intersection2(bt_tree, bt2)
+
+def test_find_intersection_two_small_trees(bt_trees_equal):
+    bt1, bt2 = bt_trees_equal
+    actual = find_intersection2(bt1, bt2)
+    expected = [15, 45, 22, 10, 27]
+    assert actual == expected
+
+def test_find_intersection_two_unequal_trees(bt_trees_unequal):
+    bt1, bt2 = bt_trees_unequal
+    actual = find_intersection2(bt1, bt2)
+    expected = [15, 45]
+    assert actual == expected
+
 
 @pytest.fixture()
 def bt_tree():
