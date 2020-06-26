@@ -95,6 +95,9 @@ class BinaryTree:
         return output
 
     def __str__(self):
+        '''
+        prints out the tree in depth first manner
+        '''
         if not self.root:
             return "NULL"
         self.final_string = ""
