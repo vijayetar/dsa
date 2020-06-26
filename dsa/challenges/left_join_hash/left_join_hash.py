@@ -20,6 +20,7 @@ def left_join_hashtable(table1, table2):
                 walk(current)
                 current = current.next
             print("this is new LL", table1.indices[i])
+            print(table1)
 
             #iterate over the linkedlist
             #grab the key,value of the node
