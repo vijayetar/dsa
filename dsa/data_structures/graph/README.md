@@ -4,7 +4,7 @@
 
 See [solution](graph.py)
 
-__PR__:
+__PR__: https://github.com/vijayetar/dsa/pull/28
 
 ## Challenge
 Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
@@ -23,7 +23,7 @@ Returns a collection of edges connected to the given node
 Takes in a given node
 Include the weight of the connection in the returned collection
 __Size()__
-Returns the total number of nodes in the graph  
+Returns the total number of nodes in the graph
 
 ## Approach and Efficiency
 
