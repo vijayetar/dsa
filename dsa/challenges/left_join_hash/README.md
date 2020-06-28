@@ -4,7 +4,7 @@
 
 See [solution]()
 
-__PR__: https://github.com/vijayetar/dsa/pull/27  
+__PR__: https://github.com/vijayetar/dsa/pull/27
 
 ## Challenge
 * Write a function that LEFT JOINs two hashmaps into a single data structure.
@@ -25,7 +25,7 @@ __PR__: https://github.com/vijayetar/dsa/pull/27
 
 
 ## Solution
-![visual](../../assets/left_join_visual.png)
+![visual](../../assets/left_join.png)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
