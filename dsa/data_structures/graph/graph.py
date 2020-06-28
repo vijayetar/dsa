@@ -19,6 +19,7 @@ class Graph:
         if end_vertex not in self._adjacency_dict:
             raise KeyError("end_vertex not in dictionary")
         self._adjacency_dict[start_vertex].append(str(Edge(Vertex(end_vertex), weight)))
+        self._adjacency_dict[end_vertex].append(str(Edge(Vertex(start_vertex), weight)))
 
     def get_vertices(self):
         '''
@@ -68,6 +69,8 @@ if __name__ == "__main__":
     print("vertices", graph.get_vertices())
     print("length", len(graph))
     graph.add_edge("apple", "bananas")
-    print("get neighbors", graph.get_neighbors("apple"))
+    graph.add_edge("oranges", "apple", 4)
     print(graph)
+    print("get neighbors", graph.get_neighbors("oranges"))
+    print("get neighbors", graph.get_neighbors("apple"))
 

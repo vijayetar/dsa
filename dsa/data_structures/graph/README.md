@@ -26,7 +26,14 @@ __Size()__
 Returns the total number of nodes in the graph
 
 ## Approach and Efficiency
+I made graph a class that upon instantiation will create a dictionary, which will allow me to access the vertices in O(1) approach, understanding that it will use the hashmap technique to do it, and so depending on the size of the hashmap, the efficiency is not exactly of O(1) depending on the collisions.
 
+__add_vertex method__ : is O(1) efficiency
+__add_edge method__ : is O(1) efficiency
+__get_vertices method__ : is O(n)* efficiency
+__get_neighbors method__ : is O(1)* efficiency
+
+Space- no new objects are created as intermediate containers.  Also by using hashmaps to create graphs, help decrease space and time complexity.
 
 ## Specifications Used
 * .editorconfig
@@ -35,7 +42,7 @@ Returns the total number of nodes in the graph
 
 
 ## Solution
-
+![graph](../../assets/graph.png)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
