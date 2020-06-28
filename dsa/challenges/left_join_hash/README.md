@@ -2,9 +2,9 @@
 
 [Table of Contents](../../../README.md)
 
-See [solution]()
+See [solution](left_join_hash.py)
 
-__PR__: https://github.com/vijayetar/dsa/pull/27
+__PR__: https://github.com/vijayetar/dsa/pull/29
 
 ## Challenge
 * Write a function that LEFT JOINs two hashmaps into a single data structure.
@@ -16,7 +16,9 @@ __PR__: https://github.com/vijayetar/dsa/pull/27
 * Avoid utilizing any of the library methods available to your language.
 
 ## Approach and Efficiency
+I chosen to use O(n) efficiency to iterate through table1 keys and match it to table 2.  while the matching is O(1), to look for the key is O(m) of table 2 and that will take place the absolute different between sizes of the two tables.
 
+Also, even though the assumption is that retrieval of keys and values is O(1), it can be higher based on collisions in the hashmaps
 
 ## Specifications Used
 * .editorconfig
