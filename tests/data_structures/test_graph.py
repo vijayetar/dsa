@@ -6,6 +6,12 @@ def test_import():
     assert Edge
     assert Vertex
 
+def test_empty_graph():
+    graph = Graph()
+    assert graph.get_vertices() == None
+    assert graph.get_neighbors("key") == None
+    assert len(graph)==0
+
 def test_create_vertex():
     apples = Vertex("apples")
     actual = isinstance(apples, Vertex)

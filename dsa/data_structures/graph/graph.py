@@ -25,18 +25,24 @@ class Graph:
         '''
         Returns all of the vertices in the graph as a collection list
         '''
+        if not self._adjacency_dict:
+            return None
         return [str(i) for i in self._adjacency_dict.keys()]
 
     def get_neighbors(self, the_key):
         '''
         Takes in a vertex as argument and returns edges with their weights
         '''
+        if not self._adjacency_dict:
+            return None
         return self._adjacency_dict[the_key]
 
     def __len__(self):
         '''
         Returns the length of the graph
         '''
+        if not self.get_vertices():
+            return 0
         return len(self.get_vertices())
 
     def __str__(self):
@@ -62,15 +68,16 @@ class Edge:
 
 if __name__ == "__main__":
     graph= Graph()
-    graph.add_vertex("apple")
-    graph.add_vertex("bananas")
-    graph.add_vertex("oranges")
-    graph.add_edge("apple", "oranges")
-    print("vertices", graph.get_vertices())
-    print("length", len(graph))
-    graph.add_edge("apple", "bananas")
-    graph.add_edge("oranges", "apple", 4)
-    print(graph)
-    print("get neighbors", graph.get_neighbors("oranges"))
-    print("get neighbors", graph.get_neighbors("apple"))
+    print(len(graph))
+    # graph.add_vertex("apple")
+    # graph.add_vertex("bananas")
+    # graph.add_vertex("oranges")
+    # graph.add_edge("apple", "oranges")
+    # print("vertices", graph.get_vertices())
+    # print("length", len(graph))
+    # graph.add_edge("apple", "bananas")
+    # graph.add_edge("oranges", "apple", 4)
+    # print(graph)
+    # print("get neighbors", graph.get_neighbors("oranges"))
+    # print("get neighbors", graph.get_neighbors("apple"))
 
