@@ -11,7 +11,7 @@ def get_direct_route(graph, origin, destination, *args):
     places.extend(list(args))
     print(places)
     for destination in places:
-        print("this is destintaion", destination)
+        print("this is destintaion", origin, "--->", destination)
         if destination not in graph.get_vertices():
             return f"{destination} is not in graph"
         for edge in graph.get_neighbors(origin):
@@ -22,12 +22,13 @@ def get_direct_route(graph, origin, destination, *args):
                 sum += int(price)
                 print("true sum",sum)
                 break
-            found = False
-            sum = 0
+            else:
+                found = False
         if found:
             print("sum", sum)
             origin = destination
         else:
+            sum=0
             break
     places = original + places
     return f"{places}   {found} ${sum}"
@@ -38,11 +39,8 @@ if __name__ == "__main__":
     graph.add_vertex("Pandora")
     graph.add_vertex("Narnia")
     graph.add_vertex("Arendelle")
-    graph.add_vertex("Z")
-    graph.add_vertex("Zingo")
-    graph.add_edge("Z", "Zingo", 100)
-    graph.add_edge("Narnia", "Z", 100)
+    graph.add_vertex("Naboo")
+    graph.add_edge("Narnia", "Naboo", 100)
     graph.add_edge("Pandora", "Narnia",100)
     graph.add_edge("Pandora", "Arendelle",100)
-    print(get_direct_route(graph, "Pandora", "Narnia", "Z"))
-    # print(get_direct_route(graph, "Pandora", "Zak"))
+    print(get_direct_route(graph, "Naboo", "Narnia", "Pandora"))
