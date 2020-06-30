@@ -21,7 +21,8 @@ and then once the matching destination is found, a boolean is returned with the 
 
 
 ## Solution
-
+![whiteboard](../../assets/graph_destination.png
+)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
