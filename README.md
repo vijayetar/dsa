@@ -32,7 +32,8 @@
 * [Linked Lists- find kth position from the end in linked list](dsa/data_structures/linked_list/README.md)
 * [Stacks-and-Queues](dsa/data_structures/stack_and_queues/README.md)
 * [Binary Tree and Binary Search Tree](dsa/data_structures/tree/README.md)
-
+* [Graph](dsa/data_structures/graph/README.md)
+* [Breadth_first_graph](dsa/challenges/breadth_first_graph/README.md)
 
 -----------------------------------
 
