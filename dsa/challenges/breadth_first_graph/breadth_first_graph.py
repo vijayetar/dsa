@@ -49,7 +49,7 @@ class Graph:
         return self._adjacency_dict[the_key]
 
 
-    @pysnooper.snoop()
+    # @pysnooper.snoop()
     def breadth_traversal_graph(self, node_value):
         '''
         Method to class Graph to do breadth_traversal
@@ -78,7 +78,7 @@ class Graph:
                     if edge.vertex.visited == False:
                         edge.vertex.visited = True
                         breadth.enqueue(edge.vertex)
-                if front.value != node_value:
+                if front.value not in vertices:
                     vertices.append(front.value)
         return vertices
 
