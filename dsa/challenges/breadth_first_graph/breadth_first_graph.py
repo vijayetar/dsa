@@ -54,7 +54,6 @@ class Graph:
         '''
         Method to class Graph to do breadth_traversal
         '''
-        ## check node_value exists in the graph
         if node_value not in self._adjacency_dict:
             return ("entered vertex does not exist in the graph")
         vertices = []
@@ -63,15 +62,9 @@ class Graph:
         node_vertex = Vertex(node_value)
         breadth.enqueue(node_vertex)
         node_vertex.visited = True
-        print("value of inserted vertex", self._adjacency_dict[node_vertex.value])
         vertices.append(node_vertex.value)
-        # test = breadth.dequeue()
-        # print("testing for visited", test.value)
         while breadth.front:
             front = breadth.dequeue()
-            # if front.visited == False:
-                # front.visited = True
-            print("this si front", front, "this is front.visited", front.visited)
             edges = self.get_neighbors(front.value)
             if edges:
                 for edge in edges:
