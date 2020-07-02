@@ -33,7 +33,7 @@
 * [Stacks-and-Queues](dsa/data_structures/stack_and_queues/README.md)
 * [Binary Tree and Binary Search Tree](dsa/data_structures/tree/README.md)
 * [Graph](dsa/data_structures/graph/README.md)
-* [Breadth_first_graph](dsa/challenges/breadth_first_graph/README.md)
+* [Breadth_first_graph](dsa/challenges/graph_breadth_first/README.md)
 * [Depth_first_graph](dsa/challenges/graph_depth_first/README.md)
 
 -----------------------------------

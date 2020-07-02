@@ -1,5 +1,5 @@
 import pytest
-from dsa.challenges.breadth_first_graph.breadth_first_graph import Graph
+from dsa.challenges.graph_breadth_first.graph_breadth_first import Graph
 
 def test_import():
     assert Graph
