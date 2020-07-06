@@ -7,6 +7,7 @@
 > * [Remove and Shift Array](/dsa/challenges/array_shift/README.md)
 
 * [Sum of Numbers in a Matrix](/dsa/challenges/array_sum_of_matrix/README.md)
+* [Fibonacci](dsa/challenges/fibonacci/fibonacci.py)
 * [Merge Linked Lists](/dsa/challenges/ll_merge/README.md)
 * [Queue with Stacks](dsa/challenges/queue_with_stacks/README.md)
 * [Fifo Animal Shelter](dsa/challenges/fifo_animal_shelter/README.md)
@@ -38,18 +39,4 @@
 
 -----------------------------------
 
-This is draft of the reading document:
-Draft:
-See [solution](file_name)
 
-A function to .
-
-  * Challenge
-
-
-  * Approach & Efficiency
-
-
-  * Specificiations used :
-
-  * Solution

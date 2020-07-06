@@ -182,6 +182,20 @@ class LinkedList:
             return value_desired.value
         return "Exception"
 
+    def reverse_link(self):
+        '''method to reverse singly linked list'''
+        if not self.head:
+            return "No head"
+        current = self.head
+        previous = None
+        while current:
+            next_fragment = current.next
+            current.next = previous
+            previous = current
+            current = next_fragment
+        self.head = previous
+        return self.head
+
 # create Node class and instantiate it with value and pointer
 class Node:
     def __init__ (self, value, next_ = None):

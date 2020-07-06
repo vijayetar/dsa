@@ -213,6 +213,102 @@ class BinaryTree2:
         bt_output(self.root)
         return f"{self.final_string}NULL"
 
+class BinaryTree3():
+    def __init__(self):
+        self.root = None
+    def add_root_w_args(self, value, *args):
+        if not self.root:
+            self.root = TreeNode(value)
+            node_list = list(args)
+        else:
+            node_list = [value]+list(args)
+        bt_queue = Queue()
+        bt_queue.enqueue(self.root)
+        for arg in node_list:
+            switch = True
+            while switch:
+                current = bt_queue.dequeue()
+                if not current.left and switch == True:
+                    current.left = TreeNode(arg)
+                    switch = False
+                bt_queue.enqueue(current.left)
+                print("this is bt_queue", bt_queue)
+                if not current.right and switch == True:
+                    current.right = TreeNode(arg)
+                    switch = False
+                bt_queue.enqueue(current.right)
+
+    def add_root(self, value):
+        if not self.root:
+            self.root = TreeNode(value)
+            return
+        bt_list = [self.root]
+        while bt_list:
+            current = bt_list.pop(0)
+            if not current.left:
+                current.left = TreeNode(value)
+                return
+            bt_list.append(current.left)
+            if not current.right:
+                current.right = TreeNode(value)
+                return
+            bt_list.append(current.right)
+
+    def preOrder(self):
+        if not self.root:
+            return ("Emtpy Tree")
+        output = []
+        def walk(root_node):
+            if not root_node:
+                return
+            output.append(root_node.value)
+            walk(root_node.left)
+            walk(root_node.right)
+        walk(self.root)
+        return output
+
+    def inOrder(self):
+        if not self.root:
+            return ("empty tree")
+        output = []
+        def walk(root_node):
+            if not root_node:
+                return
+            walk(root_node.left)
+            output.append(root_node.value)
+            walk(root_node.right)
+        walk(self.root)
+        return output
+
+    def postOrder(self):
+        if not self.root:
+            return ("empty tree")
+        output = []
+        def walk(root_node):
+            if not root_node:
+                return
+            walk(root_node.left)
+            walk(root_node.right)
+            output.append(root_node.value)
+        walk(self.root)
+        return output
+
+    def breadth_first(self):
+        if not self.root:
+            return ("empty tree")
+        output = [self.root]
+        counter = 0
+        length = len(output)
+        while counter < len(output):
+            current = output[counter]
+            if current.left:
+                output.append(current.left)
+            if current.right:
+                output.append(current.right)
+            counter +=1
+        output = [i.value for i in output]
+        return output
+
 
 class BinarySearchTree(BinaryTree):
     def __init__(self):
@@ -341,13 +437,11 @@ class Queue:
 
 if __name__ == "__main__":
     bt = BinaryTree()
-    bt.add("44")
-    bt.add("apples")
-    bt.add(100)
-    bt.add("bananas")
-    bt.add(120)
-    bt.add("kiwi")
-    bt.add("lastOne")
-    bt.add("testlastOne")
+    bt.add("root")
+    bt.add("V1")
+    bt.add("V2")
+    bt.add("V3")
+    bt.add("V4")
+    bt.add("V5")
     print("**********"*5)
-    print(bt.breadth_first())
+    print(bt.inOrder())

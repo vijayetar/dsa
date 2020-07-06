@@ -60,13 +60,11 @@ class BinaryTree:
         max = self.root.value
         def traverse(root, max):
             if not root:
-                return None
+                return max
             if max < root.value:
                 max = root.value
-            if root.left:
-                max = traverse(root.left, max)
-            if root.right:
-                max = traverse(root.right, max)
+            max = traverse(root.left, max)
+            max = traverse(root.right, max)
             return max
         max = traverse(self.root, max)
         return max

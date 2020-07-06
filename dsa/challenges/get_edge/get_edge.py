@@ -6,15 +6,13 @@ def get_direct_route(graph, origin, destination, *args):
     original = [origin]
     sum = 0
     found = False
-    places = []
-    places.append(destination)
-    places.extend(list(args))
-    print(places)
+    places = [destination]+list(args)
     for destination in places:
         print("this is destintaion", origin, "--->", destination)
         if destination not in graph.get_vertices():
             return f"{destination} is not in graph"
         for edge in graph.get_neighbors(origin):
+            found=False
             print("this is edge", edge)
             city, price = edge.split(" ")
             if city == destination:
@@ -22,8 +20,6 @@ def get_direct_route(graph, origin, destination, *args):
                 sum += int(price)
                 print("true sum",sum)
                 break
-            else:
-                found = False
         if found:
             print("sum", sum)
             origin = destination
