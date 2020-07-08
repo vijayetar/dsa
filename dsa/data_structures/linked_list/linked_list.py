@@ -4,12 +4,15 @@ from abc import ABC, abstractmethod
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.count = 0
 
     def insert(self, value, *args):
         ''' inserts new node of value at the head and creates new head'''
         self.head = Node(value, self.head)
+        self.count += 1
         for arg in args:
             self.head = Node(arg, self.head)
+            self.count += 1
         return self
 
     def append(self,value, *args):
@@ -17,6 +20,7 @@ class LinkedList:
         if not self.head:
             #code for an empty linked list only
             self.head = Node(value, self.head)
+            self.count += 1
             if len(args) == 0:
                 return
             current = self.head
@@ -26,6 +30,7 @@ class LinkedList:
                 while current and switch:
                     if current.next == None:
                         current.next = new_node
+                        self.count += 1
                         current = new_node
                         switch = False
                     else:
@@ -37,6 +42,7 @@ class LinkedList:
         while current.next != None:
             current = current.next
         current.next = new_node
+        self.count += 1
         current = new_node
         #checks if there are any arguments after the value
         if len(args)== 0:
@@ -44,6 +50,7 @@ class LinkedList:
         for arg in args:
             new_node = Node(arg)
             current.next = new_node
+            self.count += 1
             current = new_node
         return
 
@@ -71,8 +78,10 @@ class LinkedList:
                         for arg in args:
                             arg_node = Node(arg)
                             arg_node.next = new_node
+                            self.count += 1
                             new_node=arg_node
                     current.next = new_node
+                    self.count += 1
                     return self.head
                 scout = scout.next
                 current = current.next
@@ -85,20 +94,24 @@ class LinkedList:
         new_node = Node(new_value)
         if current.value == positional_value:
             new_node.next = current.next
+            self.count += 1
             if len(args):
                 for arg in args:
                     arg_node = Node(arg)
                     arg_node.next = new_node
+                    self.count += 1
                     new_node = arg_node
             current.next = new_node
             return self.head
         while current.next:
             if current.value == positional_value:
                 new_node.next = current.next
+                self.count += 1
                 if len(args):
                     for arg in args:
                         arg_node = Node(arg)
                         arg_node.next = new_node
+                        self.count += 1
                         new_node = arg_node
                 current.next = new_node
                 return self.head
@@ -196,6 +209,19 @@ class LinkedList:
         self.head = previous
         return self.head
 
+    def __iter__(self):
+        def generator():
+            current = self.head
+            while current:
+                yield current.value
+                current = current.next
+        return generator()
+
+    def __len__(self):
+        return self.count
+
+
+
 # create Node class and instantiate it with value and pointer
 class Node:
     def __init__ (self, value, next_ = None):
@@ -213,23 +239,13 @@ class Node:
 
 
 if __name__ == "__main__":
-
-    # ll = LinkedList()
-    # print(ll)
-    # ll.append("1","3","8","2")
-    # print(ll)
-    # ll.append("l","i","k","e")
-    # print(ll)
-    # print(ll.find_k_node_value(4))
-    ll= LinkedList()
-    # ll.insert("1","2","3")
-    ll.insert("oranges","bananas","coconut")
-    print("before insert_before:  ",ll)
-    ll.insert_before("oranges","kiwi","1","2","3")
-    # actual = ll.insert_before("oranges","pineapples")k
-    actual = str(ll)
-    print("this is actual:  ", actual)
-    print("after insert_before:   ",ll)
+    foods = LinkedList()
+    foods.insert("apple","banana","cucumber")
+    foods_list = []
+    for food in foods:
+        foods_list.append(food)
+    print(foods_list)
+    print(len(foods_list)==len(foods))
 
 
 
