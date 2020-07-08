@@ -1,5 +1,6 @@
 #stacks and queues
 import pysnooper
+
 class Node:
     def __init__ (self,value, _next=None):
         self.value = value
@@ -611,22 +612,79 @@ def graph_list_to_matrix():
     print(len(adj))
     print([[None]*len(adj)]*len(adj))
 
+# @pysnooper.snoop()
+
+def find_leaf_weight(tree, int):
+    if not tree.root:
+        return "No Tree provided"
+    result = 0
+    def walk(root, sum=0, switch=False):
+        if not root:
+            return sum, switch
+        sum += root.value
+        if not root.left and not root.right and int == sum:
+            switch = True
+            return sum, switch
+        if not switch:
+            sum, switch = walk(root.left, sum, switch)
+        if not switch:
+            sum, switch = walk(root.right, sum, switch)
+        if not switch:
+            sum = sum - root.value
+        return sum, switch
+
+    result, switch = walk(tree.root)
+    return result, switch
+
+
+
+
+# def find_leaf_weight2(tree, int):
+# 	if not tree.root:
+# 		return "NO tree"
+# 	result=0
+# 	def walk(root, sum=0, switch=False):
+# 		if not root:
+# 			return sum, switch
+# 		sum += root.value
+#         if not root.left and not root.right:
+#             if int==sum:
+# 			    switch = True
+# 			    return sum, switch
+#         elif not switch:
+# 			sum, switch = walk(root.left, sum, switch)
+
+#         if not switch:
+# 			sum, switch = walk(root.right, sum, switch)
+
+#         if not switch:
+# 		    sum = sum - root.value
+# 		return sum, switch
+
+# 	result, switch = walk(tree.root)
+# 	return result, switch
+
+
+
+
+
 if __name__ == "__main__":
-    graph_list_to_matrix()
+    # graph_list_to_matrix()
     # arr = [100, 20, 50, 30, 40, 10]
     # print(insertion_sort2(arr))
     # print(merge_sort3(arr))
     # print(quick_sort2(arr))
-    # numbers1 = BinaryTree()
-    # numbers1.add_root(8)
-    # numbers1.add_root(3)
-    # numbers1.add_root(10)
-    # numbers1.add_root(1)
-    # numbers1.add_root(6)
-    # numbers1.add_root(4)
-    # numbers1.add_root(7)
-    # numbers1.add_root(14)
-    # numbers1.add_root(13)
+    numbers1 = BinaryTree()
+    numbers1.add_root(1)
+    numbers1.add_root(10)
+    numbers1.add_root(10)
+    numbers1.add_root(100)
+    numbers1.add_root(100)
+    numbers1.add_root(100)
+    numbers1.add_root(100)
+    numbers1.add_root(1000)
+    numbers1.add_root(1000)
+    print(find_leaf_weight(numbers1,1111))
     # print(odd_sums(numbers1))
     # numbers2 = BinaryTree()
     # numbers2.add_root('folder')
