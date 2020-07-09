@@ -1,5 +1,7 @@
 from functools import wraps, singledispatch
+#https://pypi.org/project/singledispatch/
 from time import time
+#https://stackoverflow.com/questions/1622943/timeit-versus-timing-decorator
 #_________________________________________________________________________
 def timing(f):
     @wraps(f)
@@ -17,7 +19,7 @@ def say_nothing(func):
     def wrapper(*args, **kwargs):
         return f"{func(*args, *kwargs)} ...... <awkard silence>"
     return wrapper
-@timing
+
 def very_excited(func):
     @wraps(func)
     def wrapper(*args,**kwargs):
@@ -34,7 +36,7 @@ def invite_friends(txt):
 def fun(arg, verbose=False):
     if verbose:
         return f"hi there, {arg}!!"
-    return arg
+    return f"{arg}!!"
 
 @fun.register(int)
 def _(arg, verbose=False):
@@ -45,9 +47,10 @@ def _(arg, verbose=False):
 @fun.register(list)
 def _(arg, verbose=False):
     if verbose:
+        items = []
         for i,item in enumerate(arg):
-            print(f"Please get this: {i+1}. {item.upper()}")
-        return
+            items.append(f"Please get this: {i+1}. {item.upper()}")
+        return items
     return f"This {len(arg)} in the list is too much "
 
 @fun.register(float)
@@ -91,7 +94,7 @@ def swap(arr, i, low):
 
 
 if __name__ == "__main__":
-    print(invite_friends("Do you want to come?"))
+    # print(invite_friends("Do you want to come?"))
     print(fun("Karen", verbose=True))
     print(fun(12, verbose=True))
     print(fun(["lemons","honey"]))
@@ -99,4 +102,4 @@ if __name__ == "__main__":
     print(fun(0.12))
     print(fun(0.12, verbose=True))
     print(f(10000000))
-    print(quick_sort([5,4,33,5,3,7,876]))
+    # print(quick_sort([5,4,33,5,3,7,876]))
