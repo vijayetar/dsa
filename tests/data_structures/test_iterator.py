@@ -24,65 +24,65 @@ def test_list_cast():
     foods.insert("apple","banana","cucumber")
     assert list(foods) == food_list
 
-def test_range():
+
+def test_filter():
+
     nums = LinkedList()
-    num_range = range(1,20+1)
-    print("this is num_range", num_range)
-    nums.insert(num_range)
-    assert len(nums) == 20
+    for i in range(1,21):
+        nums.insert(i)
+    odds = [num for num in nums if num % 2]
+
+    assert odds == [19, 17, 15, 13, 11, 9, 7, 5, 3, 1]
+
+def test_next():
+
+    foods = LinkedList()
+    foods.insert("apple","banana","cucumber")
+
+    iterator = iter(foods)
+
+    assert next(iterator) == "cucumber"
+    assert next(iterator) == "banana"
+    assert next(iterator) == "apple"
+
+def test_stop_iteration():
+
+    foods = LinkedList()
+    foods.insert("apple","banana","cucumber")
+
+    iterator = iter(foods)
+
+    with pytest.raises(StopIteration):
+        while True:
+            food = next(iterator)
 
 
-# def test_filter():
+def test_str():
+    foods = LinkedList()
+    foods.insert("apple","banana","cucumber")
+    assert str(foods) == "{cucumber} -> {banana} -> {apple} ->  NULL"
 
-#     nums = LinkedList(range(1,21))
+# dunder method tests
 
-#     odds = [num for num in nums if num % 2]
+def test_equals():
 
-#     assert odds == [1,3,5,7,9,11,13,15,17,19]
+    lla = LinkedList()
+    lla.insert("apple","banana","cucumber")
+    llb = LinkedList()
+    llb.insert("apple","banana","cucumber")
 
-# def test_next():
-
-#     foods = LinkedList(["apple","banana","cucumber"])
-
-#     iterator = iter(foods)
-
-#     assert next(iterator) == "apple"
-#     assert next(iterator) == "banana"
-#     assert next(iterator) == "cucumber"
-
-# def test_stop_iteration():
-
-#     foods = LinkedList(["apple","banana","cucumber"])
-
-#     iterator = iter(foods)
-
-#     with pytest.raises(StopIteration):
-#         while True:
-#             food = next(iterator)
-
-
-# def test_str():
-#     foods = LinkedList(["apple","banana","cucumber"])
-#     assert str(foods) == "[ apple ] -> [ banana ] -> [ cucumber ] -> None"
-
-# # dunder method tests
-
-# def test_equals():
-
-#     lla = LinkedList(["apple","banana","cucumber"])
-#     llb = LinkedList(["apple","banana","cucumber"])
-
-#     assert lla == llb
+    assert len(lla) == len(llb)
+    assert str(lla)==str(llb)
 
 # def test_get_item():
-
-#     foods = LinkedList(["apple","banana","cucumber"])
-
-#     assert foods[0] == "apple"
+#     lla = LinkedList()
+#     lla.insert("apple","banana","cucumber")
+#     lla = iter(lla)
+#     assert lla[0] == "cucumber"
 
 # def test_get_item_out_of_range():
-
-#     foods = LinkedList(["apple","banana","cucumber"])
+#     lla = LinkedList()
+#     lla.insert("apple","banana","cucumber")
 
 #     with pytest.raises(IndexError):
-#         foods[100]
+#         lla[100]

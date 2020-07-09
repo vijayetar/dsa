@@ -221,7 +221,6 @@ class LinkedList:
         return self.count
 
 
-
 # create Node class and instantiate it with value and pointer
 class Node:
     def __init__ (self, value, next_ = None):
