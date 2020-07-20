@@ -23,10 +23,6 @@
 * [Binary Tree Intersection](dsa/challenges/tree_intersection/README.md)
 * [Left Join Hashtables](dsa/challenges/left_join_hash/README.md)
 
-
-
-
-
 ### Data Structures
 * [Linked Lists -insert](dsa/data_structures/linked_list/README.md)
 * [Linked Lists- append, insertBefore, insertAfter](dsa/data_structures/linked_list/README.md)
@@ -37,6 +33,10 @@
 * [Breadth_first_graph](dsa/challenges/graph_breadth_first/README.md)
 * [Depth_first_graph](dsa/challenges/graph_depth_first/README.md)
 
+## Practice for Coding Interviews
+* [Arrays and Strings](dsa/challenges/arrays_and_strings/README.md)
 -----------------------------------
 
 
+## References
+[ASCII](https://www.techonthenet.com/ascii/chart.php)
