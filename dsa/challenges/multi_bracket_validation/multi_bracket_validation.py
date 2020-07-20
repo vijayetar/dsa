@@ -22,6 +22,24 @@ def multi_bracket_validation(input_string):
     return False
 
 
+def matching_brackets(string):
+    bracket = Stack()
+    bracket_dict = {"(":")","{":"}", "[":"]" }
+    for char in string:
+        if char in bracket_dict:
+            bracket.push(char)
+        elif char in [")", "}", "]"]:
+            if bracket.isEmpty():
+                return False
+            if bracket_dict[bracket.peek()]==char:
+                bracket.pop()
+            else:
+                return False
+    if not bracket.isEmpty():
+        return False
+    return True
+
+
 if __name__ == "__main__":
     # input_string = "jjkjklj"
     input_string = "abcds{([])}"

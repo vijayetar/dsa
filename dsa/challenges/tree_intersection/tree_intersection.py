@@ -95,14 +95,14 @@ def find_intersection2(tree1, tree2):
     returned_list = []
 
     def walk_here(root_node):
-            if bt_hashed.contains(root_node.value):
-                returned_list.append(int(root_node.value))
-            else:
-                bt_hashed.add(root_node.value, value=0)
-            if root_node.left:
-                walk_here(root_node.left)
-            if root_node.right:
-                walk_here(root_node.right)
+        if not root_node:
+            return
+        if bt_hashed.contains(root_node.value):
+            returned_list.append(int(root_node.value))
+        else:
+            bt_hashed.add(root_node.value, value=0)
+        walk_here(root_node.left)
+        walk_here(root_node.right)
     #add each node value to the hash table
     walk_here(tree1.root)
     walk_here(tree2.root)

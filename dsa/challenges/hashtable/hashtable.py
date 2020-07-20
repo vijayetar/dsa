@@ -12,7 +12,10 @@ class Hashtable():
     def hash(self, string):
         if not isinstance(string,str):
             string = str(string)
-        hashed_key = (sum(list(map(lambda x: ord(x), string)))*19)%self.size
+        get_ord = sum((map(lambda x: ord(x), string)))
+        print("this is get_ord", get_ord)
+        hashed_key = (get_ord*19)%self.size
+        print(hashed_key)
         return hashed_key
 
     def add(self, key, value):

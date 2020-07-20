@@ -7,6 +7,7 @@
 > * [Remove and Shift Array](/dsa/challenges/array_shift/README.md)
 
 * [Sum of Numbers in a Matrix](/dsa/challenges/array_sum_of_matrix/README.md)
+* [Fibonacci](dsa/challenges/fibonacci/fibonacci.py)
 * [Merge Linked Lists](/dsa/challenges/ll_merge/README.md)
 * [Queue with Stacks](dsa/challenges/queue_with_stacks/README.md)
 * [Fifo Animal Shelter](dsa/challenges/fifo_animal_shelter/README.md)
@@ -32,22 +33,10 @@
 * [Linked Lists- find kth position from the end in linked list](dsa/data_structures/linked_list/README.md)
 * [Stacks-and-Queues](dsa/data_structures/stack_and_queues/README.md)
 * [Binary Tree and Binary Search Tree](dsa/data_structures/tree/README.md)
-
+* [Graph](dsa/data_structures/graph/README.md)
+* [Breadth_first_graph](dsa/challenges/graph_breadth_first/README.md)
+* [Depth_first_graph](dsa/challenges/graph_depth_first/README.md)
 
 -----------------------------------
 
-This is draft of the reading document:
-Draft:
-See [solution](file_name)
 
-A function to .
-
-  * Challenge
-
-
-  * Approach & Efficiency
-
-
-  * Specificiations used :
-
-  * Solution
