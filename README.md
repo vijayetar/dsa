@@ -34,7 +34,7 @@
 * [Depth_first_graph](dsa/challenges/graph_depth_first/README.md)
 
 ## Practice for Coding Interviews
-* [Arrays and Strings](dsa/challenges/arrays_and_strings/README.md)
+* [Arrays and Strings](dsa/practice_coding/arrays_and_strings/README.md)
 -----------------------------------
 
 
