@@ -35,6 +35,7 @@
 
 ## Practice for Coding Interviews
 * [Arrays and Strings](dsa/practice_coding/arrays_and_strings/README.md)
+* [Linked Lists](dsa/practice_coding/practice_linked_lists/README.md)
 -----------------------------------
 
 
