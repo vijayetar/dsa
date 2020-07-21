@@ -1,4 +1,4 @@
-# create a string of unique charcaters
+# 1.1 create a string of unique charcaters
 def string_unique(the_string):
     if len(the_string)>256:
         return False
@@ -9,7 +9,7 @@ def string_unique(the_string):
         chr_set[chr] = True
     return True
 
-#check if two strings are permutations of each other
+#1.2 check if two strings are permutations of each other
 def string_permutation(string_1, string_2):
     if not len(string_1) == len(string_2):
         return False
@@ -30,11 +30,21 @@ def string_permutation(string_1, string_2):
                 del char_set[char]
     return char_set=={}
 
+#1.3 URLify: method to replace all spaces with %20
+def urlify_string(the_string):
+    new_string = ''
+    for chr in the_string:
+        if chr==" ":
+            new_string += "%20"
+        else:
+            new_string += chr
+    return new_string
+
 
 
 if __name__ == "__main__":
-    the_string = "cheking"
-    # print(string_unique(the_string))
+    the_string = "chek ing"
+    print(urlify_string(the_string))
     string_1 = "abcdefgabcdefg"
     string_2 = "gfedcbaabcdddg"
-    print(string_permutation(string_1, string_2))
+    # print(string_permutation(string_1, string_2))
