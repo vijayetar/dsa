@@ -110,17 +110,117 @@ def partition (ll, value):
         current = current.next
     return output_ll
 
+# 2.5
+def sum_lists(ll_1, ll_2):
+    if not ll_1.head or not ll_2.head:
+        return "ll does not have head"
+    ll= LinkedList()
+    current_1 = ll_1.head
+    current_2 = ll_2.head
+    carry_over = 0
+    while current_1 and current_2:
+        sum = current_1.value + current_2.value + carry_over
+        if sum>9:
+            new_value = sum-10
+            carry_over = 1
+        else:
+            new_value = sum
+            carry_over = 0
+        if not ll.head:
+            ll.head=Node(new_value)
+            ll.tail = ll.head
+        else:
+            ll.tail.next = Node(new_value)
+            ll.tail= ll.tail.next
+        current_1=current_1.next
+        current_2=current_2.next
+    while current_1:
+        sum = current_1.value + carry_over
+        if sum>9:
+            new_value = sum-10
+            carry_over = 1
+        else:
+            new_value = sum
+            carry_over = 0
+        ll.tail.next = Node(new_value)
+        ll.tail= ll.tail.next
+        current_1 = current_1.next
+    while current_2:
+        sum = current_2.value + carry_over
+        if sum>9:
+            new_value = sum-10
+            carry_over = 1
+        else:
+            new_value = sum
+            carry_over = 0
+        ll.tail.next = Node(new_value)
+        ll.tail= ll.tail.next
+        current_2 = current_2.next
+    if carry_over:
+        ll.tail.next = Node(carry_over)
+        ll.tail= ll.tail.next
+    return ll
 
+#2.5 refactored
+def sum_lists2(ll_1, ll_2):
+    if not ll_1.head or not ll_2.head:
+        return "ll does not have head"
+    ll= LinkedList()
+    current_1 = ll_1.head
+    current_2 = ll_2.head
+    carry_over = 0
+
+    def get_new_value(sum,carry_over):
+        if sum>9:
+            new_value = sum-10
+            carry_over = 1
+        else:
+            new_value = sum
+            carry_over = 0
+        return new_value, carry_over
+
+    def add_to_tail(new_value):
+        ll.tail.next = Node(new_value)
+        ll.tail= ll.tail.next
+
+    while current_1 and current_2:
+        sum = current_1.value + current_2.value + carry_over
+        new_value, carry_over = get_new_value(sum, carry_over)
+        if not ll.head:
+            ll.head=Node(new_value)
+            ll.tail = ll.head
+        else:
+            add_to_tail(new_value)
+        current_1=current_1.next
+        current_2=current_2.next
+    if current_1:
+        remaining = current_1
+    else:
+        remaining = current_2
+    while remaining:
+        sum = remaining.value + carry_over
+        new_value, carry_over = get_new_value(sum, carry_over)
+        add_to_tail(new_value)
+        remaining = remaining.next
+    if carry_over:
+        ll.tail.next = Node(carry_over)
+        ll.tail= ll.tail.next
+    return ll
 
 
 if __name__ == "__main__":
-    ll = LinkedList()
+    ll_1 = LinkedList()
+    ll_2 = LinkedList()
     # ll.insert("A", "B")
     # ll.insert("C", "E", "A", "E", "D", "C", "A", "C", "A")
     # print(delete_middle(ll))
-    ll.insert(1, 2, 8, 3, 5, -1,200)
-    print("this is the ll", ll)
-    print(partition(ll, 3))
+    # ll.insert(1, 2, 8, 3, 5, -1,200)
+    # print("this is the ll", ll)
+    # print(partition(ll, 3))
+    ll_2.insert(9,9,9,9)
+    ll_1.insert(9,9,9,9,9)
+    print(sum_lists(ll_1, ll_2))
+    print(sum_lists2(ll_1, ll_2))
 
 
 
