@@ -40,11 +40,22 @@ def urlify_string(the_string):
             new_string += chr
     return new_string
 
+def checkpalindrone(the_list):
+    if (len(the_list)%2)== 0:
+        mid = len(the_list)//2
+    else:
+        mid = len(the_list)//2+1
+    for i in range(mid):
+        if the_list[i] != the_list[(i*-1)-1]:
+            return False
+    return True
 
 
 if __name__ == "__main__":
-    the_string = "chek ing"
-    print(urlify_string(the_string))
-    string_1 = "abcdefgabcdefg"
-    string_2 = "gfedcbaabcdddg"
+    # the_string = "chek ing"
+    # print(urlify_string(the_string))
+    # string_1 = "abcdefgabcdefg"
+    # string_2 = "gfedcbaabcdddg"
     # print(string_permutation(string_1, string_2))
+    the_list = [1, 2]
+    print(checkpalindrone(the_list))

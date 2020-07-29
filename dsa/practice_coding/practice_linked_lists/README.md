@@ -14,3 +14,7 @@ Both mid and current start at the head, and for every two steps the current poin
 #### 2.4 Given ll, and partition value, use the partition value given and return a linked list with nodes sorted around the partition value
 
 #### 2.5 given two ll with numeric values, return new ll with sum of the values
+
+#### 2.6 function to check if linked list is a palindrome
+* attempt using a temporary buffer such as list and then compare them to each other at either end until middle is reached.
+* consider using a stack for first in first out approach until the middle is reached and then compare the rest of the linked list
