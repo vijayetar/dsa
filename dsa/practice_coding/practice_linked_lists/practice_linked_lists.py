@@ -1,4 +1,5 @@
 from dsa.data_structures.linked_list.linked_list import LinkedList, Node
+from dsa.data_structures.stack_and_queues.stack_and_queues import Stack
 
 #### 2.1 Remove Duplicates from unsorted linked list.  Implement it with and without a temporary buffer
 
@@ -207,20 +208,44 @@ def sum_lists2(ll_1, ll_2):
         ll.tail= ll.tail.next
     return ll
 
+#### 2.6 function to check if linked list is a palindrome
+def is_palindrome(ll):
+    mid = ll.head
+    scout = ll.head
+    pal = Stack()
+    # get the stack set up
+    while scout.next:
+        pal.push(mid.value)
+        if scout.next.next:
+            scout = scout.next.next
+            mid = mid.next
+        else:
+            break
+    mid = mid.next
+    while mid:
+        if mid.value == pal.peek():
+            pal.pop()
+            mid = mid.next
+        else:
+            return False
+    return True
 
 if __name__ == "__main__":
     ll_1 = LinkedList()
     ll_2 = LinkedList()
-    # ll.insert("A", "B")
+    ll = LinkedList()
+    ll.insert("A", "B", "C", "C", "B", "D")
+    print(ll)
     # ll.insert("C", "E", "A", "E", "D", "C", "A", "C", "A")
     # print(delete_middle(ll))
     # ll.insert(1, 2, 8, 3, 5, -1,200)
     # print("this is the ll", ll)
     # print(partition(ll, 3))
-    ll_2.insert(9,9,9,9)
-    ll_1.insert(9,9,9,9,9)
-    print(sum_lists(ll_1, ll_2))
-    print(sum_lists2(ll_1, ll_2))
+    # ll_2.insert(9,9,9,9)
+    # ll_1.insert(9,9,9,9,9)
+    # print(sum_lists(ll_1, ll_2))
+    # print(sum_lists2(ll_1, ll_2))
+    print(is_palindrome(ll))
 
 
 
