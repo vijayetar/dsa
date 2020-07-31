@@ -85,8 +85,13 @@ def delete_middle(ll):
 # 2.4 given ll and value, partition ll on that value
 ## assumptions only integers given, including negative values,  no characters given.  and value present in the linked list
 
+
+#### note try this code with a list instead of a linked list
+
+#### try with modifying it in the same list with O(n) time, but space O(1)
 def partition (ll, value):
     # make a new linked list with a tail to hold high values and head to hold the small values
+    # O(n) time but O(n) for space for new linked list
     output_ll = LinkedList()
     output_ll.tail = output_ll.head
     current = ll.head
@@ -208,6 +213,27 @@ def sum_lists2(ll_1, ll_2):
         ll.tail= ll.tail.next
     return ll
 
+def new_sum_ll(ll_1, ll_2):
+    #convert the ll_1 and ll_2 into a string and then into an integer
+    if not ll_2.head:
+        return ll_1
+    elif not ll_1.head:
+        return ll_2
+    def to_integer(ll):
+        string = ""
+        current = ll.head
+        while current:
+            string+=str(current.value)
+            current = current.next
+        return int(string)
+    def to_ll(num):
+        new_ll = LinkedList()
+        for n in str(num):
+            new_ll.append(int(n))
+        return new_ll
+    sum = to_integer(ll_1)+to_integer(ll_2)
+    return (to_ll(sum))
+
 #### 2.6 function to check if linked list is a palindrome
 def is_palindrome(ll):
     mid = ll.head
@@ -233,19 +259,19 @@ def is_palindrome(ll):
 if __name__ == "__main__":
     ll_1 = LinkedList()
     ll_2 = LinkedList()
-    ll = LinkedList()
-    ll.insert("A", "B", "C", "C", "B", "D")
-    print(ll)
+    # ll = LinkedList()
+    # ll.insert("A", "B", "C", "C", "B", "D")
+    # print(ll)
     # ll.insert("C", "E", "A", "E", "D", "C", "A", "C", "A")
     # print(delete_middle(ll))
     # ll.insert(1, 2, 8, 3, 5, -1,200)
     # print("this is the ll", ll)
     # print(partition(ll, 3))
-    # ll_2.insert(9,9,9,9)
-    # ll_1.insert(9,9,9,9,9)
+    ll_2.insert(9,9,9,9)
+    ll_1.insert(9,9,9,9,9)
     # print(sum_lists(ll_1, ll_2))
-    # print(sum_lists2(ll_1, ll_2))
-    print(is_palindrome(ll))
+    print(sum_lists2(ll_1, ll_2))
+    print(new_sum_ll(ll_1, ll_2))
 
 
 
