@@ -15,6 +15,25 @@ Both mid and current start at the head, and for every two steps the current poin
 
 #### 2.5 given two ll with numeric values, return new ll with sum of the values
 
+#### 2.5 alternate
+Sum of two linked lists
+Inputn:
+ll_1 = 2 → 3 → 5 → None
+ll_2 = 3 → 6 → 3 → None
+
+Output
+235 + 363 = 598
+return = 5 → 9 → 8 → None
+
+Algorithm:
+1. define function with argument of two linked lists
+2. assert both linked lists have a head, and if not, return the other ll
+3. convert ll into a string and then into an integer
+4. add the two integers
+5. convert the sum into a linked list and then return it
+
+
+
 #### 2.6 function to check if linked list is a palindrome
 * attempt using a temporary buffer such as list and then compare them to each other at either end until middle is reached.
 * consider using a stack for first in first out approach until the middle is reached and then compare the rest of the linked list
