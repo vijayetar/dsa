@@ -256,6 +256,80 @@ def is_palindrome(ll):
             return False
     return True
 
+#### 2.7 function to find the intersection of two linked lists
+
+def find_intersection1 (ll1, ll2):
+    if not ll1.head or not ll2.head:
+        return 'No intersection'
+    node_list = []
+    current = ll1.head
+    while current:
+        node_list.append(current.value)
+        current = current.next
+    current = ll2.head
+    the_node = None
+    switch = False
+    pos = None
+    while current:
+        if current.value in node_list and switch == False:
+            the_node = current
+            pos = node_list.index(current.value)
+            switch = True
+        elif switch == True:
+            pos += 1
+            if pos>=len(node_list):
+                return "no intersection"
+            elif current.value != node_list[pos]:
+                switch = False
+        current = current.next
+    if pos == len(node_list)-1 and switch == True:
+        return the_node
+    return "no intersection"
+
+#another method from the textbook to find the intersection by first finding the shorter of the linked lists and as well as the tail and making sure the tails match
+def find_intersection2(ll1, ll2):
+    if not ll1.head or not ll2.head:
+        return 'No intersection since no heads found'
+    def find_tail_length(ll):
+        current = ll.head
+        length = 1
+        while current.next:
+            length += 1
+            current = current.next
+        print(current,length)
+        return current,length
+    ll1_tail, ll1_len = find_tail_length(ll1)
+    ll2_tail, ll2_len = find_tail_length(ll2)
+
+    #check if the tails match in value.  If so, then they intersect or else they do not.
+    if ll1_tail.value != ll2_tail.value:
+        return "No intersection since tails do not match"
+    if ll1_len<ll2_len:
+        shorter, longer = ll1, ll2
+    else:
+        shorter, longer = ll2, ll1
+    diff = abs(ll2_len-ll1_len)
+
+    # adjust the longer of the linked lists to start it exactly same length as the shorter LL
+    def adjust_longer(ll, diff):
+        current = ll.head
+        k = 0
+        while k!=diff:
+            current = current.next
+            k +=1
+        ll.head = current
+        return ll
+    longer = adjust_longer(longer,diff)
+    
+    #traverse through the linked lists to find the intersection
+    current_s, current_l = shorter.head, longer.head
+    while current_s:
+        if current_s.value == current_l.value:
+            return current_s
+        current_s, current_l = current_s.next, current_l.next
+    return "no intersection"
+
+
 if __name__ == "__main__":
     ll_1 = LinkedList()
     ll_2 = LinkedList()
@@ -267,11 +341,13 @@ if __name__ == "__main__":
     # ll.insert(1, 2, 8, 3, 5, -1,200)
     # print("this is the ll", ll)
     # print(partition(ll, 3))
-    ll_2.insert(9,9,9,9)
-    ll_1.insert(9,9,9,9,9)
-    # print(sum_lists(ll_1, ll_2))
-    print(sum_lists2(ll_1, ll_2))
-    print(new_sum_ll(ll_1, ll_2))
+    ll_1.append(1,2,3,11)
+    ll_2.append(5,25, 45, 22,3,11)
+    print("One", ll_1, "Two", ll_2)
+    # # print(sum_lists(ll_1, ll_2))
+    # print(sum_lists2(ll_1, ll_2))
+    # print(new_sum_ll(ll_1, ll_2))
+    print(find_intersection2(ll_1, ll_2))
 
 
 
