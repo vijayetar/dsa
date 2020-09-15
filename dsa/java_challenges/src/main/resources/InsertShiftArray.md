@@ -2,7 +2,7 @@
 
 [Table of Contents](../../../README.md)
 
-__PR__:
+__PR__: https://github.com/vijayetar/dsa/pull/44
 
 ## Challenge
 Write a function called insertShiftArray which takes in an array and the value to be added.
