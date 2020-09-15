@@ -5,8 +5,8 @@
 [InsertShiftArray](/dsa/java_challenges/src/main/resources/InsertShiftArray.md)
 
 
+### Algorithms in Python
 
-### Algorithms
 > these three links do not exist in the folder yet. I had created a new repo dsa due to my testing issues related to problems related to the different versions on my laptop.
 > * [Reverse an Array](/dsa/challenges/array_reverse/README.md)
 > * [Shift an Array](/dsa/challenges/array_shift/README.md)
@@ -43,6 +43,7 @@
 * [Arrays and Strings](dsa/practice_coding/arrays_and_strings/README.md)
 * [Linked Lists](dsa/practice_coding/practice_linked_lists/README.md)
 -----------------------------------
+
 
 
 ## References
