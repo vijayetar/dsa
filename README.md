@@ -1,5 +1,11 @@
 # Table of contents
 
+### Challenges for Java
+[Reverse an Array](/dsa/java_challenges/ArrayReverse)  
+[InsertShiftArray](/dsa/java_challenges/src/main/resources/InsertShiftArray.md)
+
+
+
 ### Algorithms
 > these three links do not exist in the folder yet. I had created a new repo dsa due to my testing issues related to problems related to the different versions on my laptop.
 > * [Reverse an Array](/dsa/challenges/array_reverse/README.md)
