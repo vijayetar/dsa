@@ -1,8 +1,9 @@
 # Table of contents
 
 ### Challenges for Java
-[Reverse an Array](/dsa/java_challenges/ArrayReverse)  
+[Reverse an Array](/dsa/java_challenges/ArrayReverse)
 [InsertShiftArray](/dsa/java_challenges/src/main/resources/InsertShiftArray.md)
+[Binary Search Array](/dsa/java_challenges/src/main/resources/BinarySearch.md)  
 
 
 ### Algorithms in Python
