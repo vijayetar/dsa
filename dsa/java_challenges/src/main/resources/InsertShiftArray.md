@@ -2,15 +2,13 @@
 
 [Table of Contents](../../../README.md)
 
-See [solution]()
-
-__PR__:
+__PR__: https://github.com/vijayetar/dsa/pull/44
 
 ## Challenge
-
+Write a function called insertShiftArray which takes in an array and the value to be added.
 
 ## Approach and Efficiency
-
+We had to create another array so space was O(n*2) and efficiency O(n)
 
 ## Specifications Used
 * .editorconfig
@@ -19,7 +17,7 @@ __PR__:
 
 
 ## Solution
-
+![WhiteBoard](InsertShiftArray.png)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
