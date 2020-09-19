@@ -4,13 +4,13 @@
 
 See [solution]()
 
-__PR__:
+__PR__:https://github.com/vijayetar/dsa/pull/47  
 
 ## Challenge
 Linked List created with the following methods:
 __insert(int n)__ :method that takes in parameter integer and adds it to the front of the linked List and moves the head to the front
 __isEmpty__ returns a boolean if the linked list is empty
-__includes(int n)__:method that iterates through the linked list to check if the value n is present in the linked list.  
+__includes(int n)__:method that iterates through the linked list to check if the value n is present in the linked list.
 
 ## Approach and Efficiency
 __includes(int n)__: time O(n), space O(1)
