@@ -2,9 +2,7 @@
 
 [Table of Contents](./../../../../../../README.md)
 
-See [solution]()
-
-__PR__:https://github.com/vijayetar/dsa/pull/47  
+__PR__:https://github.com/vijayetar/dsa/pull/47
 
 ## Challenge
 Linked List created with the following methods:
