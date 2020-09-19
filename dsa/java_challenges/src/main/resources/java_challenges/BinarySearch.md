@@ -1,6 +1,6 @@
-# Insert Shift Array
+# Binary Search Array
 
-[Table of Contents](../../../../../README.md)
+[Table of Contents](./../../../../../../README.md)
 
 __PR__:https://github.com/vijayetar/dsa/pull/45
 
@@ -16,7 +16,7 @@ Space = O(1)
 
 
 ## Solution
-![whiteboard](../../../assets/BinarySearch.png)
+![whiteboard](../../../../assets/BinarySearch.png)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated

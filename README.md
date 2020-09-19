@@ -2,8 +2,11 @@
 
 ### Challenges for Java
 [Reverse an Array](/dsa/java_challenges/ArrayReverse)
-[InsertShiftArray](/dsa/java_challenges/src/main/resources/InsertShiftArray.md)
-[Binary Search Array](/dsa/java_challenges/src/main/resources/BinarySearch.md)  
+[InsertShiftArray](/dsa/java_challenges/src/main/resources/java_challenges/InsertShiftArray.md)
+[Binary Search Array](/dsa/java_challenges/src/main/resources/java_challenges/BinarySearch.md)
+
+### Data Structures in Java
+[Linked List](/dsa/java_challenges/src/main/resources/data_structures/linkedList.md)
 
 
 ### Algorithms in Python

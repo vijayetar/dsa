@@ -1,6 +1,6 @@
 # Insert Shift Array
 
-[Table of Contents](../../../README.md)
+[Table of Contents](./../../../../../../README.md)
 
 __PR__: https://github.com/vijayetar/dsa/pull/44
 
@@ -17,7 +17,7 @@ We had to create another array so space was O(n*2) and efficiency O(n)
 
 
 ## Solution
-![WhiteBoard](InsertShiftArray.png)
+![WhiteBoard](../assets/InsertShiftArray.png)
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
