@@ -1,6 +1,6 @@
-# Insert Shift Array
+# Binary Search Array
 
-[Table of Contents](../../../../../../README.md)
+[Table of Contents](./../../../../../../README.md)
 
 __PR__:https://github.com/vijayetar/dsa/pull/45
 
