@@ -1,11 +1,9 @@
 package data_structures.linkedList;
 
-import javax.lang.model.type.NullType;
-
 public class LinkedList {
 
-        public Node head;
-        public Node tail;
+        private Node head;
+        private Node tail;
 
         // inserts the node to the head of the linked list
         public void insert(int n){
@@ -29,6 +27,61 @@ public class LinkedList {
                 return String.format("This is the head of the Linked List: : %s",this.head.value);
             } else return "The Linked List is empty";
         }
+
+        // append to the end of the LL in O(1)
+        public void append(int newVal){
+            if (this.head == null){
+                this.insert(newVal);
+            }
+            else {
+                Node newNode = new Node(newVal);
+                this.tail.next = newNode;
+                this.tail = newNode;
+            }
+
+        }
+
+        // inserts a new value AFTER the value given
+        public String insertAfter(int val, int newVal){
+               Node current = this.head;
+               Node newNode = new Node(newVal);
+               while (current != null) {
+                   if (current.value == val){
+                       Node temp = current.next;
+                       newNode.next = temp;
+                       current.next = newNode;
+                       if (this.head==this.tail) {
+                           this.tail = this.head.next;
+                       }
+                       return this.toString();
+                   }
+                   current = current.next;
+               }
+               return "value not in linked list";
+
+        }
+        // inserts a new value BEFORE the value given
+        public String insertBefore(int val, int newVal){
+            Node current = this.head;
+            Node newNode = new Node(newVal);
+            if (this.head.value==val){
+                newNode.next = this.head;
+                this.head=newNode;
+                return this.toString();
+            }
+            while (current.next != null) {
+                if (current.next.value == val){
+                    Node temp = current.next;
+                    newNode.next = temp;
+                    current.next = newNode;
+                    return this.toString();
+                }
+                current = current.next;
+            }
+            return "value not in linked list";
+
+        }
+
         // checks if an inserted value is included in the linked list
         public boolean includes(int n){
             Node pointer = this.head;
@@ -52,6 +105,12 @@ public class LinkedList {
                 pointer = pointer.next;
             }
             return newString + " => NULL";
+        }
+        public Node getHead(){
+            return this.head;
+        }
+        public Node getTail(){
+            return this.tail;
         }
 }
 
