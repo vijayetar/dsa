@@ -7,6 +7,7 @@ __PR__:https://github.com/vijayetar/dsa/pull/47
 __WhiteBoards__:
 ![InsertBefore](../assets/insertBefore.png)
 ![InsertAfter](../assets/insertAfter.png)
+![kthFromTheNode](../assets/Kth_from_the_end.png)
 
 ## Challenge
 Linked List created with the following methods:
@@ -19,6 +20,8 @@ __insertAfter(int val, int newVal)__: method that takes in two integers, and ite
 
 __insertBefore(int val, int newVal)__: method that takes in two integers, and iterates over the entire linked list until the value is found, and inserts a Node of the new value before the current node. It returns a string either of the linked list containing the node or a string "not found" if the node value is not found.
 
+__kthFromTheEnd(int val)__: method that takes in an integer and finds the kth value from the end.  It will return the end at k=0, and throw exception if the k>length of the linked list.
+
 ## Approach and Efficiency
 __includes(int n)__: time O(n), space O(1)
 __isEmpty()__: O(1)
@@ -26,6 +29,7 @@ __insert(int n)__: time O(1), space O(1)
 __append(int n)__: time O(1), space O(1)
 __insertAfter(int val, int newVal)__: time O(n), space O(1)
 __insertBefore(int val, int newVal)__: time O(n), space O(1)
+__kthFromTheNode(int val)__: time O(n), space O(1)
 
 ## Specifications Used
 * .editorconfig
