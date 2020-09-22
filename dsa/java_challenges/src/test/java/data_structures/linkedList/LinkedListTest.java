@@ -1,10 +1,11 @@
 package data_structures.linkedList;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class LinkedListTest {
     @Test
@@ -107,4 +108,40 @@ public class LinkedListTest {
         linkedList.append(3);
         assertEquals("{500} => {1} => {2} => {3} => NULL", linkedList.insertBefore(1,500));
     }
+    @Test public void testKthFromTheEnd () throws Exception{
+        LinkedList linkedList = new LinkedList();
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        linkedList.append(4);
+        linkedList.append(5);
+        linkedList.append(6);
+        assertEquals(4, linkedList.kthFromEnd(2));
+    }
+    @Test public void testKthFromTheEndEqualsLength () throws Exception{
+        LinkedList linkedList = new LinkedList();
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        linkedList.append(4);
+        linkedList.append(5);
+        linkedList.append(6);
+        assertEquals(1, linkedList.kthFromEnd(6));
+    }
+    @Test public void testKthFromTheEndNegativeInteger () throws Exception{
+        LinkedList linkedList = new LinkedList();
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        linkedList.append(4);
+        linkedList.append(5);
+        linkedList.append(6);
+        assertEquals(3, linkedList.kthFromEnd(-3));
+    }
+//    @Test public void testKthFromTheEndOneNode () throws Exception{
+//        LinkedList linkedList = new LinkedList();
+//        linkedList.append(1);
+//        assertThrows("", linkedList.kthFromEnd(5));
+//    }
+
 }

@@ -16,11 +16,13 @@ public class LinkedList {
                 this.head = newNode;
             }
         }
+
         // boolean returns if the linked list is empty or not
         public boolean isEmpty(){
             if (this.head == null){return true;}
             return false;
         }
+
         // returns the value of th head of the linked list
         public String showHead(){
             if (this.head !=null) {
@@ -38,7 +40,6 @@ public class LinkedList {
                 this.tail.next = newNode;
                 this.tail = newNode;
             }
-
         }
 
         // inserts a new value AFTER the value given
@@ -60,6 +61,7 @@ public class LinkedList {
                return "value not in linked list";
 
         }
+
         // inserts a new value BEFORE the value given
         public String insertBefore(int val, int newVal){
             Node current = this.head;
@@ -95,6 +97,35 @@ public class LinkedList {
             }
             return false;
         }
+        // finds the value of the node kth from the end, and throws exception if the kth integer is greater than the length of the linked list
+        public int kthFromEnd(int k) throws Exception {
+            Node current = this.head;
+            Node slower = this.head;
+            int counter = 0;
+            int slowerNum = k;
+            if (k<0){
+                slowerNum = 1;
+                while (current!= null){
+                    if (slowerNum == k*-1){
+                        return current.value;
+                    }
+                    current = current.next;
+                    slowerNum ++;
+                }
+            }
+            while (current != null){
+                if (counter > slowerNum){
+                    slower = slower.next;
+                }
+                current = current.next;
+                counter ++;
+            }
+            if (counter<slowerNum){
+                throw new Exception("It looks like the linked list is too short!");
+            }
+            return slower.value;
+        }
+
         // returns a string of values within the linked list
         public String toString(){
             if (this.head==null) {return "NULL";}
