@@ -138,10 +138,56 @@ public class LinkedListTest {
         linkedList.append(6);
         assertEquals(3, linkedList.kthFromEnd(-3));
     }
-//    @Test public void testKthFromTheEndOneNode () throws Exception{
-//        LinkedList linkedList = new LinkedList();
-//        linkedList.append(1);
-//        assertThrows("", linkedList.kthFromEnd(5));
-//    }
+    @Test public void testKthFromTheEndOneNode () throws IndexOutOfBoundsException{
+        LinkedList linkedList = new LinkedList();
+        linkedList.append(1);
+        assertThrows("It looks like the linked list is too short!", Exception.class, ()-> linkedList.kthFromEnd(5));
+    }
+    @Test public void testLinkedListZipListsNoHeads() throws Exception{
+        LinkedList ll1 = new LinkedList();
+        LinkedList ll2 = new LinkedList();
+        assertThrows("", Exception.class, ()-> LinkedList.zipLists(ll1, ll2));
 
+    }
+    @Test public void testLinkedListZipListsOneHead() throws Exception {
+        LinkedList ll1 = new LinkedList();
+        LinkedList ll2 = new LinkedList();
+        ll1.append(1);
+        assertEquals("{1} => NULL", LinkedList.zipLists(ll1, ll2).toString());
+    }
+    @Test public void testLinkedListZipListsEqualLL() throws Exception {
+        LinkedList ll1 = new LinkedList();
+        LinkedList ll2 = new LinkedList();
+        ll1.append(1);
+        ll1.append(2);
+        ll1.append(3);
+        ll1.append(4);
+        ll2.append(5);
+        ll2.append(6);
+        ll2.append(7);
+        ll2.append(8);
+        assertEquals("{1} => {5} => {2} => {6} => {3} => {7} => {4} => {8} => NULL", LinkedList.zipLists(ll1, ll2).toString());
+    }
+    @Test public void testLinkedListZipListsShortLl1() throws Exception {
+        LinkedList ll1 = new LinkedList();
+        LinkedList ll2 = new LinkedList();
+        ll1.append(1);
+        ll1.append(2);
+        ll2.append(5);
+        ll2.append(6);
+        ll2.append(7);
+        ll2.append(8);
+        assertEquals("{1} => {5} => {2} => {6} => {7} => {8} => NULL", LinkedList.zipLists(ll1, ll2).toString());
+    }
+    @Test public void testLinkedListZipListsShortLL2() throws Exception {
+        LinkedList ll1 = new LinkedList();
+        LinkedList ll2 = new LinkedList();
+        ll1.append(1);
+        ll1.append(2);
+        ll1.append(3);
+        ll1.append(4);
+        ll2.append(5);
+        ll2.append(6);
+        assertEquals("{1} => {5} => {2} => {6} => {3} => {4} => NULL", LinkedList.zipLists(ll1, ll2).toString());
+    }
 }

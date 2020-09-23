@@ -2,8 +2,8 @@ package data_structures.linkedList;
 
 public class LinkedList {
 
-        private Node head;
-        private Node tail;
+        public Node head;
+        public Node tail;
 
         // inserts the node to the head of the linked list
         public void insert(int n){
@@ -121,7 +121,7 @@ public class LinkedList {
                 counter ++;
             }
             if (counter<slowerNum){
-                throw new Exception("It looks like the linked list is too short!");
+                throw new IndexOutOfBoundsException("It looks like the linked list is too short!");
             }
             return slower.value;
         }
@@ -143,5 +143,31 @@ public class LinkedList {
         public Node getTail(){
             return this.tail;
         }
+
+        public static LinkedList zipLists(LinkedList ll1, LinkedList ll2) throws Exception {
+            if (ll1.head == null & ll2.head==null){
+                throw new Exception("Both linked lists are empty!");
+            }
+            if (ll1.head == null) {return ll2;}
+            else if (ll2.head == null) {return ll1;}
+            Node current1 = ll1.head;
+            Node current2 = ll2.head;
+            Node temp1 = current1.next;
+            Node temp2 = current2.next;
+            while (temp1 !=null & temp2 != null){
+                current1.next = current2;
+                current2.next = temp1;
+                current1 = temp1;
+                current2 = temp2;
+                temp1 = temp1.next;
+                temp2 = temp2.next;
+            }
+            current1.next = current2;
+            if (temp1 !=null & temp2 ==null){
+                current2.next = temp1;
+            }
+            return ll1;
+        }
+
 }
 
