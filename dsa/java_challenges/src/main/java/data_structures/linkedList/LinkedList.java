@@ -143,7 +143,7 @@ public class LinkedList {
         public Node getTail(){
             return this.tail;
         }
-
+        // static method to zip two linkedLists given as arguments
         public static LinkedList zipLists(LinkedList ll1, LinkedList ll2) throws Exception {
             if (ll1.head == null & ll2.head==null){
                 throw new Exception("Both linked lists are empty!");
