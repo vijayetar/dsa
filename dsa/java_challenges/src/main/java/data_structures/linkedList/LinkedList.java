@@ -128,15 +128,15 @@ public class LinkedList {
 
         // returns a string of values within the linked list
         public String toString(){
-            if (this.head==null) {return "NULL";}
-            Node pointer = this.head;
-            String newString = String.format("{%s}",pointer.value);
-            while (pointer.next != null){
-                newString = String.format("%s => {%s}",newString,pointer.next.value);
-                pointer = pointer.next;
-            }
-            return newString + " => NULL";
+            return toString(head);
         }
+
+        private String toString(Node current){
+            if (current == null) {return "NULL";}
+            String output = String.format("{%d} => ",current.value) + toString(current.next);
+            return  output;
+        }
+
         public Node getHead(){
             return this.head;
         }
@@ -168,6 +168,21 @@ public class LinkedList {
             }
             return ll1;
         }
+//        public static LinkedList zipLists(LinkedList ll1, LinkedList ll2) throws Exception {
+//            if (ll1.head == null & ll2.head==null){
+//                throw new Exception("No LLs");
+//            }
+//            return LinkedList.zipLists(ll1.head, ll2.head);
+//        }
+//        private static LinkedList zipLists(Node current1, Node current2) throws Exception {
+//            if (current1 == null) {
+//                return current2;
+//            }
+//            Node temp = current1.next;
+//            current1.next = current2;
+//            current1 = current2;
+//            return LinkedList.zipLists(current1, temp);
+//        }
 
 }
 
