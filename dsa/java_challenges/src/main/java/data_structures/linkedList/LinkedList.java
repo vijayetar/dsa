@@ -2,8 +2,8 @@ package data_structures.linkedList;
 
 public class LinkedList {
 
-        private Node head;
-        private Node tail;
+        public Node head;
+        public Node tail;
 
         // inserts the node to the head of the linked list
         public void insert(int n){
@@ -121,27 +121,70 @@ public class LinkedList {
                 counter ++;
             }
             if (counter<slowerNum){
-                throw new Exception("It looks like the linked list is too short!");
+                throw new IndexOutOfBoundsException("It looks like the linked list is too short!");
             }
             return slower.value;
         }
 
         // returns a string of values within the linked list
         public String toString(){
-            if (this.head==null) {return "NULL";}
-            Node pointer = this.head;
-            String newString = String.format("{%s}",pointer.value);
-            while (pointer.next != null){
-                newString = String.format("%s => {%s}",newString,pointer.next.value);
-                pointer = pointer.next;
-            }
-            return newString + " => NULL";
+            return toString(head);
         }
+
+        private String toString(Node current){
+            if (current == null) {return "NULL";}
+            String output = String.format("{%d} => ",current.value) + toString(current.next);
+            return  output;
+        }
+
         public Node getHead(){
             return this.head;
         }
         public Node getTail(){
             return this.tail;
         }
+        // static method to zip two linkedLists given as arguments
+        public static LinkedList zipLists(LinkedList ll1, LinkedList ll2) throws Exception {
+            if (ll1.head == null & ll2.head==null){
+                throw new Exception("Both linked lists are empty!");
+            }
+            if (ll1.head == null) {return ll2;}
+            else if (ll2.head == null) {return ll1;}
+            Node current1 = ll1.head;
+            Node current2 = ll2.head;
+            Node temp1 = current1.next;
+            Node temp2 = current2.next;
+            while (temp1 !=null & temp2 != null){
+                current1.next = current2;
+                current2.next = temp1;
+                current1 = temp1;
+                current2 = temp2;
+                temp1 = temp1.next;
+                temp2 = temp2.next;
+            }
+            current1.next = current2;
+            if (temp1 !=null & temp2 ==null){
+                current2.next = temp1;
+            }
+            return ll1;
+        }
+//        public static LinkedList zipLists(LinkedList ll1, LinkedList ll2) throws Exception {
+//            if (ll1.head == null & ll2.head==null){
+//                throw new Exception("No LLs");
+//            }
+//            return LinkedList.zipLists(ll1.head, ll2.head);
+//        }
+//        private static LinkedList zipLists(Node current1, Node current2) throws Exception {
+//            if (current1 == null) {
+//                return current2;
+//            }
+//            Node temp = current1.next;
+//            current1.next = current2;
+//            current1 = current2;
+//            return LinkedList.zipLists(current1, temp);
+//        }
+        public static int 
+
+
 }
 

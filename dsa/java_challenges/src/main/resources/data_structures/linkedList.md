@@ -5,9 +5,14 @@
 __PR__:https://github.com/vijayetar/dsa/pull/47
 
 __WhiteBoards__:
+### Insert Before   
 ![InsertBefore](../assets/insertBefore.png)
+### Insert After
 ![InsertAfter](../assets/insertAfter.png)
+### Find Kth Node from the end
 ![kthFromTheNode](../assets/Kth_from_the_end.png)
+### Zip Lists
+![ZipLists](../assets/LL_zipLists.png)
 
 ## Challenge
 Linked List created with the following methods:
@@ -22,6 +27,8 @@ __insertBefore(int val, int newVal)__: method that takes in two integers, and it
 
 __kthFromTheEnd(int val)__: method that takes in an integer and finds the kth value from the end.  It will return the end at k=0, and throw exception if the k>length of the linked list.
 
+__zipLists(LinkedList ll1, LinkedList ll2)__: STATIC method that takes in two linkedlists as arguments and returns the first linked list with the zipped second linked list
+
 ## Approach and Efficiency
 __includes(int n)__: time O(n), space O(1)
 __isEmpty()__: O(1)
@@ -30,6 +37,7 @@ __append(int n)__: time O(1), space O(1)
 __insertAfter(int val, int newVal)__: time O(n), space O(1)
 __insertBefore(int val, int newVal)__: time O(n), space O(1)
 __kthFromTheNode(int val)__: time O(n), space O(1)
+__zipLists(LinkedList ll1, LinkedList ll2)__: time O(n), space O(1)
 
 ## Specifications Used
 * .editorconfig
