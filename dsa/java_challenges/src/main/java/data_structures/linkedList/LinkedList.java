@@ -183,6 +183,8 @@ public class LinkedList {
 //            current1 = current2;
 //            return LinkedList.zipLists(current1, temp);
 //        }
+        public static int 
+
 
 }
 
