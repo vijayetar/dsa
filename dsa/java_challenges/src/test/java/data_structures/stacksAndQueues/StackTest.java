@@ -77,6 +77,6 @@ public class StackTest {
         newStack.pop();
         newStack.pop();
         assertThrows("this is empty stack", Exception.class, () -> newStack.pop());
-        assertTrue("the stack is empty", newStack.isEmpty());
+        assertTrue("the stack is empty", newStack.isEmpty());g
     }
 }
