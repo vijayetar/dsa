@@ -14,6 +14,6 @@ public class AnimalShelter {
 
     public AnimalShelter() {
         // use two stacks to do this
-        
+
     }
 }
