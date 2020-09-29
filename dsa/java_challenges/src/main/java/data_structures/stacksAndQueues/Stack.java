@@ -1,5 +1,6 @@
 package data_structures.stacksAndQueues;
 
+import java.util.ArrayList;
 import java.util.EmptyStackException;
 
 public class Stack<T>{
@@ -18,8 +19,9 @@ public class Stack<T>{
 
 
     // returns the value of the top of the Stack
-    public T peek() throws EmptyStackException {
-        return isEmpty()? null: top.value;
+    public T peek () throws EmptyStackException {
+        if (isEmpty()) {throw new EmptyStackException();}
+        return (T) top.value;
     }
 
 
@@ -32,14 +34,14 @@ public class Stack<T>{
         }
         top = new Node<T>(val, top);
     }
-    public void push (T[] values){
+    public void push (ArrayList<T> values){
         int i = 0;
         if (isEmpty()){
-            top = new Node<T>(values[i], top);
+            top = new Node<T>(values.get(i), top);
             i = 1;
         }
-        for (int j = i; j<values.length; j++){
-            top = new Node<T>(values[j], top);
+        for (int j = i; j<values.size(); j++){
+            top = new Node<T>(values.get(j), top);
         }
     }
     // remove the top of the Stack
