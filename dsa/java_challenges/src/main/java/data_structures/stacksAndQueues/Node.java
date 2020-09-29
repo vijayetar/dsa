@@ -1,13 +1,13 @@
 package data_structures.stacksAndQueues;
 
-public class Node {
-    public Integer value;
-    public Node next;
+public class Node<T> {
+    T value;
+    Node<T> next;
 
-    public Node(Integer value){
+    public Node(T value){
         this.value = value;
     }
-    public Node(Integer value, Node next){
+    public Node(T value, Node<T> next){
         this.value = value;
         this.next = next;
     }
@@ -17,7 +17,7 @@ public class Node {
     public String toString(){
         return String.format("{%s}",this.value);
     }
-    public Integer getValue(){
+    public T getValue(){
         return this.value;
     }
 }

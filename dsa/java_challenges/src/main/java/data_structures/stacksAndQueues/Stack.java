@@ -1,58 +1,61 @@
 package data_structures.stacksAndQueues;
 
-import data_structures.linkedList.Node;
+import java.util.ArrayList;
+import java.util.EmptyStackException;
 
-public class Stack{
-    private Node top;
+public class Stack<T>{
+    private Node<T> top = null;
 
-    public Stack(Node top) {
-        this.top = top;
-    }
-    public Stack(){
-        this.top = null;
-    }
     // checks if the stack is empty
     public boolean isEmpty(){
         return top==null;
     }
+
+
     // get Top of the Stack
-    public Node getTop(){
+    public Node<T> getTop(){
         return top;
     }
+
+
     // returns the value of the top of the Stack
-    public int peek() throws Exception {
-        if (top==null){
-            throw new Exception("Stack is empty");
-        }
-        return top.value;
+    public T peek () throws EmptyStackException {
+        if (isEmpty()) {throw new EmptyStackException();}
+        return (T) top.value;
     }
+
+
 //     add values to the top of the stack
-    public void push(Integer val){
+    public void push(T val){
+        Node<T> newNode = new Node(val);
         if (isEmpty()){
-            top = new Node(val);
+            top = newNode;
             return;
         }
-        top = new Node (val, top);
+        top = new Node<T>(val, top);
     }
-    public void push (int[] values){
+    public void push (ArrayList<T> values){
         int i = 0;
         if (isEmpty()){
-            top = new Node(values[i], top);
+            top = new Node<T>(values.get(i), top);
             i = 1;
         }
-        for (int j = i; j<values.length; j++){
-            top = new Node(values[j], top);
+        for (int j = i; j<values.size(); j++){
+            top = new Node<T>(values.get(j), top);
         }
     }
     // remove the top of the Stack
-    public Integer pop(){
-        Node temp = top;
+    public T pop() throws EmptyStackException {
+        if (top == null){
+            throw new EmptyStackException();
+        }
+        Node<T> temp = top;
         top = top.next;
         return temp.value;
     }
     public String toString(){
         String output = "";
-        Node current = top;
+        Node<T> current = top;
         while(current != null){
             output += String.format("{%d}=> ", current.value);
             current = current.next;
