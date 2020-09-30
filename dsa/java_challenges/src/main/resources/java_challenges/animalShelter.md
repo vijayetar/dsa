@@ -19,6 +19,10 @@ I was able to create enqueue, dequeue, peek and isEmpty for the shelter class, t
 * .gitattributes
 * .gitignore
 
+## Reference
+[How to get the name of the class](https://stackoverflow.com/questions/6271417/java-get-the-current-class-name)
+
+
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
  - [x] Feature tasks for this challenge are completed
@@ -30,3 +34,4 @@ I was able to create enqueue, dequeue, peek and isEmpty for the shelter class, t
      - [x] Summary, Description, Approach & Efficiency, Solution
      - [x] Link to code
      - [NA] Picture of whiteboard
+
