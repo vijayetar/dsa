@@ -1,6 +1,6 @@
 # Stacks and Queues
 
-[Table of Contents](./../../../../../../README.md)   
+[Table of Contents](./../../../../../../README.md)
 PR: https://github.com/vijayetar/dsa/pull/52
 
 
@@ -30,7 +30,7 @@ __peek()__:
 Define a method called peek that does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
 Should raise exception when called on empty queue
 __isEmpty()__:
-Define a method called isEmpty that takes no argument, and returns a boolean indicating whether or not the queue is empty.
+Define a method called isEmpty that takes no argument, and returns a boolean indicating whether or not the queue is empty.  
 
 ## Checklist
  - [x] Top-level README “Table of Contents” is updated
