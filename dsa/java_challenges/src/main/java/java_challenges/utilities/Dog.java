@@ -1,10 +1,13 @@
 package java_challenges.utilities;
 
 public class Dog extends Animal {
-
-    public Dog(String name) {
-        super(name);
+    private String name;
+    public Dog() {
     }
+    public Dog(String name){
+        this.name = name;
+    }
+
     public String toString(){
         return "dog name: "+ name;
     }

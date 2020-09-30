@@ -1,5 +1,7 @@
 package java_challenges.utilities;
 
+import java.util.EmptyStackException;
+
 public class AnimalShelter {
 //    Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
 //    Implement the following methods:
@@ -13,7 +15,7 @@ public class AnimalShelter {
 //enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
 //    dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
 
-    private static class Node<T> {
+    protected static class Node<T> {
         T value;
         AnimalShelter.Node<T> next;
 
@@ -39,27 +41,70 @@ public class AnimalShelter {
     Node<Animal> rear = null;
 
     // takes each animal either cat or dog or other and adds it to the front of the queue
-    public void enqueue(Animal animal){
-        if (front == null){
-            front = new Node<Animal>(animal);
-            rear = front;
+    public void enqueue(Animal animal) {
+        Node<Animal> newNode = new Node<Animal>(animal);
+        if (front == null) {
+            front = newNode;
+            rear = newNode;
         }
-        front = new Node<Animal>(animal, front);
+        rear.next = newNode;
+        rear = newNode;
     }
+
     public boolean isEmpty(){
         return front==null;
     }
 
+    public Node<Animal> getFront(){
+        return front;
+    }
+//    public String dequeue(Animal animal) {
+//        if (isEmpty()){
+//            return "null";
+//        }
+//        Node<Animal> current = front;
+//        while(current != null){
+//            System.out.println("This is the current in the while loop  "+current.value);
+//            System.out.println("HERE ARE WE  " + current.value.getClass().getSimpleName());
+//            if (current.value.getClass().getSimpleName().equals(animal.getClass().getSimpleName())){
+//                return current.value.toString();
+//            }
+//            current = current.next;
+//        }
+//        return "null";
+//    }
+    public String dequeue(String animal) {
+        if (isEmpty()){
+            return null;
+        }
+        Node<Animal> current = front;
+        if (current.value.getClass().getSimpleName().toLowerCase().equals(animal)){
+            System.out.println("this is front.next "+current.next.toString());
+            front = current.next;
+            return current.value.toString();
+        }
+        while(current.next != null){
+        System.out.println("This is the current.next in the while loop  "+current.next.value);
+        System.out.println("HERE ARE WE  " + current.next.value.getClass().getSimpleName());
+        if (current.next.value.getClass().getSimpleName().toLowerCase().equals(animal)){
+            Node<Animal> temp = current.next;
+            current.next = temp.next;
+            return temp.value.toString();
+        }
+        current = current.next;
+        }
+        return null;
+    }
+
     public String toString(){
         String output = "";
-        if (!isEmpty()) {
-            Node<Animal> current = front;
-            while(current != null){
-                output += String.format("{%s} => ", current.value) + output;
-            }
+        Node<Animal> current = front;
+        while (current != null){
+            output += current.value.toString()+" <= ";
+            current = current.next;
         }
         return output+"NULL";
-
     }
+
 
 }
