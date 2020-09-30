@@ -50,11 +50,7 @@ public class PseudoQueue <T> {
             if (dequeueStack.isEmpty()) {
                 shuffleStack(enqueueStack, dequeueStack);
             }
-            Node<T> current = dequeueStack.top;
-            while (current != null) {
-                output = String.format("{%d} => ", (int)current.value) + output;
-                current = dequeueStack.top;
-            }
+            return dequeueStack.toString();
         }
         return output+"Null";
 

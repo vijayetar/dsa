@@ -62,11 +62,15 @@ public class PseudoQueueTest {
     }
     @Test public void testToString(){
         PseudoQueue<Integer> newQueue = new PseudoQueue<>();
+        assertEquals("Null", newQueue.toString());
+    }
+    @Test public void testToStringFullQueue(){
+        PseudoQueue<Integer> newQueue = new PseudoQueue<>();
         newQueue.enqueue(5);
         newQueue.enqueue(10);
         newQueue.enqueue(15);
         newQueue.enqueue(25);
-        assertEquals("", newQueue.toString());
+        assertEquals("{5}=> {10}=> {15}=> {25}=> NULL", newQueue.toString());
     }
 
 }
