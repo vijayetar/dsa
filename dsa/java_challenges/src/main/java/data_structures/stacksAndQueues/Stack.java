@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.EmptyStackException;
 
 public class Stack<T>{
-    private Node<T> top = null;
+    public Node<T> top=null;
 
     // checks if the stack is empty
     public boolean isEmpty(){
