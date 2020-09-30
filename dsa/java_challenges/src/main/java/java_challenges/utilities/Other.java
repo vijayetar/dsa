@@ -1,24 +1,11 @@
 package java_challenges.utilities;
 
-public class Other {
-    private String type;
+public class Other extends Animal{
 
-    public Other(String type) {
-        this.type = type;
+    public Other(String name) {
+        super(name);
     }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    @Override
-    public String toString() {
-        return "Other{" +
-            "type='" + type + '\'' +
-            '}';
+    public String toString(){
+        return "other name: "+name;
     }
 }

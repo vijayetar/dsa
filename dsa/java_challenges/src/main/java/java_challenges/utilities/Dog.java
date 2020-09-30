@@ -1,24 +1,11 @@
 package java_challenges.utilities;
 
-public class Dog {
-    private String name;
+public class Dog extends Animal {
 
     public Dog(String name) {
-        this.name = name;
+        super(name);
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Dog{" +
-            "name='" + name + '\'' +
-            '}';
+    public String toString(){
+        return "dog name: "+ name;
     }
 }
