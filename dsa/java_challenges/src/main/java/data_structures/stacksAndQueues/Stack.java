@@ -24,7 +24,6 @@ public class Stack<T>{
         return (T) top.value;
     }
 
-
 //     add values to the top of the stack
     public void push(T val){
         Node<T> newNode = new Node(val);
