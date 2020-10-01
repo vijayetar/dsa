@@ -1,10 +1,38 @@
 package java_challenges.utilities;
 
+
+import org.junit.Test;
+
+import java.util.EmptyStackException;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 public class MultiBracketValidationTest {
-    public static boolean multiBracketValidation(String input){
-        //create a hashmap of the brackets with O1 look up time
-        // instantiate a stack
-        // iterate over the string and then add to the stack as we see
-        return true;
+
+    @Test public void testMultiBracketSimpleHappyPathTrue() throws EmptyStackException {
+        MultiBracketValidation mbv = new MultiBracketValidation();
+        System.out.println(mbv.multiBracketValidationWithString("{and}"));
+        assertTrue("testing simpleHappyPath", mbv.multiBracketValidationWithString("{and}"));
+    }
+    @Test public void testMultiBracketComplicatedHappyPathTrue() throws EmptyStackException {
+        MultiBracketValidation mbv = new MultiBracketValidation();
+        assertTrue("testing simpleHappyPath", mbv.multiBracketValidationWithString("({and})"));
+    }
+    @Test public void testMultiBracketAnotherComplicatedHappyPathTrue() throws EmptyStackException {
+        MultiBracketValidation mbv = new MultiBracketValidation();
+        assertTrue("testing simpleHappyPath", mbv.multiBracketValidationWithString("()[({and})]"));
+    }
+    @Test public void testMultiBracketSimpleHappyPathFalse() throws EmptyStackException {
+        MultiBracketValidation mbv = new MultiBracketValidation();
+        assertFalse("testing simpleHappyPath", mbv.multiBracketValidationWithString("{and})"));
+    }
+    @Test public void testMultiBracketComplicatedHappyPathFalse() throws EmptyStackException {
+        MultiBracketValidation mbv = new MultiBracketValidation();
+        assertFalse("testing simpleHappyPath", mbv.multiBracketValidationWithString("({and})["));
+    }
+    @Test public void testMultiBracketAnotherComplicatedHappyPathFalse() throws EmptyStackException {
+        MultiBracketValidation mbv = new MultiBracketValidation();
+        assertFalse("testing simpleHappyPath", mbv.multiBracketValidationWithString("()[chipmunks({and})][]{"));
     }
 }
