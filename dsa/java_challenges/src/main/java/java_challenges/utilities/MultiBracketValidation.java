@@ -1,5 +1,7 @@
 package java_challenges.utilities;
 
+import data_structures.linkedList.LinkedList;
+
 import java.util.EmptyStackException;
 import java.util.HashMap;
 
