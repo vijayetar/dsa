@@ -6,6 +6,7 @@
 [Binary Search Array](/dsa/java_challenges/src/main/resources/java_challenges/BinarySearch.md)
 [AnimalShelter, classes and linked lists](/dsa/java_challenges/src/main/resources/java_challenges/animalShelter.md)
 [Java MultiBracket Validation](/dsa/java_challenges/src/main/resources/java_challenges/multiBracketValidation.md)
+[DuckDuckGoose](/dsa/java_challenges/src/main/resources/java_challenges/ddg.md)
 
 ### Data Structures in Java
 [Linked List](/dsa/java_challenges/src/main/resources/data_structures/linkedList.md)
