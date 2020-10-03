@@ -14,6 +14,7 @@ public class Tree<T> {
     public Tree (NodeTree<T> rootNode){
         this.root = rootNode;
     }
+    //getters and setters
     public void setRoot(NodeTree<T> node){
         this.root = node;
     }
@@ -31,6 +32,7 @@ public class Tree<T> {
         }
         rootQueue = new QueueForTree<>();
         this._walk(this.root, newNode);
+        //while loop is checking the queue and dequeing and then find the spot where there is null and assign the newNode to that spot
     }
     private void _walk(NodeTree<T> newRoot, NodeTree<T> newNode){
         if (newRoot.left != null){ rootQueue.enqueue(newRoot.left);}
