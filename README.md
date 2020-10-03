@@ -9,7 +9,7 @@
 
 ### Data Structures in Java
 [Linked List](/dsa/java_challenges/src/main/resources/data_structures/linkedList.md)
-[Stacks and Queues](/dsa/java_challenges/src/main/resources/data_structures/linkedList.md)
+[Stacks and Queues](/dsa/java_challenges/src/main/resources/data_structures/stacksAndqueues.md)
 [Trees and Binary Search Trees](/dsa/java_challenges/src/main/resources/data_structures/trees.md)
 
 
