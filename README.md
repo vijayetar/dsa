@@ -54,7 +54,8 @@
 * [Linked Lists](dsa/practice_coding/practice_linked_lists/README.md)
 -----------------------------------
 
-
+## Grokking the coding interview
+* [Average of subdirectories](dsa/grokking/README.md)
 
 ## References
 [ASCII](https://www.techonthenet.com/ascii/chart.php)
