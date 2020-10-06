@@ -15,26 +15,15 @@ public class BinarySearchTree {
 
     // add integer to the tree recursively using _walk method
     public void add(Integer val) {
-        if (this.root == null) {
-            this.root = new NodeTree<Integer>(val);
-            return;
-        }
-        root = _walk(this.root, val);
+        root = walk(this.root, val);
     }
 
-    private NodeTree<Integer> _walk(NodeTree<Integer> current, Integer val) {
+    private NodeTree<Integer> walk(NodeTree<Integer> current, Integer val) {
+        if (current == null){return new NodeTree<Integer>(val);}
         if (val > current.value) {
-            if (current.right == null) {
-                current.right = new NodeTree<Integer>(val);
-                return current;
-            }
-            current.right = _walk(current.right, val);
+                current.right = walk(current.right,val);
         } else if (val < current.value) {
-            if (current.left == null) {
-                current.left = new NodeTree<Integer>(val);
-                return current;
-            }
-            current.left = _walk(current.left, val);
+                current.left = walk(current.left,val);
         }
         return current;
     }

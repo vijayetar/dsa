@@ -1,9 +1,9 @@
 package data_structures.tree;
 
 public class NodeTree <T> {
-    T value;
-    NodeTree<T> left;
-    NodeTree<T> right;
+    public T value;
+    public NodeTree<T> left;
+    public NodeTree<T> right;
     public NodeTree() {
         value = null;
     }
