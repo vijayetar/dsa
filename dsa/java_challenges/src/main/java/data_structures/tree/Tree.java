@@ -24,6 +24,8 @@ public class Tree<T> {
     public boolean isEmpty(){
         return root==null;
     }
+
+
     // use breadth traversal to add to the tree
     public void add(NodeTree<T> newNode){
         if (this.root == null) {
@@ -50,6 +52,25 @@ public class Tree<T> {
         return;
     }
 
+    // breadth traversal, returns an arrayList of all nodes in the breadth traversal
+    public ArrayList<T> breadthTraversal(){
+        if(isEmpty()){throw new EmptyStackException();}
+        listOfNodes = new ArrayList<T>();
+        rootQueue = new QueueForTree<>();
+        rootQueue.enqueue(root);
+        while (!rootQueue.isEmpty()){
+            NodeTree<T> newN = rootQueue.dequeue();
+            listOfNodes.add(newN.value);
+            if (newN.left != null){
+                rootQueue.enqueue(newN.left);
+            }
+            if (newN.right != null){
+                rootQueue.enqueue(newN.right);
+            }
+        }
+        return listOfNodes;
+    }
+
     // preOrder traversal is grabbing the nodes before you traverse the tree in a depth first manner
     public ArrayList<T> preOrder() throws EmptyStackException{
         listOfNodes = new ArrayList<T>();
@@ -66,9 +87,6 @@ public class Tree<T> {
             _walkPreOrder(current.right);
         }
     }
-
-
-
 
 
     // inOrder traversal

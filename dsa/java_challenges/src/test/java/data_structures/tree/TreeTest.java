@@ -8,6 +8,16 @@ import java.util.EmptyStackException;
 import static org.junit.Assert.*;
 
 public class TreeTest {
+    // create a helper function to isntantiate a new tree each time
+    public Tree createTreeWithSixNodes(){
+        Tree tree = new Tree();
+        tree.add(new NodeTree<Integer>(500));
+        tree.add(new NodeTree<Integer>(300));
+        tree.add(new NodeTree<Integer>(5000));
+        tree.add(new NodeTree<Integer>(10));
+        tree.add(new NodeTree<Integer>(400));
+        return tree;
+    }
     // test instantiation
     @Test
     public void testEmptyTree(){
@@ -54,16 +64,6 @@ public class TreeTest {
         tree.add(new NodeTree<Integer>(15));
         assertEquals("Tree{root={value=5000, left={value=1000, left={value=10, left=null, right=null}, right={value=15, left=null, right=null}}, right={value=15000, left=null, right=null}}}", tree.toString());
     }
-    // create a helper function to isntantiate a new tree each time
-    public Tree createTreeWithSixNodes(){
-        Tree tree = new Tree();
-        tree.add(new NodeTree<Integer>(500));
-        tree.add(new NodeTree<Integer>(300));
-        tree.add(new NodeTree<Integer>(5000));
-        tree.add(new NodeTree<Integer>(10));
-        tree.add(new NodeTree<Integer>(400));
-        return tree;
-    }
     // testing for preOrder method
     @Test public void testPreOrder(){
         Tree tree = createTreeWithSixNodes();
@@ -102,9 +102,25 @@ public class TreeTest {
         expected.add(500);
         assertEquals(expected, tree.postOrder());
     }
-
-
-
-
-
+    @Test public void testBreadthTraversalException() throws EmptyStackException{
+        Tree tree = new Tree();
+        assertThrows("empty tree", Exception.class, ()->tree.breadthTraversal());
+    }
+    @Test public void testBreadthTraversalOneNode() throws EmptyStackException{
+        Tree tree = new Tree(new NodeTree<Integer>(500));
+        ArrayList<Integer> expected = new ArrayList<>();
+        expected.add(500);
+        assertEquals(expected,tree.breadthTraversal());
+    }
+    @Test public void testBreadthTraversalMultipleNode() throws EmptyStackException{
+        Tree tree = createTreeWithSixNodes();
+        ArrayList<Integer> expected = new ArrayList<>();
+        expected.add(500);
+        expected.add(300);
+        expected.add(5000);
+        expected.add(10);
+        expected.add(400);
+        assertEquals(expected,tree.breadthTraversal());
+    }
+    
 }
