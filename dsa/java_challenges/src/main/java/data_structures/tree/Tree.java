@@ -50,10 +50,6 @@ public class Tree<T> {
         return;
     }
 
-
-
-
-
     // preOrder traversal is grabbing the nodes before you traverse the tree in a depth first manner
     public ArrayList<T> preOrder() throws EmptyStackException{
         listOfNodes = new ArrayList<T>();
