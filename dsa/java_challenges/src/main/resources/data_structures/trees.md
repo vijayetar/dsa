@@ -27,6 +27,7 @@ a. add: Takes a single argument value, and adds argument to the Binary Tree usin
 b. preOrder: Returns list with node values in depth first traversal in the preorder method
 c. inOrder: Returns list with node values in depth first traversal in the inorder method
 d. postOrder: Returns list with node values in depth first traversal in the postorder method
+e. breadthTraversal: Returns list with node values in breadth traversal manner
 
 * __sub class Binary Search Tree__:
 a. add: Takes argument an integer and adds to the Binary Search tree so that if it is less than the root, it is placed left, and if it is more than the root, then it is placed rightof the root
