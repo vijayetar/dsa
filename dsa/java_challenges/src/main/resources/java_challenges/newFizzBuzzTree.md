@@ -2,6 +2,8 @@
 
 [Table of Contents](./../../../../../../README.md)
 
+![WhiteBoard](../assets/FizzBuzzTree.png)
+
 ## Challenge
 * Write a function called __FizzBuzzTree__ which takes a tree as an argument.
 * __Create a new tree__ with the same structure as the original, but the values modified as follows:
