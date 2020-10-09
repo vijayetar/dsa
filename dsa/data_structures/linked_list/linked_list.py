@@ -5,15 +5,20 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.count = 0
+        self.tail = None
 
     def insert(self, value, *args):
         ''' inserts new node of value at the head and creates new head'''
-        self.head = Node(value, self.head)
-        self.count += 1
+        if not self.head:
+            self.head = Node(value)
+            self.tail = self.head
+            self.count += 1
+        else:
+            self.head = Node(value, self.head)
+            self.count += 1
         for arg in args:
             self.head = Node(arg, self.head)
             self.count += 1
-        return self
 
     def append(self,value, *args):
         ''' appends new node of value at the tail'''
@@ -53,6 +58,16 @@ class LinkedList:
             self.count += 1
             current = new_node
         return
+
+    def append_at_tail(self, val):
+        if not self.tail:
+            self.tail = Node(val)
+            if not self.head:
+                self.head = self.tail
+        else:
+            self.tail.next = Node(val)
+            self.tail = self.tail.next
+
 
     def insert_before(self,positional_value,value,*args):
         '''at positional_value, inserts value and additional arguments BEFORE the positional_value'''

@@ -116,7 +116,31 @@ def partition (ll, value):
         current = current.next
     return output_ll
 
-# 2.5
+#2.4 partition using a linked List where I can add to the tail
+def partition_same_ll(ll, k):
+    if not ll:
+        return "NULL"
+    current = ll.head
+    previous = ll.head
+    end_point = ll.tail
+    print(current, previous, end_point)
+    while (current != end_point):
+        if (current.value>= k):
+            if (current == ll.head):
+                ll.head = current.next
+                ll.append_at_tail(current.value)
+                current, previous = ll.head, ll.head
+            else:
+                previous.next = current.next
+                ll.append_at_tail(current.value)
+                current = previous
+        current = current.next
+        if (previous.next != current):
+            previous = previous.next
+    return ll
+
+
+# 2.5 Given two linked lists of integers, add them together and then return a linked list
 def sum_lists(ll_1, ll_2):
     if not ll_1.head or not ll_2.head:
         return "ll does not have head"
@@ -256,6 +280,33 @@ def is_palindrome(ll):
             return False
     return True
 
+### 2.6 Determine if a linked List is a Palindrome using a recursive function space is O(n) and time is O(n)
+def isPalindromeByRecursion(ll):
+    if not ll.head:
+        return "Null"
+    node, isPal = _walkPalindrome(ll.head, _getLength(ll))
+    return isPal
+
+def _walkPalindrome(headNode, length):
+    if not headNode or length ==0:
+        return headNode, True
+    elif length ==1:
+        return headNode.next, True
+    node, isPal = _walkPalindrome(headNode.next, length-2)
+    ## check if the nodes are matching
+    return node.next, headNode.value == node.value
+
+def _getLength(ll):
+    ''' get the length of the linked list'''
+    current = ll.head
+    if not ll.head:
+        return 0
+    length = 0
+    while current:
+        length+=1
+        current = current.next
+    return length
+
 #### 2.7 function to find the intersection of two linked lists
 
 def find_intersection1 (ll1, ll2):
@@ -320,7 +371,7 @@ def find_intersection2(ll1, ll2):
         ll.head = current
         return ll
     longer = adjust_longer(longer,diff)
-    
+
     #traverse through the linked lists to find the intersection
     current_s, current_l = shorter.head, longer.head
     while current_s:
@@ -328,6 +379,27 @@ def find_intersection2(ll1, ll2):
             return current_s
         current_s, current_l = current_s.next, current_l.next
     return "no intersection"
+
+## 2.8 Loop detection: Given a linked list which might contain a loop, implement an algorithm that returns the node at the beginning of the loop (if one exists)
+
+# iterate over the linked list and push each value into a hashmap. if there are any repeats then return the node
+
+def findLoop(ll):
+    # iterate through the linked list
+    node_dict = {}
+    if not ll.head:
+        return "Empty Linked List"
+    current = ll.head
+    return _walk(node_dict, current)
+
+def _walk(node_dict, current):
+    if (current.value not in node_dict):
+        node_dict[current.value]=1
+    else:
+        return current
+    if not current.next:
+        return "No loop found"
+    return _walk(node_dict,current.next)
 
 
 if __name__ == "__main__":
@@ -341,13 +413,15 @@ if __name__ == "__main__":
     # ll.insert(1, 2, 8, 3, 5, -1,200)
     # print("this is the ll", ll)
     # print(partition(ll, 3))
-    ll_1.append(1,2,3,11)
-    ll_2.append(5,25, 45, 22,3,11)
-    print("One", ll_1, "Two", ll_2)
-    # # print(sum_lists(ll_1, ll_2))
-    # print(sum_lists2(ll_1, ll_2))
-    # print(new_sum_ll(ll_1, ll_2))
-    print(find_intersection2(ll_1, ll_2))
+    ll_1.insert(1,2,1,1,2,1)
+    # ll_2.append(5,25, 45, 22,3,11)
+    # print("One", ll_1, "Two", ll_2)
+    # # # print(sum_lists(ll_1, ll_2))
+    # # print(sum_lists2(ll_1, ll_2))
+    # # print(new_sum_ll(ll_1, ll_2))
+    # print(find_intersection2(ll_1, ll_2))
+    # print(findLoop(ll_1))
+    print(isPalindromeByRecursion(ll_1))
 
 
 

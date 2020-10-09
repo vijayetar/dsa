@@ -13,6 +13,8 @@ Both mid and current start at the head, and for every two steps the current poin
 
 #### 2.4 Given ll, and partition value, use the partition value given and return a linked list with nodes sorted around the partition value
 
+![whiteboard](../../assets/Partition_LL.png)
+
 #### 2.5 given two ll with numeric values, return new ll with sum of the values
 
 #### 2.5 alternate
