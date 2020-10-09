@@ -49,7 +49,7 @@
 * [Breadth_first_graph](dsa/challenges/graph_breadth_first/README.md)
 * [Depth_first_graph](dsa/challenges/graph_depth_first/README.md)
 
-## Practice for Coding Interviews
+## Cracking the Coding Interviews
 * [Arrays and Strings](dsa/practice_coding/arrays_and_strings/README.md)
 * [Linked Lists](dsa/practice_coding/practice_linked_lists/README.md)
 -----------------------------------
