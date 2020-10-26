@@ -17,6 +17,7 @@
 
 [FizzBuzz A Tree<Integer>](/dsa/java_challenges/src/main/resources/java_challenges/newFizzBuzzTree.md)
 
+[Repeated Word using HashMap](/dsa/java_challenges/src/main/resources/java_challenges/repeatedWord.md)
 
 ### Data Structures in Java
 [Linked List](/dsa/java_challenges/src/main/resources/data_structures/linkedList.md)
